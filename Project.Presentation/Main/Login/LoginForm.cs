@@ -1,14 +1,23 @@
-﻿using System;
+﻿using Project.Business.Services;
+using Project.Common.Security;
+using Project.Entity;
+using Project.Presentation.Main.Dashboard;
+using System;
+using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Project.Presentation.Main.Login
 {
     public partial class LoginForm : Form
     {
+        private readonly UserService userService;
+
         public LoginForm()
         {
             InitializeComponent();
             SetTitle();
+            this.userService = new UserService();
         }
 
         public bool ValidateLoginFields()
@@ -35,12 +44,54 @@ namespace Project.Presentation.Main.Login
 
         public void ValidateCredentials()
         {
+            try
+            {
+                if (ValidateLoginFields())
+                {
+                    User user = userService.GetAll().Where(u => u.Username == txtUsername.Text && u.Password == txtPassword.Text).FirstOrDefault();
 
+                    if (user != null)
+                    {
+                        string decryptedPassword = Encryptor.Decrypt(user.Password);
+
+                        if (decryptedPassword == txtPassword.Text)
+                        {
+                            if (!user.IsActive)
+                            {
+                                MessageBox.Show("Este usuario se encuentra Inactivo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                this.Hide();
+                                DashboardForm dashboard = new DashboardForm();
+                                dashboard.Show();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Credenciales incorrectas, verifique e inténtelo nuevamente.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credenciales incorrectas, verifique e inténtelo nuevamente.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void SetTitle()
         {
             this.txtName.Text = $"MV Arroz al Wok © {DateTime.Now.Year}";
+        }
+
+        private void btnEntry_Click(object sender, EventArgs e)
+        {
+            ValidateCredentials();
         }
     }   
 }
