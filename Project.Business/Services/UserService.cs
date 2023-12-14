@@ -1,5 +1,4 @@
-﻿using Project.Data.Interface;
-using Project.Data.Repository;
+﻿using Project.Data.Repository;
 using Project.Entity;
 using System.Collections.Generic;
 
@@ -21,12 +20,12 @@ namespace Project.Business.Services
 
         public bool Delete(int id)
         {
-            throw new System.NotImplementedException();
+            return this.userRepository.Delete(id);
         }
 
         public User Get(int id)
         {
-            throw new System.NotImplementedException();
+            return this.userRepository.Get(id);
         }
 
         public IEnumerable<User> GetAll()
@@ -34,9 +33,9 @@ namespace Project.Business.Services
             return this.userRepository.GetAll();
         }
 
-        public bool Update(User entity)
+        public bool Update(User user)
         {
-            throw new System.NotImplementedException();
+            return this.userRepository.Update(user);
         }
     }
 }

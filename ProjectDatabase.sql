@@ -104,3 +104,77 @@ AS
 BEGIN
     SELECT * FROM Users;
 END;
+GO
+
+CREATE PROCEDURE CreateModule
+    @ModuleName NVARCHAR(255),
+    @RoleId INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Modules WHERE Name = @ModuleName)
+    BEGIN
+        INSERT INTO Modules (Name, RoleId)
+        VALUES (@ModuleName, @RoleId);
+        SELECT SCOPE_IDENTITY() AS ModuleId;
+    END
+    ELSE
+    BEGIN
+        -- Module name already exists, handle accordingly (e.g., raise an error)
+        RAISERROR('El modulo con este nombre ya existe.', 16, 1);
+    END
+END;
+GO
+
+CREATE PROCEDURE GetModule
+    @ModuleId INT
+AS
+BEGIN
+    SELECT * FROM Modules WHERE Id = @ModuleId;
+END;
+GO
+
+CREATE PROCEDURE UpdateModule
+    @ModuleId INT,
+    @ModuleName NVARCHAR(255),
+    @RoleId INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Modules WHERE Id = @ModuleId)
+    BEGIN
+        RAISERROR('Modulo no encontrado.', 16, 1);
+    END
+    ELSE
+    BEGIN
+        UPDATE Modules
+        SET Name = @ModuleName,
+            RoleId = @RoleId
+        WHERE Id = @ModuleId;
+    END
+END;
+GO
+
+CREATE PROCEDURE DeleteModule
+    @ModuleId INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Modules WHERE Id = @ModuleId)
+    BEGIN
+        RAISERROR('Modulo no encontrado.', 16, 1);
+    END
+    ELSE
+    BEGIN
+        DELETE FROM Modules WHERE Id = @ModuleId;
+    END
+END;
+GO
+
+CREATE PROCEDURE GetModulesByRoleId
+    @RoleId INT
+AS
+BEGIN
+    SELECT M.*
+    FROM Modules M
+    INNER JOIN Roles R ON M.RoleId = R.Id
+    WHERE R.Id = @RoleId;
+END;
+GO

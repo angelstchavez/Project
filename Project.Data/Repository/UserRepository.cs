@@ -24,7 +24,7 @@ namespace Project.Data.Repository
             {
                 dbConnection.Open();
 
-                string encryptedPassword = Encryptor.Encrypt(user.Password);
+                string encryptedPassword = Encryptor.GetSHA256(user.Password);
 
                 var parameters = new
                 {

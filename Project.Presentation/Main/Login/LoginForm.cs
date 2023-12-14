@@ -3,6 +3,7 @@ using Project.Common.Security;
 using Project.Entity;
 using Project.Presentation.Main.Dashboard;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
@@ -48,28 +49,21 @@ namespace Project.Presentation.Main.Login
             {
                 if (ValidateLoginFields())
                 {
-                    User user = userService.GetAll().Where(u => u.Username == txtUsername.Text && u.Password == txtPassword.Text).FirstOrDefault();
+                    string enteredPasswordHash = Encryptor.GetSHA256(txtPassword.Text);
+
+                    User user = userService.GetAll().FirstOrDefault(u => u.Username == txtUsername.Text && u.Password == enteredPasswordHash);
 
                     if (user != null)
                     {
-                        string decryptedPassword = Encryptor.Decrypt(user.Password);
-
-                        if (decryptedPassword == txtPassword.Text)
+                        if (user.IsActive)
                         {
-                            if (!user.IsActive)
-                            {
-                                MessageBox.Show("Este usuario se encuentra Inactivo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                            else
-                            {
-                                this.Hide();
-                                DashboardForm dashboard = new DashboardForm();
-                                dashboard.Show();
-                            }
+                            this.Hide();
+                            DashboardForm dashboard = new DashboardForm(user);
+                            dashboard.Show();
                         }
                         else
                         {
-                            MessageBox.Show("Credenciales incorrectas, verifique e inténtelo nuevamente.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("Este usuario se encuentra Inactivo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     else

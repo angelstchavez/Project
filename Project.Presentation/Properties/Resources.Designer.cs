@@ -63,6 +63,26 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _100_add_user {
+            get {
+                object obj = ResourceManager.GetObject("_100_add_user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _100_clear {
+            get {
+                object obj = ResourceManager.GetObject("_100_clear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _100_login {
             get {
                 object obj = ResourceManager.GetObject("_100_login", resourceCulture);
@@ -76,6 +96,56 @@ namespace Project.Presentation.Properties {
         internal static System.Drawing.Bitmap _100_logo {
             get {
                 object obj = ResourceManager.GetObject("_100_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _100_seach {
+            get {
+                object obj = ResourceManager.GetObject("_100_seach", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _75_add {
+            get {
+                object obj = ResourceManager.GetObject("_75_add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _75_delete {
+            get {
+                object obj = ResourceManager.GetObject("_75_delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _75_edit {
+            get {
+                object obj = ResourceManager.GetObject("_75_edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _75_report {
+            get {
+                object obj = ResourceManager.GetObject("_75_report", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

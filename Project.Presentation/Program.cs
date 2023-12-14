@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using Project.Presentation.Main.Login;
+using System;
 using System.Windows.Forms;
 
 namespace Project.Presentation
@@ -13,7 +15,7 @@ namespace Project.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main.Login.LoginForm());
+            Application.Run(new LoginForm());
         }
     }
 }
