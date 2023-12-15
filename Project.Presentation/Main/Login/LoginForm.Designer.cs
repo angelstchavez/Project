@@ -50,7 +50,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnEntry);
@@ -68,7 +68,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.label3.Location = new System.Drawing.Point(77, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 22);
@@ -77,14 +77,11 @@
             // 
             // btnEntry
             // 
-            this.btnEntry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnEntry.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntry.FlatAppearance.BorderSize = 0;
             this.btnEntry.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnEntry.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnEntry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntry.ForeColor = System.Drawing.Color.White;
-            this.btnEntry.Image = global::Project.Presentation.Properties.Resources._100_login;
+            this.btnEntry.ForeColor = System.Drawing.Color.Black;
             this.btnEntry.Location = new System.Drawing.Point(37, 308);
             this.btnEntry.Name = "btnEntry";
             this.btnEntry.Size = new System.Drawing.Size(215, 30);
@@ -95,9 +92,8 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.ForeColor = System.Drawing.Color.White;
+            this.txtPassword.BackColor = System.Drawing.Color.White;
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
             this.txtPassword.Location = new System.Drawing.Point(37, 266);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(215, 26);
@@ -107,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
             this.label2.Location = new System.Drawing.Point(34, 245);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 18);
@@ -116,9 +112,8 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsername.ForeColor = System.Drawing.Color.White;
+            this.txtUsername.BackColor = System.Drawing.Color.White;
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
             this.txtUsername.Location = new System.Drawing.Point(37, 204);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(215, 26);
@@ -127,7 +122,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(34, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 18);
@@ -136,7 +131,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Project.Presentation.Properties.Resources._100_logo;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(94, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
@@ -176,6 +171,7 @@
             // 
             // label4
             // 
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.ForeColor = System.Drawing.Color.DimGray;
             this.label4.Location = new System.Drawing.Point(0, 0);
@@ -189,7 +185,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

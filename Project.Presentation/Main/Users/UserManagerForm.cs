@@ -11,8 +11,19 @@ namespace Project.Presentation.Main.Users
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-            UserControlForm userControlForm = new UserControlForm();
+            UserControlForm userControlForm = new UserControlForm(true);
             userControlForm.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, System.EventArgs e)
+        {
+            UserControlForm userControlForm = new UserControlForm(false);
+            userControlForm.ShowDialog();
+        }
+
+        private void button6_Click(object sender, System.EventArgs e)
+        {
+
         }
     }
 }

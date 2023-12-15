@@ -17,9 +17,11 @@ namespace Project.Presentation.Main.Dashboard
             this.currentUser = user;
             InitializeComponent();
             ValidateControls();
+            txtCurrentUser.Text = user.Username;
         }
 
         #region Functions
+       
         private void ValidateControls()
         {
             ModuleService moduleService = new ModuleService();
@@ -38,15 +40,9 @@ namespace Project.Presentation.Main.Dashboard
             }
         }
 
-        private Color SetColor(int r, int g, int b)
+        private void OpenModule(Form form, Button button, string title)
         {
-            Color backgroundColor = Color.FromArgb(r, g, b);
-
-            return backgroundColor;
-        }
-
-        private void OpenModule(Form form, Button button)
-        {
+            txtTitle.Text = title;
             OpenNewForm(form);
             ToggleMainButtonsState(true, button);
         }
@@ -64,33 +60,21 @@ namespace Project.Presentation.Main.Dashboard
 
         private void ToggleMainButtonsState(bool state, Button button)
         {
-            List<Button> buttons = new List<Button> { btnUsers, btnConfig };
+            List<Button> buttons = new List<Button> { btnHome, btnMakeOrder, btnSales, btnBills, btnSupplies, btnProducts, btnCustomers, btnReports, btnUsers, btnConfig };
 
             if (buttons.Contains(button))
             {
                 button.Enabled = !state;
-                if (button.Width == 45 && button.Height == 45)
-                {
-                    button.BackColor = Color.FromArgb(40, 40, 40);
-                }
-                else
-                {
-                    button.BackColor = Color.FromArgb(40, 40, 40);
-                }
-
+                
+                button.BackColor = Color.FromArgb(220, 220, 220);
+                
                 foreach (Button btn in buttons)
                 {
                     if (btn != button)
                     {
                         btn.Enabled = state;
-                        if (btn.Width == 45 && btn.Height == 45)
-                        {
-                            btn.BackColor = Color.FromArgb(40, 40, 40);
-                        }
-                        else
-                        {
-                            btn.BackColor = Color.FromArgb(20, 20, 20);
-                        }
+
+                        btn.BackColor = Color.White;
                     }
                 }
             }
@@ -100,11 +84,31 @@ namespace Project.Presentation.Main.Dashboard
 
         #region Events
 
-        #endregion
-
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            OpenModule(new Users.UserManagerForm(), btnUsers);
+            OpenModule(new Users.UserManagerForm(), btnUsers, "Gestor de usuarios");
         }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            OpenModule(new Config.ConfigForm(), btnConfig, "Configuración del sistema");
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            OpenModule(new Products.ProductManagerForm(), btnProducts, "Gestor de productos");
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            OpenModule(new Customers.CustomersForm(), btnCustomers, "Gestor de clientes");
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            OpenModule(new Sales.SalesForm(), btnSales, "Gestor de ventas");
+        }
+
+        #endregion
     }
 }

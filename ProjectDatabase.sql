@@ -168,13 +168,14 @@ BEGIN
 END;
 GO
 
-CREATE PROCEDURE GetModulesByRoleId
-    @RoleId INT
+CREATE PROCEDURE GetModulesByUserId
+    @UserId INT
 AS
 BEGIN
     SELECT M.*
     FROM Modules M
     INNER JOIN Roles R ON M.RoleId = R.Id
-    WHERE R.Id = @RoleId;
+    INNER JOIN Users U ON R.Id = U.RoleId
+    WHERE U.Id = @UserId;
 END;
 GO

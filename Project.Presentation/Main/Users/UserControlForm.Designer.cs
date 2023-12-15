@@ -35,51 +35,53 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAction = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.txtTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 40);
+            this.panel1.Size = new System.Drawing.Size(392, 30);
             this.panel1.TabIndex = 0;
             // 
             // txtTitle
             // 
+            this.txtTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTitle.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.txtTitle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.txtTitle.ForeColor = System.Drawing.Color.White;
             this.txtTitle.Location = new System.Drawing.Point(0, 0);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(379, 40);
+            this.txtTitle.Size = new System.Drawing.Size(392, 30);
             this.txtTitle.TabIndex = 11;
             this.txtTitle.Text = "Registrar usuario";
             this.txtTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsername.ForeColor = System.Drawing.Color.White;
-            this.txtUsername.Location = new System.Drawing.Point(13, 71);
+            this.txtUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtUsername.ForeColor = System.Drawing.Color.Black;
+            this.txtUsername.Location = new System.Drawing.Point(13, 64);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(170, 26);
+            this.txtUsername.Size = new System.Drawing.Size(176, 26);
             this.txtUsername.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(9, 50);
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(9, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 18);
             this.label1.TabIndex = 3;
@@ -89,86 +91,105 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(195, 71);
+            this.comboBox1.Location = new System.Drawing.Point(204, 64);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 26);
+            this.comboBox1.Size = new System.Drawing.Size(176, 26);
             this.comboBox1.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(191, 50);
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(200, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 18);
             this.label2.TabIndex = 6;
             this.label2.Text = "Rol:";
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(13, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 26);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtPassword.Location = new System.Drawing.Point(13, 124);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(176, 26);
+            this.txtPassword.TabIndex = 8;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(9, 110);
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(9, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 18);
             this.label3.TabIndex = 7;
             this.label3.Text = "Contraseña:";
             // 
-            // textBox2
+            // txtConfirmPassword
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(195, 131);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 26);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.txtConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.txtConfirmPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtConfirmPassword.Location = new System.Drawing.Point(204, 124);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Size = new System.Drawing.Size(176, 26);
+            this.txtConfirmPassword.TabIndex = 10;
+            this.txtConfirmPassword.UseSystemPasswordChar = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(191, 110);
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(200, 103);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(162, 18);
             this.label4.TabIndex = 9;
             this.label4.Text = "Confirmar contraseña:";
             // 
-            // button1
+            // btnAction
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::Project.Presentation.Properties.Resources._100_add_user;
-            this.button1.Location = new System.Drawing.Point(15, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(352, 30);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAction.FlatAppearance.BorderSize = 0;
+            this.btnAction.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnAction.ForeColor = System.Drawing.Color.White;
+            this.btnAction.Location = new System.Drawing.Point(204, 164);
+            this.btnAction.Name = "btnAction";
+            this.btnAction.Size = new System.Drawing.Size(176, 47);
+            this.btnAction.TabIndex = 11;
+            this.btnAction.Text = "Registrar";
+            this.btnAction.UseVisualStyleBackColor = true;
+            this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.DimGray;
+            this.label5.Location = new System.Drawing.Point(10, 164);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 18);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Estado:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(13, 185);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(178, 26);
+            this.comboBox2.TabIndex = 12;
             // 
             // UserControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(379, 213);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(392, 230);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.btnAction);
+            this.Controls.Add(this.txtConfirmPassword);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
@@ -179,9 +200,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(395, 252);
+            this.MaximumSize = new System.Drawing.Size(408, 269);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(395, 252);
+            this.MinimumSize = new System.Drawing.Size(408, 269);
             this.Name = "UserControlForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control";
@@ -199,11 +220,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtConfirmPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label txtTitle;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAction;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

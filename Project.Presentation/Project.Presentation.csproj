@@ -49,17 +49,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main\Config\ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Config\ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Customers\CustomersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Customers\CustomersForm.Designer.cs">
+      <DependentUpon>CustomersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Dashboard\DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\Dashboard\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Home\HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Home\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Products\ProductManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Products\ProductManagerForm.Designer.cs">
+      <DependentUpon>ProductManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Sales\SalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Sales\SalesForm.Designer.cs">
+      <DependentUpon>SalesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\Users\UserControlForm.cs">
       <SubType>Form</SubType>
@@ -75,11 +105,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Main\Config\ConfigForm.resx">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Customers\CustomersForm.resx">
+      <DependentUpon>CustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Dashboard\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\Home\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Products\ProductManagerForm.resx">
+      <DependentUpon>ProductManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Sales\SalesForm.resx">
+      <DependentUpon>SalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Users\UserControlForm.resx">
       <DependentUpon>UserControlForm.cs</DependentUpon>
@@ -125,7 +170,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Main\Home\" />
+    <Folder Include="Main\Reports\" />
     <Folder Include="Report\" />
     <Folder Include="Utils\" />
   </ItemGroup>
@@ -143,6 +188,28 @@
     <None Include="Image\75px\75-edit.png" />
     <None Include="Image\75px\75-delete.png" />
     <None Include="Image\75px\75-add.png" />
+    <None Include="Image\32px\32-bills.png" />
+    <None Include="Image\32px\32-config.png" />
+    <None Include="Image\32px\32-customers.png" />
+    <None Include="Image\32px\32-home.png" />
+    <None Include="Image\32px\32-makeSale.png" />
+    <None Include="Image\32px\32-products.png" />
+    <None Include="Image\32px\32-report.png" />
+    <None Include="Image\32px\32-sales.png" />
+    <None Include="Image\32px\32-users.png" />
+    <None Include="Image\24px\24-bills.png" />
+    <None Include="Image\24px\24-config.png" />
+    <None Include="Image\24px\24-make-sales.png" />
+    <None Include="Image\24px\24-products.png" />
+    <None Include="Image\24px\24-report.png" />
+    <None Include="Image\24px\24-sales.png" />
+    <None Include="Image\24px\24-users.png" />
+    <None Include="Image\24px\24-suppliers.png" />
+    <None Include="Image\24px\24-home.png" />
+    <None Include="Image\24px\24-customers.png" />
+    <None Include="Image\24px\24-delete.png" />
+    <None Include="Image\24px\24-edit.png" />
+    <None Include="Image\24px\24-add.png" />
     <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
