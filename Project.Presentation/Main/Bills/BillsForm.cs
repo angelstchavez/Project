@@ -31,21 +31,17 @@ namespace Project.Presentation.Main.Bills
 
         private void ToggleMainButtonsState(bool state, Button button)
         {
-            List<Button> buttons = new List<Button> { btnConsult, btnHistoric };
+            List<Button> buttons = new List<Button> { btnConsult, btnPerDay };
 
             if (buttons.Contains(button))
             {
                 button.Enabled = !state;
-
-                button.BackColor = Color.FromArgb(220, 220, 220);
 
                 foreach (Button btn in buttons)
                 {
                     if (btn != button)
                     {
                         btn.Enabled = state;
-
-                        btn.BackColor = Color.White;
                     }
                 }
             }
@@ -54,6 +50,10 @@ namespace Project.Presentation.Main.Bills
         private void btnControl_Click(object sender, EventArgs e)
         {
             BillsControlForm billsControlForm = new BillsControlForm();
+
+            // Utilizar la propiedad CenterScreen para centrar el formulario en la pantalla
+            billsControlForm.StartPosition = FormStartPosition.CenterParent;
+
             billsControlForm.ShowDialog();
         }
 
@@ -64,7 +64,7 @@ namespace Project.Presentation.Main.Bills
 
         private void btnHistoric_Click(object sender, EventArgs e)
         {
-            OpenModule(new BillsHistoricForm(), btnHistoric);
+            OpenModule(new BillsPerDayForm(), btnPerDay);
         }
     }
 }

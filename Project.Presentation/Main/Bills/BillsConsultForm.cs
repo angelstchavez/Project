@@ -11,15 +11,12 @@ namespace Project.Presentation.Main.Bills
     public partial class BillsConsultForm : Form
     {
         private readonly ExpeditureService expeditureService;
-        private bool isSearchEnabled = true; // Variable para rastrear el estado del botón de búsqueda
+        private bool isSearchEnabled = true;
 
         public BillsConsultForm()
         {
             InitializeComponent();
             expeditureService = new ExpeditureService();
-            Consult(DateTime.Now);
-
-            // Suscribir al evento ValueChanged del DateTimePicker para habilitar el botón de búsqueda cuando cambia la fecha
             dateTimePicker.ValueChanged += (sender, e) => EnableSearchButton();
         }
 

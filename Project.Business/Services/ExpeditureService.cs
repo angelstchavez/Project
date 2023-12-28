@@ -1,4 +1,5 @@
-﻿using Project.Data.Repository;
+﻿using Project.Data.Interface;
+using Project.Data.Repository;
 using Project.Entity;
 using System;
 using System.Collections.Generic;
@@ -34,9 +35,19 @@ namespace Project.Business.Services
             return expeditureRepository.GetAll();
         }
 
+        public IEnumerable<Expenditure> GetAllExpensesByDate(DateTime date)
+        {
+            return expeditureRepository.GetAllExpensesByDate(date);
+        }
+
         public IEnumerable<Expenditure> GetBySpecificDate(DateTime date)
         {
             return expeditureRepository.GetBySpecificDate(date);
+        }
+
+        public IEnumerable<ExpenditureDay> GetTotalExpensesPerDay()
+        {
+            return this.expeditureRepository.GetTotalExpensesPerDay();
         }
 
         public bool Update(Expenditure entity)

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panelBase = new System.Windows.Forms.Panel();
-            this.btnControl = new System.Windows.Forms.Button();
+            this.btnPerDay = new System.Windows.Forms.Button();
             this.btnConsult = new System.Windows.Forms.Button();
-            this.btnHistoric = new System.Windows.Forms.Button();
+            this.btnControl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panelBase
@@ -45,38 +45,47 @@
             this.panelBase.Size = new System.Drawing.Size(590, 491);
             this.panelBase.TabIndex = 6;
             // 
-            // btnControl
+            // btnPerDay
             // 
-            this.btnControl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnControl.Location = new System.Drawing.Point(12, 12);
-            this.btnControl.Name = "btnControl";
-            this.btnControl.Size = new System.Drawing.Size(100, 40);
-            this.btnControl.TabIndex = 10;
-            this.btnControl.Text = "Agregar";
-            this.btnControl.UseVisualStyleBackColor = true;
-            this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
+            this.btnPerDay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPerDay.Image = global::Project.Presentation.Properties.Resources._24_historic;
+            this.btnPerDay.Location = new System.Drawing.Point(244, 12);
+            this.btnPerDay.Name = "btnPerDay";
+            this.btnPerDay.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnPerDay.Size = new System.Drawing.Size(110, 40);
+            this.btnPerDay.TabIndex = 13;
+            this.btnPerDay.Text = "Registros";
+            this.btnPerDay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPerDay.UseVisualStyleBackColor = true;
+            this.btnPerDay.Click += new System.EventHandler(this.btnHistoric_Click);
             // 
             // btnConsult
             // 
             this.btnConsult.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsult.Location = new System.Drawing.Point(118, 12);
+            this.btnConsult.Image = global::Project.Presentation.Properties.Resources._24_search;
+            this.btnConsult.Location = new System.Drawing.Point(128, 12);
             this.btnConsult.Name = "btnConsult";
-            this.btnConsult.Size = new System.Drawing.Size(100, 40);
+            this.btnConsult.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnConsult.Size = new System.Drawing.Size(110, 40);
             this.btnConsult.TabIndex = 12;
             this.btnConsult.Text = "Consultar";
+            this.btnConsult.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConsult.UseVisualStyleBackColor = true;
             this.btnConsult.Click += new System.EventHandler(this.btnConsult_Click);
             // 
-            // btnHistoric
+            // btnControl
             // 
-            this.btnHistoric.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHistoric.Location = new System.Drawing.Point(224, 12);
-            this.btnHistoric.Name = "btnHistoric";
-            this.btnHistoric.Size = new System.Drawing.Size(100, 40);
-            this.btnHistoric.TabIndex = 13;
-            this.btnHistoric.Text = "Histórico";
-            this.btnHistoric.UseVisualStyleBackColor = true;
-            this.btnHistoric.Click += new System.EventHandler(this.btnHistoric_Click);
+            this.btnControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnControl.Image = global::Project.Presentation.Properties.Resources._24_add_expenditure;
+            this.btnControl.Location = new System.Drawing.Point(12, 12);
+            this.btnControl.Name = "btnControl";
+            this.btnControl.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnControl.Size = new System.Drawing.Size(110, 40);
+            this.btnControl.TabIndex = 10;
+            this.btnControl.Text = "Agregar";
+            this.btnControl.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnControl.UseVisualStyleBackColor = true;
+            this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
             // 
             // BillsForm
             // 
@@ -84,7 +93,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(614, 561);
-            this.Controls.Add(this.btnHistoric);
+            this.Controls.Add(this.btnPerDay);
             this.Controls.Add(this.btnConsult);
             this.Controls.Add(this.btnControl);
             this.Controls.Add(this.panelBase);
@@ -102,6 +111,6 @@
         private System.Windows.Forms.Panel panelBase;
         private System.Windows.Forms.Button btnControl;
         private System.Windows.Forms.Button btnConsult;
-        private System.Windows.Forms.Button btnHistoric;
+        private System.Windows.Forms.Button btnPerDay;
     }
 }

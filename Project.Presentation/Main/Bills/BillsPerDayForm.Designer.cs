@@ -1,6 +1,6 @@
 ﻿namespace Project.Presentation.Main.Bills
 {
-    partial class BillsConsultForm
+    partial class BillsPerDayForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,43 +29,32 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.btnConsult = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnDetails = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDate = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker
+            // label2
             // 
-            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(12, 14);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(139, 26);
-            this.dateTimePicker.TabIndex = 0;
-            // 
-            // btnConsult
-            // 
-            this.btnConsult.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsult.FlatAppearance.BorderSize = 0;
-            this.btnConsult.Location = new System.Drawing.Point(155, 12);
-            this.btnConsult.Name = "btnConsult";
-            this.btnConsult.Size = new System.Drawing.Size(75, 30);
-            this.btnConsult.TabIndex = 9;
-            this.btnConsult.Text = "Buscar";
-            this.btnConsult.UseVisualStyleBackColor = true;
-            this.btnConsult.Click += new System.EventHandler(this.btnConsult_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label2.Location = new System.Drawing.Point(8, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(265, 19);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Registro de gastos totales por día";
             // 
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -85,108 +74,100 @@
             this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCol,
-            this.Column1,
-            this.Column2,
+            this.DateColumn,
             this.Column3});
             this.dataGridView.Location = new System.Drawing.Point(12, 48);
+            this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(566, 399);
-            this.dataGridView.TabIndex = 10;
+            this.dataGridView.Size = new System.Drawing.Size(566, 395);
+            this.dataGridView.TabIndex = 18;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
-            // idCol
+            // DateColumn
             // 
-            this.idCol.HeaderText = "Id";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Categoría";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Descripción";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.DateColumn.FillWeight = 128.934F;
+            this.DateColumn.HeaderText = "Fecha";
+            this.DateColumn.Name = "DateColumn";
+            this.DateColumn.ReadOnly = true;
             // 
             // Column3
             // 
+            this.Column3.FillWeight = 71.06599F;
             this.Column3.HeaderText = "Valor";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(442, 12);
+            this.button1.Location = new System.Drawing.Point(133, 449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 30);
-            this.button1.TabIndex = 11;
+            this.button1.TabIndex = 17;
             this.button1.Text = "Generar reporte";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // txtTotal
+            // btnDetails
             // 
-            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.BackColor = System.Drawing.Color.White;
-            this.txtTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.txtTotal.Location = new System.Drawing.Point(418, 453);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(160, 26);
-            this.txtTotal.TabIndex = 12;
+            this.btnDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDetails.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDetails.FlatAppearance.BorderSize = 0;
+            this.btnDetails.Location = new System.Drawing.Point(12, 449);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(115, 30);
+            this.btnDetails.TabIndex = 22;
+            this.btnDetails.Text = "Ver detalle";
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(355, 458);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(355, 457);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 18);
-            this.label1.TabIndex = 13;
+            this.label1.TabIndex = 24;
             this.label1.Text = "TOTAL:";
             // 
-            // txtDate
+            // txtTotal
             // 
-            this.txtDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtDate.AutoSize = true;
-            this.txtDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.txtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.txtDate.Location = new System.Drawing.Point(8, 457);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(143, 19);
-            this.txtDate.TabIndex = 14;
-            this.txtDate.Text = "Cargando fecha...";
+            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotal.BackColor = System.Drawing.Color.White;
+            this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.txtTotal.Location = new System.Drawing.Point(418, 453);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(160, 26);
+            this.txtTotal.TabIndex = 23;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
-            // BillsConsultForm
+            // BillsPerDayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 491);
-            this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDetails);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.btnConsult);
-            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "BillsConsultForm";
-            this.Text = "BillsConsultForm";
+            this.Name = "BillsPerDayForm";
+            this.Text = "BillsPerDayForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -195,16 +176,13 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
-        private System.Windows.Forms.Button btnConsult;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtTotal;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button btnDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Label txtDate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTotal;
     }
 }

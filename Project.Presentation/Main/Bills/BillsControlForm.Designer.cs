@@ -47,7 +47,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 165);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(7, 155);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 0;
@@ -60,18 +61,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(257, 30);
+            this.panel1.Size = new System.Drawing.Size(257, 31);
             this.panel1.TabIndex = 1;
             // 
             // txtTitle
             // 
-            this.txtTitle.BackColor = System.Drawing.Color.Firebrick;
+            this.txtTitle.BackColor = System.Drawing.Color.Brown;
             this.txtTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTitle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.txtTitle.ForeColor = System.Drawing.Color.White;
             this.txtTitle.Location = new System.Drawing.Point(0, 0);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(257, 30);
+            this.txtTitle.Size = new System.Drawing.Size(257, 31);
             this.txtTitle.TabIndex = 11;
             this.txtTitle.Text = "Registrar gasto";
             this.txtTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,20 +90,22 @@
             "Equipamiento de Cocina",
             "Nomina",
             "Papelería",
+            "Prestamo",
             "Publicidad Física",
             "Publicidad Marketing",
             "Servicios Públicos",
             "Transporte",
             "Otro"});
-            this.comboBoxCategory.Location = new System.Drawing.Point(12, 186);
+            this.comboBoxCategory.Location = new System.Drawing.Point(11, 176);
             this.comboBoxCategory.Name = "comboBoxCategory";
-            this.comboBoxCategory.Size = new System.Drawing.Size(231, 26);
-            this.comboBoxCategory.TabIndex = 2;
+            this.comboBoxCategory.Size = new System.Drawing.Size(236, 26);
+            this.comboBoxCategory.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 104);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(7, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 18);
             this.label2.TabIndex = 3;
@@ -110,15 +113,16 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(12, 125);
+            this.txtDescription.Location = new System.Drawing.Point(11, 121);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(231, 26);
-            this.txtDescription.TabIndex = 4;
+            this.txtDescription.Size = new System.Drawing.Size(236, 26);
+            this.txtDescription.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 223);
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(7, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 18);
             this.label3.TabIndex = 5;
@@ -126,21 +130,24 @@
             // 
             // btnAction
             // 
+            this.btnAction.BackColor = System.Drawing.Color.Transparent;
+            this.btnAction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAction.FlatAppearance.BorderSize = 0;
-            this.btnAction.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnAction.ForeColor = System.Drawing.Color.White;
-            this.btnAction.Location = new System.Drawing.Point(12, 284);
+            this.btnAction.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAction.ForeColor = System.Drawing.Color.Brown;
+            this.btnAction.Location = new System.Drawing.Point(11, 268);
             this.btnAction.Name = "btnAction";
-            this.btnAction.Size = new System.Drawing.Size(231, 47);
-            this.btnAction.TabIndex = 12;
+            this.btnAction.Size = new System.Drawing.Size(236, 35);
+            this.btnAction.TabIndex = 5;
             this.btnAction.Text = "Registrar";
-            this.btnAction.UseVisualStyleBackColor = true;
+            this.btnAction.UseVisualStyleBackColor = false;
             this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 42);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(7, 40);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 13;
@@ -149,29 +156,30 @@
             // pickDate
             // 
             this.pickDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.pickDate.Location = new System.Drawing.Point(12, 63);
+            this.pickDate.Location = new System.Drawing.Point(11, 61);
             this.pickDate.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.pickDate.Name = "pickDate";
-            this.pickDate.Size = new System.Drawing.Size(231, 26);
-            this.pickDate.TabIndex = 14;
+            this.pickDate.Size = new System.Drawing.Size(236, 26);
+            this.pickDate.TabIndex = 1;
             // 
             // numericUpDownValue
             // 
-            this.numericUpDownValue.Location = new System.Drawing.Point(12, 244);
+            this.numericUpDownValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.numericUpDownValue.Location = new System.Drawing.Point(11, 232);
             this.numericUpDownValue.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
             this.numericUpDownValue.Name = "numericUpDownValue";
-            this.numericUpDownValue.Size = new System.Drawing.Size(231, 26);
-            this.numericUpDownValue.TabIndex = 15;
+            this.numericUpDownValue.Size = new System.Drawing.Size(236, 26);
+            this.numericUpDownValue.TabIndex = 4;
             // 
             // BillsControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(257, 341);
+            this.ClientSize = new System.Drawing.Size(257, 314);
             this.Controls.Add(this.numericUpDownValue);
             this.Controls.Add(this.pickDate);
             this.Controls.Add(this.label4);
@@ -186,9 +194,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(273, 380);
+            this.MaximumSize = new System.Drawing.Size(273, 353);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(273, 380);
+            this.MinimumSize = new System.Drawing.Size(273, 353);
             this.Name = "BillsControlForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.BillsControlForm_Load_1);

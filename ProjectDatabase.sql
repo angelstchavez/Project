@@ -275,3 +275,22 @@ BEGIN
     SELECT * FROM Expenditures WHERE Date = @SpecificDate;
 END;
 GO
+
+CREATE PROCEDURE GetTotalExpensesPerDay
+AS
+BEGIN
+    SELECT
+        CONVERT(DATE, Date) AS Date,
+        SUM(Value) AS TotalExpenses
+    FROM Expenditures
+    GROUP BY CONVERT(DATE, Date);
+END;
+GO
+
+CREATE PROCEDURE GetAllExpensesByDate
+    @SpecificDate DATETIME
+AS
+BEGIN
+    SELECT * FROM Expenditures WHERE CONVERT(DATE, Date) = CONVERT(DATE, @SpecificDate);
+END;
+GO

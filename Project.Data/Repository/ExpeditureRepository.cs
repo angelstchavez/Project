@@ -129,5 +129,25 @@ namespace Project.Data.Repository
                 return dbConnection.Query<Expenditure>("GetExpendituresBySpecificDate", parameters, commandType: CommandType.StoredProcedure);
             }
         }
+
+        public IEnumerable<ExpenditureDay> GetTotalExpensesPerDay()
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+                return dbConnection.Query<ExpenditureDay>("GetTotalExpensesPerDay", commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public IEnumerable<Expenditure> GetAllExpensesByDate(DateTime date)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+                var parameters = new { SpecificDate = date };
+                return dbConnection.Query<Expenditure>("GetAllExpensesByDate", parameters, commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }
+    

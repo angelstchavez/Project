@@ -83,6 +83,16 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _24_add_expenditure {
+            get {
+                object obj = ResourceManager.GetObject("_24_add_expenditure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _24_bills {
             get {
                 object obj = ResourceManager.GetObject("_24_bills", resourceCulture);
@@ -133,6 +143,26 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _24_expenditure_day {
+            get {
+                object obj = ResourceManager.GetObject("_24_expenditure_day", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _24_historic {
+            get {
+                object obj = ResourceManager.GetObject("_24_historic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _24_home {
             get {
                 object obj = ResourceManager.GetObject("_24_home", resourceCulture);
@@ -176,6 +206,16 @@ namespace Project.Presentation.Properties {
         internal static System.Drawing.Bitmap _24_sales {
             get {
                 object obj = ResourceManager.GetObject("_24_sales", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _24_search {
+            get {
+                object obj = ResourceManager.GetObject("_24_search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
