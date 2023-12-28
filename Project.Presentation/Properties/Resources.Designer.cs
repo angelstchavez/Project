@@ -63,6 +63,26 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _100_btn_entry {
+            get {
+                object obj = ResourceManager.GetObject("_100_btn_entry", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _100_image {
+            get {
+                object obj = ResourceManager.GetObject("_100_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _100_logo {
             get {
                 object obj = ResourceManager.GetObject("_100_logo", resourceCulture);
@@ -236,6 +256,16 @@ namespace Project.Presentation.Properties {
         internal static System.Drawing.Bitmap _24_users {
             get {
                 object obj = ResourceManager.GetObject("_24_users", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _24_view_expense {
+            get {
+                object obj = ResourceManager.GetObject("_24_view_expense", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

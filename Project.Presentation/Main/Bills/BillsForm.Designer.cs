@@ -32,6 +32,9 @@
             this.btnPerDay = new System.Windows.Forms.Button();
             this.btnConsult = new System.Windows.Forms.Button();
             this.btnControl = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel = new System.Windows.Forms.Panel();
+            this.panelBase.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBase
@@ -40,9 +43,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBase.BackColor = System.Drawing.SystemColors.Control;
+            this.panelBase.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelBase.Controls.Add(this.panel);
+            this.panelBase.Controls.Add(this.panel1);
             this.panelBase.Location = new System.Drawing.Point(12, 58);
             this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(590, 491);
+            this.panelBase.Size = new System.Drawing.Size(790, 656);
             this.panelBase.TabIndex = 6;
             // 
             // btnPerDay
@@ -87,12 +93,29 @@
             this.btnControl.UseVisualStyleBackColor = true;
             this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Brown;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(786, 30);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel
+            // 
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel.Location = new System.Drawing.Point(0, 30);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(786, 622);
+            this.panel.TabIndex = 1;
+            // 
             // BillsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(614, 561);
+            this.ClientSize = new System.Drawing.Size(814, 726);
             this.Controls.Add(this.btnPerDay);
             this.Controls.Add(this.btnConsult);
             this.Controls.Add(this.btnControl);
@@ -102,6 +125,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BillsForm";
             this.Text = "BillsForm";
+            this.panelBase.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -112,5 +136,7 @@
         private System.Windows.Forms.Button btnControl;
         private System.Windows.Forms.Button btnConsult;
         private System.Windows.Forms.Button btnPerDay;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Panel panel1;
     }
 }

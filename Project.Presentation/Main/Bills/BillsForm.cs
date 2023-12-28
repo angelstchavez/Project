@@ -20,13 +20,13 @@ namespace Project.Presentation.Main.Bills
 
         private void OpenNewForm(Form module)
         {
-            panelBase.Controls.Clear();
+            this.panel.Controls.Clear();
             module.TopLevel = false;
             module.Dock = DockStyle.Fill;
-            panelBase.Controls.Add(module);
-            panelBase.Tag = module;
+            this.panel.Controls.Add(module);
+            this.panel.Tag = module;
             module.Show();
-            panelBase.BringToFront();
+            this.panel.BringToFront();
         }
 
         private void ToggleMainButtonsState(bool state, Button button)

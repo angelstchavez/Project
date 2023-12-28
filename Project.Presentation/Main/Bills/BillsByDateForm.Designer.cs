@@ -96,13 +96,13 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView.Location = new System.Drawing.Point(12, 52);
+            this.dataGridView.Location = new System.Drawing.Point(12, 45);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(660, 274);
+            this.dataGridView.Size = new System.Drawing.Size(660, 281);
             this.dataGridView.TabIndex = 18;
             // 
             // idCol
@@ -153,16 +153,15 @@
             // 
             // txtDate
             // 
-            this.txtDate.BackColor = System.Drawing.Color.Brown;
+            this.txtDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtDate.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtDate.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
             this.txtDate.ForeColor = System.Drawing.Color.White;
             this.txtDate.Location = new System.Drawing.Point(0, 0);
             this.txtDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(684, 39);
+            this.txtDate.Size = new System.Drawing.Size(684, 30);
             this.txtDate.TabIndex = 22;
-            this.txtDate.Text = "Registrar gasto";
             this.txtDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BillsByDateForm

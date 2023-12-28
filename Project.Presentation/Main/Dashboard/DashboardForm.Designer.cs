@@ -61,12 +61,12 @@
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSide.Location = new System.Drawing.Point(0, 35);
             this.panelSide.Name = "panelSide";
-            this.panelSide.Size = new System.Drawing.Size(170, 626);
+            this.panelSide.Size = new System.Drawing.Size(170, 726);
             this.panelSide.TabIndex = 0;
             // 
             // buttonsPanel
             // 
-            this.buttonsPanel.BackColor = System.Drawing.Color.White;
+            this.buttonsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.buttonsPanel.Controls.Add(this.btnConfig);
             this.buttonsPanel.Controls.Add(this.btnUsers);
             this.buttonsPanel.Controls.Add(this.btnReports);
@@ -80,7 +80,7 @@
             this.buttonsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.buttonsPanel.Location = new System.Drawing.Point(0, 0);
             this.buttonsPanel.Name = "buttonsPanel";
-            this.buttonsPanel.Size = new System.Drawing.Size(170, 581);
+            this.buttonsPanel.Size = new System.Drawing.Size(170, 681);
             this.buttonsPanel.TabIndex = 1;
             // 
             // btnConfig
@@ -88,9 +88,10 @@
             this.btnConfig.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConfig.FlatAppearance.BorderSize = 0;
-            this.btnConfig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnConfig.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnConfig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.ForeColor = System.Drawing.Color.Black;
+            this.btnConfig.ForeColor = System.Drawing.Color.Silver;
             this.btnConfig.Image = global::Project.Presentation.Properties.Resources._24_config;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfig.Location = new System.Drawing.Point(0, 360);
@@ -109,9 +110,10 @@
             this.btnUsers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUsers.FlatAppearance.BorderSize = 0;
-            this.btnUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnUsers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsers.ForeColor = System.Drawing.Color.Black;
+            this.btnUsers.ForeColor = System.Drawing.Color.Silver;
             this.btnUsers.Image = global::Project.Presentation.Properties.Resources._24_users;
             this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsers.Location = new System.Drawing.Point(0, 320);
@@ -130,9 +132,10 @@
             this.btnReports.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReports.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnReports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnReports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReports.ForeColor = System.Drawing.Color.Black;
+            this.btnReports.ForeColor = System.Drawing.Color.Silver;
             this.btnReports.Image = global::Project.Presentation.Properties.Resources._24_report;
             this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReports.Location = new System.Drawing.Point(0, 280);
@@ -150,9 +153,10 @@
             this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomers.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCustomers.FlatAppearance.BorderSize = 0;
-            this.btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnCustomers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCustomers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomers.ForeColor = System.Drawing.Color.Black;
+            this.btnCustomers.ForeColor = System.Drawing.Color.Silver;
             this.btnCustomers.Image = global::Project.Presentation.Properties.Resources._24_customers;
             this.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCustomers.Location = new System.Drawing.Point(0, 240);
@@ -171,9 +175,10 @@
             this.btnProducts.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProducts.FlatAppearance.BorderSize = 0;
-            this.btnProducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnProducts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnProducts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducts.ForeColor = System.Drawing.Color.Black;
+            this.btnProducts.ForeColor = System.Drawing.Color.Silver;
             this.btnProducts.Image = global::Project.Presentation.Properties.Resources._24_products;
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProducts.Location = new System.Drawing.Point(0, 200);
@@ -192,9 +197,10 @@
             this.btnSupplies.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSupplies.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSupplies.FlatAppearance.BorderSize = 0;
-            this.btnSupplies.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnSupplies.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSupplies.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnSupplies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSupplies.ForeColor = System.Drawing.Color.Black;
+            this.btnSupplies.ForeColor = System.Drawing.Color.Silver;
             this.btnSupplies.Image = global::Project.Presentation.Properties.Resources._24_suppliers;
             this.btnSupplies.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSupplies.Location = new System.Drawing.Point(0, 160);
@@ -212,9 +218,10 @@
             this.btnBills.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBills.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnBills.FlatAppearance.BorderSize = 0;
-            this.btnBills.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnBills.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnBills.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBills.ForeColor = System.Drawing.Color.Black;
+            this.btnBills.ForeColor = System.Drawing.Color.Silver;
             this.btnBills.Image = global::Project.Presentation.Properties.Resources._24_bills;
             this.btnBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBills.Location = new System.Drawing.Point(0, 120);
@@ -233,9 +240,10 @@
             this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnSales.FlatAppearance.BorderSize = 0;
-            this.btnSales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnSales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSales.ForeColor = System.Drawing.Color.Black;
+            this.btnSales.ForeColor = System.Drawing.Color.Silver;
             this.btnSales.Image = global::Project.Presentation.Properties.Resources._24_sales;
             this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSales.Location = new System.Drawing.Point(0, 80);
@@ -254,9 +262,10 @@
             this.btnMakeOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMakeOrder.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMakeOrder.FlatAppearance.BorderSize = 0;
-            this.btnMakeOrder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnMakeOrder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnMakeOrder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnMakeOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMakeOrder.ForeColor = System.Drawing.Color.Black;
+            this.btnMakeOrder.ForeColor = System.Drawing.Color.Silver;
             this.btnMakeOrder.Image = global::Project.Presentation.Properties.Resources._24_make_sales;
             this.btnMakeOrder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMakeOrder.Location = new System.Drawing.Point(0, 40);
@@ -274,9 +283,10 @@
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.ForeColor = System.Drawing.Color.Black;
+            this.btnHome.ForeColor = System.Drawing.Color.Silver;
             this.btnHome.Image = global::Project.Presentation.Properties.Resources._24_home;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHome.Location = new System.Drawing.Point(0, 0);
@@ -291,17 +301,18 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panel2.Controls.Add(this.txtCurrentUser);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 581);
+            this.panel2.Location = new System.Drawing.Point(0, 681);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(170, 45);
             this.panel2.TabIndex = 2;
             // 
             // txtCurrentUser
             // 
+            this.txtCurrentUser.ForeColor = System.Drawing.Color.Silver;
             this.txtCurrentUser.Location = new System.Drawing.Point(3, 22);
             this.txtCurrentUser.Name = "txtCurrentUser";
             this.txtCurrentUser.Size = new System.Drawing.Size(161, 18);
@@ -313,7 +324,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
             this.label1.Location = new System.Drawing.Point(26, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 19);
@@ -326,24 +337,24 @@
             this.panelBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBase.Location = new System.Drawing.Point(170, 35);
             this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(714, 626);
+            this.panelBase.Size = new System.Drawing.Size(814, 726);
             this.panelBase.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panel1.Controls.Add(this.txtTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 35);
+            this.panel1.Size = new System.Drawing.Size(984, 35);
             this.panel1.TabIndex = 0;
             // 
             // txtTitle
             // 
             this.txtTitle.AutoSize = true;
             this.txtTitle.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTitle.ForeColor = System.Drawing.Color.Black;
+            this.txtTitle.ForeColor = System.Drawing.Color.White;
             this.txtTitle.Location = new System.Drawing.Point(6, 8);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(97, 19);
@@ -354,7 +365,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 661);
+            this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.panelBase);
             this.Controls.Add(this.panelSide);
             this.Controls.Add(this.panel1);

@@ -95,7 +95,7 @@
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(566, 399);
+            this.dataGridView.Size = new System.Drawing.Size(790, 634);
             this.dataGridView.TabIndex = 10;
             // 
             // idCol
@@ -128,7 +128,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(442, 12);
+            this.button1.Location = new System.Drawing.Point(666, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 30);
             this.button1.TabIndex = 11;
@@ -141,7 +141,7 @@
             this.txtTotal.BackColor = System.Drawing.Color.White;
             this.txtTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.txtTotal.Location = new System.Drawing.Point(418, 453);
+            this.txtTotal.Location = new System.Drawing.Point(642, 688);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(160, 26);
             this.txtTotal.TabIndex = 12;
@@ -152,7 +152,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(355, 458);
+            this.label1.Location = new System.Drawing.Point(579, 693);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 18);
             this.label1.TabIndex = 13;
@@ -164,7 +164,7 @@
             this.txtDate.AutoSize = true;
             this.txtDate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.txtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.txtDate.Location = new System.Drawing.Point(8, 457);
+            this.txtDate.Location = new System.Drawing.Point(8, 692);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(143, 19);
             this.txtDate.TabIndex = 14;
@@ -174,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 491);
+            this.ClientSize = new System.Drawing.Size(814, 726);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTotal);

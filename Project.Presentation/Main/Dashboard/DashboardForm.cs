@@ -65,8 +65,8 @@ namespace Project.Presentation.Main.Dashboard
             if (buttons.Contains(button))
             {
                 button.Enabled = !state;
-                
-                button.BackColor = Color.FromArgb(220, 220, 220);
+
+                button.BackColor = Color.FromArgb(50,50,50);
                 
                 foreach (Button btn in buttons)
                 {
@@ -74,7 +74,7 @@ namespace Project.Presentation.Main.Dashboard
                     {
                         btn.Enabled = state;
 
-                        btn.BackColor = Color.White;
+                        btn.BackColor = Color.FromArgb(40,40,40);
                     }
                 }
             }
