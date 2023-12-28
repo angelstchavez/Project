@@ -109,6 +109,11 @@ namespace Project.Presentation.Main.Dashboard
             OpenModule(new Sales.SalesForm(), btnSales, "Gestor de ventas");
         }
 
+        private void btnBills_Click(object sender, EventArgs e)
+        {
+            OpenModule(new Bills.BillsForm(), btnBills, "Gestor de gastos");
+        }
+
         #endregion
     }
 }

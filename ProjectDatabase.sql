@@ -30,6 +30,17 @@ CREATE TABLE Modules
 );
 GO
 
+CREATE TABLE Expenditures
+(
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Date DATETIME NOT NULL,
+    Category NVARCHAR(MAX) NOT NULL,
+    Description NVARCHAR(MAX),
+    Value DECIMAL(18,2) NOT NULL,
+    CreatedAt DATETIME NOT NULL
+);
+GO
+
 -- Procedures
 
 CREATE PROCEDURE CreateUser
@@ -177,5 +188,90 @@ BEGIN
     INNER JOIN Roles R ON M.RoleId = R.Id
     INNER JOIN Users U ON R.Id = U.RoleId
     WHERE U.Id = @UserId;
+END;
+GO
+
+CREATE PROCEDURE CreateExpenditure
+    @Date DATETIME,
+    @Category NVARCHAR(MAX),
+    @Description NVARCHAR(MAX),
+    @Value DECIMAL(18,2),
+    @CreatedAt DATETIME
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Expenditures WHERE Date = @Date AND Category = @Category)
+    BEGIN
+        INSERT INTO Expenditures (Date, Category, Description, Value, CreatedAt)
+        VALUES (@Date, @Category, @Description, @Value, @CreatedAt);
+        SELECT SCOPE_IDENTITY() AS ExpenditureId;
+    END
+    ELSE
+    BEGIN
+        RAISERROR('Ya existe un gasto con esta fecha y categoría.', 16, 1);
+    END
+END;
+GO
+
+CREATE PROCEDURE GetExpenditure
+    @ExpenditureId INT
+AS
+BEGIN
+    SELECT * FROM Expenditures WHERE Id = @ExpenditureId;
+END;
+GO
+
+CREATE PROCEDURE UpdateExpenditure
+    @ExpenditureId INT,
+    @Date DATETIME,
+    @Category NVARCHAR(MAX),
+    @Description NVARCHAR(MAX),
+    @Value DECIMAL(18,2),
+    @CreatedAt DATETIME
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Expenditures WHERE Id = @ExpenditureId)
+    BEGIN
+        RAISERROR('Gasto no encontrado.', 16, 1);
+    END
+    ELSE
+    BEGIN
+        UPDATE Expenditures
+        SET Date = @Date,
+            Category = @Category,
+            Description = @Description,
+            Value = @Value,
+            CreatedAt = @CreatedAt
+        WHERE Id = @ExpenditureId;
+    END
+END;
+GO
+
+CREATE PROCEDURE DeleteExpenditure
+    @ExpenditureId INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Expenditures WHERE Id = @ExpenditureId)
+    BEGIN
+        RAISERROR('Gasto no encontrado.', 16, 1);
+    END
+    ELSE
+    BEGIN
+        DELETE FROM Expenditures WHERE Id = @ExpenditureId;
+    END
+END;
+GO
+
+CREATE PROCEDURE GetAllExpenditures
+AS
+BEGIN
+    SELECT * FROM Expenditures;
+END;
+GO
+
+CREATE PROCEDURE GetExpendituresBySpecificDate
+    @SpecificDate DATETIME
+AS
+BEGIN
+    SELECT * FROM Expenditures WHERE Date = @SpecificDate;
 END;
 GO

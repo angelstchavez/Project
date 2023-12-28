@@ -56,7 +56,8 @@
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F);
@@ -74,8 +75,10 @@
             this.isActiveCol});
             this.dataGridView.Location = new System.Drawing.Point(12, 48);
             this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowHeadersWidth = 25;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(590, 420);
             this.dataGridView.TabIndex = 4;
             // 
@@ -83,28 +86,33 @@
             // 
             this.idCol.HeaderText = "Id";
             this.idCol.Name = "idCol";
+            this.idCol.ReadOnly = true;
             this.idCol.Visible = false;
             // 
             // usernameCol
             // 
             this.usernameCol.HeaderText = "Usuario";
             this.usernameCol.Name = "usernameCol";
+            this.usernameCol.ReadOnly = true;
             // 
             // passwordCol
             // 
             this.passwordCol.HeaderText = "Contraseña";
             this.passwordCol.Name = "passwordCol";
+            this.passwordCol.ReadOnly = true;
             this.passwordCol.Visible = false;
             // 
             // roleCol
             // 
             this.roleCol.HeaderText = "Rol";
             this.roleCol.Name = "roleCol";
+            this.roleCol.ReadOnly = true;
             // 
             // isActiveCol
             // 
             this.isActiveCol.HeaderText = "Estado";
             this.isActiveCol.Name = "isActiveCol";
+            this.isActiveCol.ReadOnly = true;
             // 
             // txtUsername
             // 

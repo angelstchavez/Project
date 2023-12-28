@@ -1,10 +1,10 @@
-﻿using Project.Data.Connection;
+﻿using Dapper;
+using Project.Data.Connection;
 using Project.Data.Interface;
 using Project.Entity;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using Dapper;
+using System.Data.SqlClient;
 
 namespace Project.Data.Repository
 {

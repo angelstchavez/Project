@@ -49,6 +49,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main\Bills\BillsConsultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Bills\BillsConsultForm.Designer.cs">
+      <DependentUpon>BillsConsultForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Bills\BillsControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Bills\BillsControlForm.Designer.cs">
+      <DependentUpon>BillsControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Bills\BillsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Bills\BillsForm.Designer.cs">
+      <DependentUpon>BillsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Bills\BillsHistoricForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Bills\BillsHistoricForm.Designer.cs">
+      <DependentUpon>BillsHistoricForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Config\ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +129,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Main\Bills\BillsConsultForm.resx">
+      <DependentUpon>BillsConsultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Bills\BillsControlForm.resx">
+      <DependentUpon>BillsControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Bills\BillsForm.resx">
+      <DependentUpon>BillsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Bills\BillsHistoricForm.resx">
+      <DependentUpon>BillsHistoricForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Config\ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </EmbeddedResource>

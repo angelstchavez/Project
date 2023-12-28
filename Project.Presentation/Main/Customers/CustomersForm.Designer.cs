@@ -38,14 +38,12 @@
             this.button5 = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isActiveCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,43 +182,14 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCol,
-            this.usernameCol,
-            this.passwordCol,
-            this.roleCol,
-            this.isActiveCol});
+            this.Column1,
+            this.Column2});
             this.dataGridView.Location = new System.Drawing.Point(12, 48);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.Size = new System.Drawing.Size(590, 371);
             this.dataGridView.TabIndex = 10;
-            // 
-            // idCol
-            // 
-            this.idCol.HeaderText = "Id";
-            this.idCol.Name = "idCol";
-            this.idCol.Visible = false;
-            // 
-            // usernameCol
-            // 
-            this.usernameCol.HeaderText = "Usuario";
-            this.usernameCol.Name = "usernameCol";
-            // 
-            // passwordCol
-            // 
-            this.passwordCol.HeaderText = "Contraseña";
-            this.passwordCol.Name = "passwordCol";
-            this.passwordCol.Visible = false;
-            // 
-            // roleCol
-            // 
-            this.roleCol.HeaderText = "Rol";
-            this.roleCol.Name = "roleCol";
-            // 
-            // isActiveCol
-            // 
-            this.isActiveCol.HeaderText = "Estado";
-            this.isActiveCol.Name = "isActiveCol";
             // 
             // button3
             // 
@@ -259,6 +228,22 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Cargando paginado...";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // idCol
+            // 
+            this.idCol.HeaderText = "Id";
+            this.idCol.Name = "idCol";
+            this.idCol.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nombre";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Teléfono";
+            this.Column2.Name = "Column2";
             // 
             // CustomersForm
             // 
@@ -300,13 +285,11 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isActiveCol;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
