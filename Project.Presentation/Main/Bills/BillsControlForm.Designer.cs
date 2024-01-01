@@ -157,7 +157,6 @@
             // 
             this.pickDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.pickDate.Location = new System.Drawing.Point(11, 61);
-            this.pickDate.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.pickDate.Name = "pickDate";
             this.pickDate.Size = new System.Drawing.Size(236, 26);
             this.pickDate.TabIndex = 1;

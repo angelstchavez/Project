@@ -2,13 +2,49 @@
 using Project.Entity;
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Project.Presentation.Main.Bills
 {
     public partial class BillsControlForm : Form
     {
         private readonly ExpeditureService expeditureService;
+        private Expenditure expenditure;
+        private bool option;
+
+        public BillsControlForm(Expenditure expenditure, bool option)
+        {
+            InitializeComponent();
+            this.expenditure = expenditure;
+            this.option = option;
+            InitializeFormWithExpenditure();
+        }
+
+        private void InitializeFormWithExpenditure()
+        {
+
+            if (option)
+            {
+                comboBoxCategory.Text = expenditure.Category;
+                txtDescription.Text = expenditure.Description;
+                numericUpDownValue.Value = expenditure.Value;
+
+                btnAction.Text = "Actualizar";
+                txtTitle.Text = "Corregir gasto";
+                txtTitle.BackColor = Color.DarkOrange;
+                MessageBox.Show($"{expenditure.Date}");
+                pickDate.Enabled = false;
+            }
+            else
+            {
+                btnAction.Text = "Registrar";
+                txtTitle.Text = "Registrar gasto";
+                txtTitle.BackColor = Color.Brown;
+            }
+
+        }
 
         public BillsControlForm()
         {
@@ -124,15 +160,27 @@ namespace Project.Presentation.Main.Bills
         {
             try
             {
-                // Captura los datos y trata de crear un nuevo gasto.
-                if (expeditureService.Create(CaptureData()))
+                if (option)
                 {
-                    MessageBox.Show("Gasto registrado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearForm(); // Limpia el formulario después de un registro exitoso.
+                    ExpeditureService expeditureService = new ExpeditureService();
+                    if (expeditureService.Update(expenditure))
+                    {
+                        MessageBox.Show("Gasto actualizado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Hide(); // Limpia el formulario después de un registro exitoso.
+                    };
                 }
                 else
                 {
-                    MessageBox.Show("Error al registrar el gasto. Por favor, verifica la información.");
+                    // Captura los datos y trata de crear un nuevo gasto.
+                    if (expeditureService.Create(CaptureData()))
+                    {
+                        MessageBox.Show("Gasto registrado exitosamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearForm(); // Limpia el formulario después de un registro exitoso.
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al registrar el gasto. Por favor, verifica la información.");
+                    }
                 }
             }
             catch (Exception ex)

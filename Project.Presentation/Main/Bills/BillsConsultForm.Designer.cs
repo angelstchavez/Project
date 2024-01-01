@@ -30,38 +30,29 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.btnConsult = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.Label();
+            this.btnCorrect = new System.Windows.Forms.Button();
+            this.btnConsult = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker
             // 
             this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(12, 14);
+            this.dateTimePicker.Location = new System.Drawing.Point(12, 19);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(139, 26);
             this.dateTimePicker.TabIndex = 0;
-            // 
-            // btnConsult
-            // 
-            this.btnConsult.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsult.FlatAppearance.BorderSize = 0;
-            this.btnConsult.Location = new System.Drawing.Point(155, 12);
-            this.btnConsult.Name = "btnConsult";
-            this.btnConsult.Size = new System.Drawing.Size(75, 30);
-            this.btnConsult.TabIndex = 9;
-            this.btnConsult.Text = "Buscar";
-            this.btnConsult.UseVisualStyleBackColor = true;
-            this.btnConsult.Click += new System.EventHandler(this.btnConsult_Click);
             // 
             // dataGridView
             // 
@@ -85,54 +76,35 @@
             this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCol,
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dataGridView.Location = new System.Drawing.Point(12, 48);
+            this.Id,
+            this.Category,
+            this.Description,
+            this.Value,
+            this.ColumnValue,
+            this.Date});
+            this.dataGridView.Location = new System.Drawing.Point(12, 58);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(790, 634);
+            this.dataGridView.Size = new System.Drawing.Size(790, 624);
             this.dataGridView.TabIndex = 10;
-            // 
-            // idCol
-            // 
-            this.idCol.HeaderText = "Id";
-            this.idCol.Name = "idCol";
-            this.idCol.ReadOnly = true;
-            this.idCol.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Categoría";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Descripción";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Valor";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(666, 12);
+            this.button1.Image = global::Project.Presentation.Properties.Resources._24_report;
+            this.button1.Location = new System.Drawing.Point(646, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 30);
+            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(156, 40);
             this.button1.TabIndex = 11;
             this.button1.Text = "Generar reporte";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             // 
             // txtTotal
@@ -170,11 +142,82 @@
             this.txtDate.TabIndex = 14;
             this.txtDate.Text = "Cargando fecha...";
             // 
+            // btnCorrect
+            // 
+            this.btnCorrect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCorrect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCorrect.FlatAppearance.BorderSize = 0;
+            this.btnCorrect.Image = global::Project.Presentation.Properties.Resources._24_correct;
+            this.btnCorrect.Location = new System.Drawing.Point(531, 12);
+            this.btnCorrect.Name = "btnCorrect";
+            this.btnCorrect.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnCorrect.Size = new System.Drawing.Size(109, 40);
+            this.btnCorrect.TabIndex = 15;
+            this.btnCorrect.Text = "Corregir";
+            this.btnCorrect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCorrect.UseVisualStyleBackColor = true;
+            this.btnCorrect.Click += new System.EventHandler(this.btnCorrect_Click);
+            // 
+            // btnConsult
+            // 
+            this.btnConsult.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsult.FlatAppearance.BorderSize = 0;
+            this.btnConsult.Image = global::Project.Presentation.Properties.Resources._24_search;
+            this.btnConsult.Location = new System.Drawing.Point(155, 12);
+            this.btnConsult.Name = "btnConsult";
+            this.btnConsult.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnConsult.Size = new System.Drawing.Size(95, 40);
+            this.btnConsult.TabIndex = 9;
+            this.btnConsult.Text = "Buscar";
+            this.btnConsult.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConsult.UseVisualStyleBackColor = true;
+            this.btnConsult.Click += new System.EventHandler(this.btnConsult_Click);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Categoría";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Descripción";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // Value
+            // 
+            this.Value.HeaderText = "Valor";
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
+            // 
+            // ColumnValue
+            // 
+            this.ColumnValue.HeaderText = "Value";
+            this.ColumnValue.Name = "ColumnValue";
+            this.ColumnValue.ReadOnly = true;
+            this.ColumnValue.Visible = false;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Visible = false;
+            // 
             // BillsConsultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 726);
+            this.Controls.Add(this.btnCorrect);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTotal);
@@ -201,10 +244,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label txtDate;
+        private System.Windows.Forms.Button btnCorrect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Value;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
     }
 }

@@ -50,9 +50,9 @@ namespace Project.Business.Services
             return this.expeditureRepository.GetTotalExpensesPerDay();
         }
 
-        public bool Update(Expenditure entity)
+        public bool Update(Expenditure expenditure)
         {
-            return expeditureRepository.Update(entity);
+            return expeditureRepository.Update(expenditure);
         }
     }
 }

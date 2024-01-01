@@ -12,7 +12,8 @@ namespace Project.Presentation.Main.Bills
     {
         private readonly ExpeditureService expeditureService;
         private bool isSearchEnabled = true;
-
+        private int selectedId = 0;
+        private Expenditure selectedExpenditure = new Expenditure();
         public BillsConsultForm()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace Project.Presentation.Main.Bills
                 foreach (var item in expenditures)
                 {
                     // Agrega la fila al DataGridView con el formato de moneda colombiana
-                    dataGridView.Rows.Add(new object[] { item.Id, item.Category, item.Description, FormatCurrency(item.Value) });
+                    dataGridView.Rows.Add(new object[] { item.Id, item.Category, item.Description, FormatCurrency(item.Value), item.Value });
 
                     // Suma el valor al total
                     total += item.Value;
@@ -79,6 +80,42 @@ namespace Project.Presentation.Main.Bills
         {
             isSearchEnabled = true;
             btnConsult.Enabled = true;
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView.Rows[e.RowIndex];
+
+                int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                string category = selectedRow.Cells["Category"].Value.ToString();
+                string description = selectedRow.Cells["Description"].Value.ToString();
+                decimal value = Convert.ToDecimal(selectedRow.Cells["ColumnValue"].Value);
+                DateTime date = Convert.ToDateTime(selectedRow.Cells["Date"].Value);
+
+                // Asigna valores a la variable de instancia
+                selectedExpenditure.Id = id;
+                selectedExpenditure.Category = category;
+                selectedExpenditure.Description = description;
+                selectedExpenditure.Value = value;
+                selectedExpenditure.Date = date;
+
+                selectedId = id;
+            }
+        }
+
+        private void btnCorrect_Click(object sender, EventArgs e)
+        {
+            if (selectedId != 0)
+            {
+                BillsControlForm billsControlForm = new BillsControlForm(selectedExpenditure, true);
+                billsControlForm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila antes de hacer clic en 'Corregir'.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
