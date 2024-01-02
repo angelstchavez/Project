@@ -38,7 +38,6 @@
             this.btnProducts = new System.Windows.Forms.Button();
             this.btnSupplies = new System.Windows.Forms.Button();
             this.btnBills = new System.Windows.Forms.Button();
-            this.btnSales = new System.Windows.Forms.Button();
             this.btnMakeOrder = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,6 +46,7 @@
             this.panelBase = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTitle = new System.Windows.Forms.Label();
+            this.btnSales = new System.Windows.Forms.Button();
             this.panelSide.SuspendLayout();
             this.buttonsPanel.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -235,28 +235,6 @@
             this.btnBills.UseVisualStyleBackColor = true;
             this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
             // 
-            // btnSales
-            // 
-            this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSales.FlatAppearance.BorderSize = 0;
-            this.btnSales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnSales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSales.ForeColor = System.Drawing.Color.Silver;
-            this.btnSales.Image = global::Project.Presentation.Properties.Resources._24_sales;
-            this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSales.Location = new System.Drawing.Point(0, 80);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnSales.Size = new System.Drawing.Size(170, 40);
-            this.btnSales.TabIndex = 2;
-            this.btnSales.Text = " Ventas";
-            this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSales.UseVisualStyleBackColor = true;
-            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
-            // 
             // btnMakeOrder
             // 
             this.btnMakeOrder.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -277,6 +255,7 @@
             this.btnMakeOrder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMakeOrder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMakeOrder.UseVisualStyleBackColor = true;
+            this.btnMakeOrder.Click += new System.EventHandler(this.btnMakeOrder_Click);
             // 
             // btnHome
             // 
@@ -361,6 +340,28 @@
             this.txtTitle.TabIndex = 0;
             this.txtTitle.Text = "Cargando...";
             // 
+            // btnSales
+            // 
+            this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSales.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSales.FlatAppearance.BorderSize = 0;
+            this.btnSales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSales.ForeColor = System.Drawing.Color.Silver;
+            this.btnSales.Image = global::Project.Presentation.Properties.Resources._24_sales;
+            this.btnSales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSales.Location = new System.Drawing.Point(0, 80);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnSales.Size = new System.Drawing.Size(170, 40);
+            this.btnSales.TabIndex = 2;
+            this.btnSales.Text = " Ventas";
+            this.btnSales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSales.UseVisualStyleBackColor = true;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
+            // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -397,7 +398,6 @@
         private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Button btnSupplies;
         private System.Windows.Forms.Button btnBills;
-        private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.Button btnMakeOrder;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panelBase;
@@ -406,5 +406,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label txtCurrentUser;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSales;
     }
 }
