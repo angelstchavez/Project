@@ -263,6 +263,7 @@
     <None Include="Image\100px\100-btn-entry.png" />
     <None Include="Image\24px\24-view-expense.png" />
     <None Include="Image\24px\24-correct.png" />
+    <None Include="Image\16px\16-config.png" />
     <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

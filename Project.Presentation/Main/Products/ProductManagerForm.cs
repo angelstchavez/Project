@@ -3,6 +3,8 @@ using Project.Entity;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Project.Presentation.Main.Products
@@ -10,14 +12,18 @@ namespace Project.Presentation.Main.Products
     public partial class ProductManagerForm : Form
     {
         private readonly ProductCategoryService productCategoryService;
+        private readonly ProductService productService;
         private Panel selectedCategoryPanel;
         public static int productCategoryId;
 
         public ProductManagerForm()
         {
             productCategoryService = new ProductCategoryService();
+            productService = new ProductService();
             InitializeComponent();
             DrawProductCategories();
+            panelWelcome.Visible = true;
+            panelWelcome.Dock = DockStyle.Fill;
         }
 
         #region Functions
@@ -78,7 +84,7 @@ namespace Project.Presentation.Main.Products
             ToolStripMenuItem ToolStripDelete = new ToolStripMenuItem();
             ToolStripMenuItem ToolStripRestart = new ToolStripMenuItem();
 
-            //ToolStripPRINCIPAL.Image = Properties.Resources._16_config;
+            ToolStripPRINCIPAL.Image = Properties.Resources._16_config;
             ToolStripPRINCIPAL.BackColor = Color.Transparent;
 
             ToolStripEdit.Text = "Editar";
@@ -122,7 +128,120 @@ namespace Project.Presentation.Main.Products
             }
 
             productCategoryId = Convert.ToInt32(((Label)sender).Name);
-            //DisplayProductsByGroup(productCategoryId);
+            DisplayProductsByGroup(productCategoryId);
+        }
+
+        private void DisplayProductsByGroup(int categoryId)
+        {
+            panelWelcome.Visible = false;
+            btnProductReport.Visible = true;
+            panelWelcome.Dock = DockStyle.None;
+            banelBase.Visible = true;
+            flowProducts.Dock = DockStyle.Fill;
+            banelBase.Dock = DockStyle.Fill;
+            DrawProducts(categoryId);
+        }
+
+        private void DrawProducts(int categoryId)
+        {
+            try
+            {
+                flowProducts.Controls.Clear();
+
+                IEnumerable<Product> products = productService.GetActiveProductsByCategoryId(categoryId);
+
+                if (!products.Any())
+                {
+                    MessageBox.Show("Esta categoría no tiene productos relacionados.", "Sin Productos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // No es necesario continuar si no hay productos
+                }
+
+                txtProductCount.Text = "Productos registrados en esta categoría: " + products.Count();
+
+                foreach (var product in products)
+                {
+                    Label label = new Label();
+                    Panel panel1 = new Panel();
+                    Panel panel2 = new Panel();
+                    Label priceLabel = new Label();
+                    PictureBox pictureBox = new PictureBox();
+
+                    label.Text = product.Name;
+                    label.Name = product.Id.ToString();
+                    label.Size = new System.Drawing.Size(119, 25);
+                    label.Font = new System.Drawing.Font("Arial", 12);
+                    label.BackColor = Color.Transparent;
+                    label.ForeColor = Color.White;
+                    label.Dock = DockStyle.Fill;
+                    label.TextAlign = ContentAlignment.MiddleCenter;
+                    label.Cursor = Cursors.Hand;
+
+
+                    // Cultura colombiana (es-CO)
+                    CultureInfo culturaColombiana = new CultureInfo("es-CO");
+
+                    priceLabel.Text = product.Price.ToString("C", culturaColombiana); priceLabel.Size = new Size(119, 25);
+                    priceLabel.Font = new Font("Arial", 10);
+                    priceLabel.BackColor = Color.Transparent;
+                    priceLabel.ForeColor = Color.Gainsboro;
+                    priceLabel.Dock = DockStyle.Bottom;
+                    priceLabel.TextAlign = ContentAlignment.MiddleCenter;
+
+                    panel1.Size = new Size(140, 133);
+                    panel1.BorderStyle = BorderStyle.FixedSingle;
+                    panel1.Dock = DockStyle.Bottom;
+                    panel1.BackColor = Color.FromArgb(43, 43, 43);
+
+                    panel2.Size = new Size(140, 25);
+                    panel2.Dock = DockStyle.Top;
+                    panel2.BackColor = Color.Transparent;
+                    panel2.BorderStyle = BorderStyle.None;
+
+                    pictureBox.Size = new Size(140, 76);
+                    pictureBox.Dock = DockStyle.Top;
+
+                    panel1.Controls.Add(label);
+                    panel1.Controls.Add(priceLabel);
+
+                    MenuStrip menuStrip = new MenuStrip();
+                    menuStrip.BackColor = Color.Transparent;
+                    menuStrip.AutoSize = false;
+                    menuStrip.Size = new System.Drawing.Size(28, 24);
+                    menuStrip.Dock = DockStyle.Right;
+                    menuStrip.Name = product.Id.ToString();
+
+                    ToolStripMenuItem toolStripPrincipal = new ToolStripMenuItem();
+                    ToolStripMenuItem toolStripEditar = new ToolStripMenuItem();
+                    ToolStripMenuItem toolStripEliminar = new ToolStripMenuItem();
+                    ToolStripMenuItem toolStripRestaurar = new ToolStripMenuItem();
+
+                    toolStripPrincipal.Image = Properties.Resources._16_config;
+                    toolStripPrincipal.BackColor = Color.Transparent;
+
+                    toolStripEditar.Text = "Editar";
+                    toolStripEditar.Name = product.Name;
+                    toolStripEditar.Tag = product.Id.ToString();
+
+                    toolStripEliminar.Text = "Eliminar";
+                    toolStripEliminar.Tag = product.Id.ToString();
+
+
+                    menuStrip.Items.Add(toolStripPrincipal);
+                    toolStripPrincipal.DropDownItems.Add(toolStripEditar);
+                    toolStripPrincipal.DropDownItems.Add(toolStripEliminar);
+
+                    panel2.Controls.Add(menuStrip);
+
+                    panel1.Controls.Add(panel2);
+                    label.BringToFront();
+                    panel2.SendToBack();
+                    flowProducts.Controls.Add(panel1);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace);
+            }
         }
 
         #endregion

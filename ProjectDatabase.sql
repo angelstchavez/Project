@@ -480,3 +480,19 @@ BEGIN
     WHERE Id = @Id
 END;
 GO
+
+CREATE PROCEDURE GetActiveProductsByCategoryId
+    @CategoryId INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM ProductCategory WHERE Id = @CategoryId)
+    BEGIN
+        RAISERROR('ID de categoría de producto no válido.', 16, 1)
+        RETURN
+    END
+
+    SELECT P.*
+    FROM Product P
+    WHERE P.IsActive = 1 AND P.CategoryId = @CategoryId
+END;
+GO
