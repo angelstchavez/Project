@@ -41,6 +41,24 @@ CREATE TABLE Expenditures
 );
 GO
 
+CREATE TABLE ProductCategory
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    IsActive BIT NOT NULL
+);
+GO
+
+CREATE TABLE Product
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    Price DECIMAL(18, 2) NOT NULL,
+    CategoryId INT FOREIGN KEY REFERENCES ProductCategory(Id),
+    IsActive BIT NOT NULL
+);
+GO
+
 -- Procedures
 
 CREATE PROCEDURE CreateUser
@@ -292,5 +310,173 @@ CREATE PROCEDURE GetAllExpensesByDate
 AS
 BEGIN
     SELECT * FROM Expenditures WHERE CONVERT(DATE, Date) = CONVERT(DATE, @SpecificDate);
+END;
+GO
+
+CREATE PROCEDURE CreateProductCategory
+    @Name NVARCHAR(255),
+    @IsActive BIT
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM ProductCategory WHERE Name = @Name)
+    BEGIN
+        RAISERROR('Ya existe una categoría de producto con el mismo nombre.', 16, 1)
+        RETURN
+    END
+
+    INSERT INTO ProductCategory (Name, IsActive)
+    VALUES (@Name, @IsActive)
+END;
+GO
+
+CREATE PROCEDURE UpdateProductCategory
+    @Id INT,
+    @Name NVARCHAR(255),
+    @IsActive BIT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM ProductCategory WHERE Id = @Id)
+    BEGIN
+        RAISERROR('Categoría de producto no encontrada.', 16, 1)
+        RETURN
+    END
+
+    UPDATE ProductCategory
+    SET Name = @Name,
+        IsActive = @IsActive
+    WHERE Id = @Id
+END;
+GO
+
+CREATE PROCEDURE GetAllActiveProductCategory
+AS
+BEGIN
+    SELECT *
+    FROM ProductCategory
+    WHERE IsActive = 1
+END;
+GO
+
+CREATE PROCEDURE GetProductCategory
+    @Id INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM ProductCategory WHERE Id = @Id)
+    BEGIN
+        RAISERROR('Categoría de producto no encontrada.', 16, 1)
+        RETURN
+    END
+
+    SELECT *
+    FROM ProductCategory
+    WHERE Id = @Id
+END;
+GO
+
+CREATE PROCEDURE DeleteProductCategory
+    @Id INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM ProductCategory WHERE Id = @Id)
+    BEGIN
+        RAISERROR('Categoría de producto no encontrada.', 16, 1)
+        RETURN
+    END
+
+    DELETE FROM ProductCategory
+    WHERE Id = @Id
+END;
+GO
+
+CREATE PROCEDURE CreateProduct
+    @Name NVARCHAR(255),
+    @Price DECIMAL(18, 2),
+    @CategoryId INT,
+    @IsActive BIT
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Product WHERE Name = @Name)
+    BEGIN
+        RAISERROR('Ya existe un producto con el mismo nombre.', 16, 1)
+        RETURN
+    END
+
+    IF NOT EXISTS (SELECT 1 FROM ProductCategory WHERE Id = @CategoryId)
+    BEGIN
+        RAISERROR('ID de categoría de producto no válido.', 16, 1)
+        RETURN
+    END
+
+    INSERT INTO Product (Name, Price, CategoryId, IsActive)
+    VALUES (@Name, @Price, @CategoryId, @IsActive)
+END;
+GO
+
+CREATE PROCEDURE UpdateProduct
+    @Id INT,
+    @Name NVARCHAR(255),
+    @Price DECIMAL(18, 2),
+    @CategoryId INT,
+    @IsActive BIT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Product WHERE Id = @Id)
+    BEGIN
+        RAISERROR('Producto no encontrado.', 16, 1)
+        RETURN
+    END
+
+    IF NOT EXISTS (SELECT 1 FROM ProductCategory WHERE Id = @CategoryId)
+    BEGIN
+        RAISERROR('ID de categoría de producto no válido.', 16, 1)
+        RETURN
+    END
+
+    UPDATE Product
+    SET Name = @Name,
+        Price = @Price,
+        CategoryId = @CategoryId,
+        IsActive = @IsActive
+    WHERE Id = @Id
+END;
+GO
+
+CREATE PROCEDURE GetAllActiveProducts
+AS
+BEGIN
+    SELECT *
+    FROM Product
+    WHERE IsActive = 1
+END;
+GO
+
+CREATE PROCEDURE GetProduct
+    @Id INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Product WHERE Id = @Id)
+    BEGIN
+        RAISERROR('Producto no encontrado.', 16, 1)
+        RETURN
+    END
+
+    SELECT *
+    FROM Product
+    WHERE Id = @Id
+END;
+GO
+
+CREATE PROCEDURE DeleteProduct
+    @Id INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Product WHERE Id = @Id)
+    BEGIN
+        RAISERROR('Producto no encontrado.', 16, 1)
+        RETURN
+    END
+
+    DELETE FROM Product
+    WHERE Id = @Id
 END;
 GO
