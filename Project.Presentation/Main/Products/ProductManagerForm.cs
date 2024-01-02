@@ -247,6 +247,12 @@ namespace Project.Presentation.Main.Products
         #endregion
 
         #region Events
+        
+        private void btnReportCategory_Click(object sender, EventArgs e)
+        {
+            Report.Forms.ReportGetAllActiveProductsForm reportGetAllActiveProductsForm = new Report.Forms.ReportGetAllActiveProductsForm();
+            reportGetAllActiveProductsForm.ShowDialog();
+        }
 
         #endregion
     }

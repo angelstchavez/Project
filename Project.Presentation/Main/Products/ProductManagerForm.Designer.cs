@@ -31,7 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowCategories = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnReportCategory = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,11 +41,11 @@
             this.banelBase = new System.Windows.Forms.Panel();
             this.flowProducts = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtProductCount = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -81,22 +81,23 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btnReportCategory);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 679);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(170, 47);
             this.panel3.TabIndex = 1;
             // 
-            // button2
+            // btnReportCategory
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(10, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 30);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Reporte de cat.";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnReportCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportCategory.Location = new System.Drawing.Point(10, 8);
+            this.btnReportCategory.Name = "btnReportCategory";
+            this.btnReportCategory.Size = new System.Drawing.Size(150, 30);
+            this.btnReportCategory.TabIndex = 3;
+            this.btnReportCategory.Text = "Reporte de cat.";
+            this.btnReportCategory.UseVisualStyleBackColor = true;
+            this.btnReportCategory.Click += new System.EventHandler(this.btnReportCategory_Click);
             // 
             // panel2
             // 
@@ -189,6 +190,16 @@
             this.panel4.Size = new System.Drawing.Size(616, 50);
             this.panel4.TabIndex = 2;
             // 
+            // button4
+            // 
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Location = new System.Drawing.Point(8, 10);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 30);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Agregar producto";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -230,16 +241,6 @@
             this.txtProductCount.Size = new System.Drawing.Size(290, 18);
             this.txtProductCount.TabIndex = 15;
             this.txtProductCount.Text = "Productos registrados en esta categoría:";
-            // 
-            // button4
-            // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(8, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 30);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Agregar producto";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // panelWelcome
             // 
@@ -299,7 +300,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnReportCategory;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnProductReport;
         private System.Windows.Forms.Panel banelBase;
