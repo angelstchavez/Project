@@ -254,6 +254,13 @@ namespace Project.Presentation.Main.Products
             reportGetAllActiveProductsForm.ShowDialog();
         }
 
+        private void btnAllProductReport_Click(object sender, EventArgs e)
+        {
+            Report.Forms.ReportGetAllProductsWithCategoryForm reportGetAllProductsWithCategoryForm
+                = new Report.Forms.ReportGetAllProductsWithCategoryForm();
+            reportGetAllProductsWithCategoryForm.ShowDialog();
+        }
+
         #endregion
     }
 }

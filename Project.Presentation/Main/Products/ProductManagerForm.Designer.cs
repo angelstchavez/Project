@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnAllProductReport = new System.Windows.Forms.Button();
             this.btnProductReport = new System.Windows.Forms.Button();
             this.banelBase = new System.Windows.Forms.Panel();
             this.flowProducts = new System.Windows.Forms.FlowLayoutPanel();
@@ -48,7 +49,6 @@
             this.txtProductCount = new System.Windows.Forms.Label();
             this.panelWelcome = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAllProductReport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -149,6 +149,18 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(644, 60);
             this.panel5.TabIndex = 4;
+            // 
+            // btnAllProductReport
+            // 
+            this.btnAllProductReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllProductReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAllProductReport.Location = new System.Drawing.Point(288, 8);
+            this.btnAllProductReport.Name = "btnAllProductReport";
+            this.btnAllProductReport.Size = new System.Drawing.Size(169, 40);
+            this.btnAllProductReport.TabIndex = 5;
+            this.btnAllProductReport.Text = "Reporte general";
+            this.btnAllProductReport.UseVisualStyleBackColor = true;
+            this.btnAllProductReport.Click += new System.EventHandler(this.btnAllProductReport_Click);
             // 
             // btnProductReport
             // 
@@ -263,17 +275,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Seleccione una categoría para empezar";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAllProductReport
-            // 
-            this.btnAllProductReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAllProductReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAllProductReport.Location = new System.Drawing.Point(288, 8);
-            this.btnAllProductReport.Name = "btnAllProductReport";
-            this.btnAllProductReport.Size = new System.Drawing.Size(169, 40);
-            this.btnAllProductReport.TabIndex = 5;
-            this.btnAllProductReport.Text = "Reporte de todos";
-            this.btnAllProductReport.UseVisualStyleBackColor = true;
             // 
             // ProductManagerForm
             // 
