@@ -33,5 +33,16 @@ namespace Project.Presentation.Properties {
                 return ((string)(this["MVWOKDatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ANGEL\\SQLEXPRESS;Initial Catalog=ProjectDatabase;Integrated Security=" +
+            "True")]
+        public string ProjectDatabaseConnectionString {
+            get {
+                return ((string)(this["ProjectDatabaseConnectionString"]));
+            }
+        }
     }
 }

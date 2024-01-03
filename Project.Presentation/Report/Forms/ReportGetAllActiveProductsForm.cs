@@ -16,14 +16,20 @@ namespace Project.Presentation.Report.Forms
             await Task.Run(() =>
             {
                 // Cargar datos de manera asíncrona
-                this.Invoke(new Action(() => this.getAllProductCategoriesTableAdapter.Fill(this.reportMasterDataSet.GetAllProductCategories)));
+                this.Invoke(new Action(() => this.getAllActiveProductCategoryTableAdapter.Fill(this.reportMasterDataSet.GetAllActiveProductCategory)));
             });
 
             // Muestra el informe en formato "Diseño de impresión"
             this.reportViewer.SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
 
             // Ajusta el tamaño de la página para el diseño de impresión
-            this.reportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.reportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
+
+            // Establece el zoom al 150%
+            this.reportViewer.ZoomPercent = 150;
+
+            // Refresca el informe después de aplicar cambios
+            this.reportViewer.RefreshReport();
         }
     }
 }

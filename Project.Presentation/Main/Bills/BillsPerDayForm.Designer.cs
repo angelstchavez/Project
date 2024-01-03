@@ -32,7 +32,7 @@
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.DateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReport = new System.Windows.Forms.Button();
             this.btnDetails = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -88,20 +88,21 @@
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
-            // button1
+            // btnReport
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Image = global::Project.Presentation.Properties.Resources._24_report;
-            this.button1.Location = new System.Drawing.Point(137, 674);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(155, 40);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Generar reporte";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReport.FlatAppearance.BorderSize = 0;
+            this.btnReport.Image = global::Project.Presentation.Properties.Resources._24_report;
+            this.btnReport.Location = new System.Drawing.Point(137, 674);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnReport.Size = new System.Drawing.Size(155, 40);
+            this.btnReport.TabIndex = 17;
+            this.btnReport.Text = "Generar reporte";
+            this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnDetails
             // 
@@ -141,7 +142,7 @@
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReport);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -155,7 +156,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

@@ -87,5 +87,11 @@ namespace Project.Presentation.Main.Bills
         {
 
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Report.Forms.ReportGetTotalExpensesPerDayForm reportGetTotalExpensesPerDayForm = new Report.Forms.ReportGetTotalExpensesPerDayForm();
+            reportGetTotalExpensesPerDayForm.ShowDialog();
+        }
     }
 }

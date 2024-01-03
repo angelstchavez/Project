@@ -441,6 +441,24 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE GetAllProductsWithCategory
+AS
+BEGIN
+    SELECT
+        P.Id AS ProductId,
+        P.Name AS ProductName,
+        P.Price,
+        PC.Name AS CategoryName,
+        P.IsActive AS ProductIsActive
+    FROM
+        Product AS P
+    INNER JOIN
+        ProductCategory AS PC ON P.CategoryId = PC.Id
+		    WHERE
+        P.IsActive = 1;
+END;
+GO
+
 CREATE PROCEDURE GetAllActiveProducts
 AS
 BEGIN
