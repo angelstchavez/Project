@@ -338,7 +338,7 @@
             this.panelBase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBase.Location = new System.Drawing.Point(170, 35);
             this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(814, 726);
+            this.panelBase.Size = new System.Drawing.Size(1014, 726);
             this.panelBase.TabIndex = 1;
             // 
             // panel1
@@ -348,7 +348,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(984, 35);
+            this.panel1.Size = new System.Drawing.Size(1184, 35);
             this.panel1.TabIndex = 0;
             // 
             // txtTitle
@@ -366,14 +366,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 761);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.panelBase);
             this.Controls.Add(this.panelSide);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "DashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project";

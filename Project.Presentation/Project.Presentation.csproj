@@ -103,6 +103,12 @@
     <Compile Include="Main\Config\ConfigForm.Designer.cs">
       <DependentUpon>ConfigForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Customers\CustomersConsultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Customers\CustomersConsultForm.Designer.cs">
+      <DependentUpon>CustomersConsultForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Customers\CustomersForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Config\ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Customers\CustomersConsultForm.resx">
+      <DependentUpon>CustomersConsultForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Customers\CustomersForm.resx">
       <DependentUpon>CustomersForm.cs</DependentUpon>
@@ -301,6 +310,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Image\24px\24-cancel.png" />
+    <None Include="Image\24px\24-acept-sale.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

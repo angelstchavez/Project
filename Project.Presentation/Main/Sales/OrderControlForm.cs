@@ -53,12 +53,17 @@ namespace Project.Presentation.Main.Sales
 
             btnCategory.Text = category.Name;
             btnCategory.Name = category.Id.ToString();
-            btnCategory.Size = new Size(125, 125);
+            btnCategory.Size = new Size(135, 135);
             btnCategory.Font = new Font("Arial", 12);
-            btnCategory.ForeColor = Color.Black;
+            btnCategory.ForeColor = Color.White;
+            btnCategory.BackColor = Color.FromArgb(2, 97, 170);
             btnCategory.Dock = DockStyle.Top;
             btnCategory.TextAlign = ContentAlignment.MiddleCenter;
             btnCategory.Cursor = Cursors.Hand;
+            btnCategory.FlatStyle = FlatStyle.Flat;
+            btnCategory.FlatAppearance.BorderSize = 0;
+            btnCategory.FlatAppearance.MouseOverBackColor = Color.FromArgb(2, 97, 170);
+            btnCategory.FlatAppearance.MouseDownBackColor = Color.FromArgb(2, 97, 170);
 
             btnCategory.Click += new EventHandler(myButtonEvent);
 
@@ -69,16 +74,14 @@ namespace Project.Presentation.Main.Sales
         {
             if (selectedCategoryButton != null)
             {
-                selectedCategoryButton.Enabled = true;
-                selectedCategoryButton.BackColor = Color.Transparent;
+                selectedCategoryButton.BackColor = Color.FromArgb(2, 97, 170);
             }
 
             selectedCategoryButton = (Button)sender;
 
             if (selectedCategoryButton != null)
             {
-                selectedCategoryButton.Enabled = false;
-                selectedCategoryButton.BackColor = Color.FromArgb(240, 240, 240);
+                selectedCategoryButton.BackColor = Color.FromArgb(0, 48, 85);
             }
 
             productCategoryId = Convert.ToInt32(selectedCategoryButton.Name);
@@ -108,14 +111,19 @@ namespace Project.Presentation.Main.Sales
                 {
                     Button btnProduct = new Button();
 
-                    btnProduct.Text = $"{product.Name}\n{product.Price:C}";
+                    btnProduct.Text = $"{product.Name}\n\n{product.Price:C}";
                     btnProduct.Name = product.Id.ToString();
-                    btnProduct.Size = new Size(125, 125);
-                    btnProduct.Font = new Font("Arial", 12);
-                    btnProduct.ForeColor = Color.Black;
+                    btnProduct.Size = new Size(135, 135);
+                    btnProduct.Font = new Font("Arial", 12, FontStyle.Bold);
+                    btnProduct.ForeColor = Color.White;
+                    btnProduct.BackColor = Color.FromArgb(2, 97, 170);
                     btnProduct.Dock = DockStyle.Bottom;
                     btnProduct.TextAlign = ContentAlignment.MiddleCenter;
                     btnProduct.Cursor = Cursors.Hand;
+                    btnProduct.FlatStyle = FlatStyle.Flat;
+                    btnProduct.FlatAppearance.BorderSize = 0;
+                    btnProduct.FlatAppearance.MouseOverBackColor = Color.FromArgb(1, 67, 118);
+                    btnProduct.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 48, 85);
 
                     flowProducts.Controls.Add(btnProduct);
 
@@ -266,6 +274,12 @@ namespace Project.Presentation.Main.Sales
             {
                 MessageBox.Show("El pedido ya se encuentra vacío.", "Pedido Vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+            Customers.CustomersConsultForm customersConsultForm = new Customers.CustomersConsultForm();
+            customersConsultForm.ShowDialog();
         }
     }
 }
