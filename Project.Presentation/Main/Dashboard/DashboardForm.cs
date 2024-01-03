@@ -119,6 +119,11 @@ namespace Project.Presentation.Main.Dashboard
             OpenModule(new Sales.SalesForm(), btnMakeOrder, "Gestor de ventas");
         }
 
+        private void DashboardForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         #endregion
     }
 }

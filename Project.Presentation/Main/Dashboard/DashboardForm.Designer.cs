@@ -378,6 +378,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DashboardForm_FormClosing);
             this.panelSide.ResumeLayout(false);
             this.buttonsPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
