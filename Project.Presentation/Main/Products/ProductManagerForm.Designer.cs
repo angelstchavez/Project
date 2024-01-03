@@ -38,10 +38,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAllProductReport = new System.Windows.Forms.Button();
-            this.btnProductReport = new System.Windows.Forms.Button();
             this.banelBase = new System.Windows.Forms.Panel();
             this.flowProducts = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -92,11 +92,14 @@
             // btnReportCategory
             // 
             this.btnReportCategory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportCategory.Location = new System.Drawing.Point(10, 8);
+            this.btnReportCategory.Image = global::Project.Presentation.Properties.Resources._24_report;
+            this.btnReportCategory.Location = new System.Drawing.Point(10, 10);
             this.btnReportCategory.Name = "btnReportCategory";
+            this.btnReportCategory.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnReportCategory.Size = new System.Drawing.Size(150, 40);
             this.btnReportCategory.TabIndex = 3;
-            this.btnReportCategory.Text = "Reporte de cat.";
+            this.btnReportCategory.Text = "Reporte Categ.";
+            this.btnReportCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReportCategory.UseVisualStyleBackColor = true;
             this.btnReportCategory.Click += new System.EventHandler(this.btnReportCategory_Click);
             // 
@@ -132,18 +135,20 @@
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Image = global::Project.Presentation.Properties.Resources._24_add;
             this.button1.Location = new System.Drawing.Point(10, 12);
             this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(150, 40);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Agregar categoría";
+            this.button1.Text = "Agregar categ.";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.panel5.Controls.Add(this.btnAllProductReport);
-            this.panel5.Controls.Add(this.btnProductReport);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(170, 666);
             this.panel5.Name = "panel5";
@@ -154,24 +159,16 @@
             // 
             this.btnAllProductReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAllProductReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAllProductReport.Location = new System.Drawing.Point(288, 8);
+            this.btnAllProductReport.Image = global::Project.Presentation.Properties.Resources._24_report;
+            this.btnAllProductReport.Location = new System.Drawing.Point(474, 10);
             this.btnAllProductReport.Name = "btnAllProductReport";
-            this.btnAllProductReport.Size = new System.Drawing.Size(169, 40);
+            this.btnAllProductReport.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnAllProductReport.Size = new System.Drawing.Size(158, 40);
             this.btnAllProductReport.TabIndex = 5;
             this.btnAllProductReport.Text = "Reporte general";
+            this.btnAllProductReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAllProductReport.UseVisualStyleBackColor = true;
             this.btnAllProductReport.Click += new System.EventHandler(this.btnAllProductReport_Click);
-            // 
-            // btnProductReport
-            // 
-            this.btnProductReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProductReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProductReport.Location = new System.Drawing.Point(463, 8);
-            this.btnProductReport.Name = "btnProductReport";
-            this.btnProductReport.Size = new System.Drawing.Size(169, 40);
-            this.btnProductReport.TabIndex = 4;
-            this.btnProductReport.Text = "Reporte de productos";
-            this.btnProductReport.UseVisualStyleBackColor = true;
             // 
             // banelBase
             // 
@@ -195,6 +192,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.label2);
@@ -204,14 +202,30 @@
             this.panel4.Size = new System.Drawing.Size(616, 60);
             this.panel4.TabIndex = 2;
             // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Image = global::Project.Presentation.Properties.Resources._24_report;
+            this.button2.Location = new System.Drawing.Point(185, 9);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(158, 40);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Generar reporte";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Image = global::Project.Presentation.Properties.Resources._24_add;
             this.button4.Location = new System.Drawing.Point(8, 9);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 40);
+            this.button4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(171, 40);
             this.button4.TabIndex = 3;
             this.button4.Text = "Agregar producto";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // textBox2
@@ -316,7 +330,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnReportCategory;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnProductReport;
         private System.Windows.Forms.Panel banelBase;
         private System.Windows.Forms.FlowLayoutPanel flowProducts;
         private System.Windows.Forms.Panel panel4;
@@ -328,5 +341,6 @@
         private System.Windows.Forms.Panel panelWelcome;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAllProductReport;
+        private System.Windows.Forms.Button button2;
     }
 }

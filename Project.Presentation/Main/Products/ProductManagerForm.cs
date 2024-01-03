@@ -134,7 +134,6 @@ namespace Project.Presentation.Main.Products
         private void DisplayProductsByGroup(int categoryId)
         {
             panelWelcome.Visible = false;
-            btnProductReport.Visible = true;
             panelWelcome.Dock = DockStyle.None;
             banelBase.Visible = true;
             flowProducts.Dock = DockStyle.Fill;
