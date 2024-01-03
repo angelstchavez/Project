@@ -300,6 +300,7 @@
     <None Include="Image\100px\100-login.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Image\24px\24-cancel.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

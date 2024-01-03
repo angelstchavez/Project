@@ -15,6 +15,8 @@ namespace Project.Presentation.Main.Sales
         private readonly ProductService productService;
         private Button selectedCategoryButton;
         public static int productCategoryId;
+        private List<ShoppingCartItem> shoppingCartItems = new List<ShoppingCartItem>();
+
 
         public OrderControlForm()
         {
@@ -22,6 +24,7 @@ namespace Project.Presentation.Main.Sales
             productService = new ProductService();
             InitializeComponent();
             DrawProductCategories();
+            txtTotalAmount.Text = "$ 0,00";
         }
 
         #region Functions
@@ -105,7 +108,7 @@ namespace Project.Presentation.Main.Sales
                 {
                     Button btnProduct = new Button();
 
-                    btnProduct.Text = $"{product.Name}\n{product.Price:C}"; 
+                    btnProduct.Text = $"{product.Name}\n{product.Price:C}";
                     btnProduct.Name = product.Id.ToString();
                     btnProduct.Size = new Size(125, 125);
                     btnProduct.Font = new Font("Arial", 12);
@@ -115,6 +118,9 @@ namespace Project.Presentation.Main.Sales
                     btnProduct.Cursor = Cursors.Hand;
 
                     flowProducts.Controls.Add(btnProduct);
+
+                    // Manejar el evento de clic para los botones de productos
+                    btnProduct.Click += new EventHandler(ProductButtonClick);
                 }
             }
             catch (Exception ex)
@@ -123,6 +129,143 @@ namespace Project.Presentation.Main.Sales
             }
         }
 
+        private void ProductButtonClick(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            int productId = Convert.ToInt32(clickedButton.Name);
+            Product selectedProduct = productService.Get(productId);
+
+            // Verificar si el producto ya está en el carrito
+            ShoppingCartItem existingItem = shoppingCartItems.FirstOrDefault(item => item.ProductName == selectedProduct.Name);
+
+            if (existingItem != null)
+            {
+                // Incrementar la cantidad si el producto ya está en el carrito
+                existingItem.Quantity++;
+                existingItem.TotalPrice = existingItem.Quantity * selectedProduct.Price;
+            }
+            else
+            {
+                // Agregar un nuevo elemento al carrito si el producto no está en el carrito
+                ShoppingCartItem newItem = new ShoppingCartItem
+                {
+                    ProductId = selectedProduct.Id,
+                    ProductName = selectedProduct.Name,
+                    Quantity = 1,
+                    TotalPrice = selectedProduct.Price
+                };
+
+                shoppingCartItems.Add(newItem);
+            }
+
+            // Actualizar el DataGridView con la información del carrito de compras
+            UpdateDataGridView();
+        }
+
+        private void UpdateTotalAmount()
+        {
+            decimal totalAmount = shoppingCartItems.Sum(item => item.TotalPrice);
+            txtTotalAmount.Text = totalAmount.ToString("C", CultureInfo.CurrentCulture);
+        }
+
+        private void UpdateDataGridView()
+        {
+            // Limpiar las filas existentes en el DataGridView
+            dataGridView.Rows.Clear();
+
+            // Agregar las filas actualizadas
+            foreach (var item in shoppingCartItems)
+            {
+                // Agregar una nueva fila con la información del carrito
+                int rowIndex = dataGridView.Rows.Add(item.ProductId, item.ProductName, item.Quantity, item.TotalPrice.ToString("C"));
+
+                // Configurar el botón eliminar en la última columna
+                dataGridView.Rows[rowIndex].Cells["Eliminar"].Value = "Eliminar";
+            }
+
+            UpdateTotalAmount();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView.Columns["Eliminar"].Index && e.RowIndex >= 0)
+            {
+                int rowIndex = e.RowIndex;
+
+                if (rowIndex < shoppingCartItems.Count)
+                {
+                    ShoppingCartItem selectedItem = shoppingCartItems[rowIndex];
+
+                    // Reducir la cantidad o eliminar el producto según sea necesario
+                    if (selectedItem.Quantity > 1)
+                    {
+                        selectedItem.Quantity--;
+                        selectedItem.TotalPrice = selectedItem.Quantity * productService.Get(selectedItem.ProductId).Price;
+                    }
+                    else
+                    {
+                        shoppingCartItems.RemoveAt(rowIndex);
+                    }
+
+                    UpdateDataGridView();
+                }
+            }
+        }
+
+
+        private void ClearCart()
+        {
+            // Limpiar la lista de productos en el carrito
+            shoppingCartItems.Clear();
+            txtCustomer.Clear();
+            txtPhoneCustomer.Clear();
+            txtAddressCustomer.Clear();
+
+            // Actualizar el DataGridView y la cantidad total del valor de la venta
+            UpdateDataGridView();
+            UpdateTotalAmount();
+        }
+
         #endregion
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (shoppingCartItems.Any())
+            {
+                // Mostrar un mensaje de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas limpiar el pedido?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes)
+                {
+                    // Limpiar la tabla (o realizar cualquier acción adicional)
+                    ClearCart();
+                }
+            }
+            else
+            {
+                MessageBox.Show("El pedido ya se encuentra vacío.", "Pedido Vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (shoppingCartItems.Any())
+            {
+                // Mostrar un mensaje de confirmación
+                DialogResult result = MessageBox.Show("¿Estás seguro de que deseas cancelar el pedido?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Verificar la respuesta del usuario
+                if (result == DialogResult.Yes)
+                {
+                    // Limpiar la tabla (o realizar cualquier acción adicional)
+                    ClearCart();
+                }
+            }
+            else
+            {
+                MessageBox.Show("El pedido ya se encuentra vacío.", "Pedido Vacío", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
