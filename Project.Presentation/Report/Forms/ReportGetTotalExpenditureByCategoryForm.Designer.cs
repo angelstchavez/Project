@@ -31,18 +31,30 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportGetTotalExpenditureByCategoryForm));
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportMasterDataSet = new Project.Presentation.Report.Data.ReportMasterDataSet();
             this.getTotalExpenditureByCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportMasterDataSet = new Project.Presentation.Report.Data.ReportMasterDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.getTotalExpenditureByCategoryTableAdapter = new Project.Presentation.Report.Data.ReportMasterDataSetTableAdapters.GetTotalExpenditureByCategoryTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.reportMasterDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getTotalExpenditureByCategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportMasterDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // getTotalExpenditureByCategoryBindingSource
+            // 
+            this.getTotalExpenditureByCategoryBindingSource.DataMember = "GetTotalExpenditureByCategory";
+            this.getTotalExpenditureByCategoryBindingSource.DataSource = this.reportMasterDataSet;
+            // 
+            // reportMasterDataSet
+            // 
+            this.reportMasterDataSet.DataSetName = "ReportMasterDataSet";
+            this.reportMasterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.reportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DataSet";
             reportDataSource1.Value = this.getTotalExpenditureByCategoryBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
@@ -50,18 +62,8 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(784, 561);
+            this.reportViewer1.Size = new System.Drawing.Size(761, 460);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // reportMasterDataSet
-            // 
-            this.reportMasterDataSet.DataSetName = "ReportMasterDataSet";
-            this.reportMasterDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getTotalExpenditureByCategoryBindingSource
-            // 
-            this.getTotalExpenditureByCategoryBindingSource.DataMember = "GetTotalExpenditureByCategory";
-            this.getTotalExpenditureByCategoryBindingSource.DataSource = this.reportMasterDataSet;
             // 
             // getTotalExpenditureByCategoryTableAdapter
             // 
@@ -71,17 +73,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(761, 460);
             this.Controls.Add(this.reportViewer1);
             this.Font = new System.Drawing.Font("Arial", 12F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(761, 460);
             this.Name = "ReportGetTotalExpenditureByCategoryForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ReportGetTotalExpenditureByCategoryForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.reportMasterDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getTotalExpenditureByCategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportMasterDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

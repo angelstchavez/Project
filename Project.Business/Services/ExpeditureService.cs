@@ -45,6 +45,16 @@ namespace Project.Business.Services
             return expeditureRepository.GetBySpecificDate(date);
         }
 
+        public IEnumerable<Expenditure> GetExpenditureByMonth(int month, int year)
+        {
+            return expeditureRepository.GetExpenditureByMonth(month, year);
+        }
+
+        public IEnumerable<SpendingByCategory> GetMonthlyExpenditureByCategory()
+        {
+            return expeditureRepository.GetMonthlyExpenditureByCategory();
+        }
+
         public IEnumerable<SpendingByCategory> GetTotalExpenditureByCategory()
         {
             return expeditureRepository.GetTotalExpenditureByCategory();

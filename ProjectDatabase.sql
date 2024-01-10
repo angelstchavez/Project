@@ -654,3 +654,35 @@ BEGIN
     GROUP BY Category;
 END;
 GO
+
+CREATE PROCEDURE GetExpenditureByMonth
+    @Month INT,
+    @Year INT
+AS
+BEGIN
+    DECLARE @StartDate DATETIME, @EndDate DATETIME;
+
+    SET @StartDate = DATEFROMPARTS(@Year, @Month, 1);
+    SET @EndDate = EOMONTH(@StartDate);
+
+    SELECT *
+    FROM Expenditures
+    WHERE Date >= @StartDate AND Date <= @EndDate;
+END;
+GO
+
+CREATE PROCEDURE GetMonthlyExpenditureByCategory
+AS
+BEGIN
+    DECLARE @CurrentMonthStart DATETIME;
+    DECLARE @CurrentMonthEnd DATETIME;
+
+    SET @CurrentMonthStart = DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), 0);
+    SET @CurrentMonthEnd = DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE()), 0);
+
+    SELECT Category, SUM(Value) AS TotalExpenditure
+    FROM Expenditures
+    WHERE Date >= @CurrentMonthStart AND Date < @CurrentMonthEnd
+    GROUP BY Category;
+END;
+GO

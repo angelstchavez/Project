@@ -212,9 +212,11 @@ namespace Project.Presentation.Main.Sales
                     }
                     else
                     {
+                        // Eliminar completamente el producto cuando la cantidad llega a cero
                         shoppingCartItems.RemoveAt(rowIndex);
                     }
 
+                    // Actualizar el DataGridView y el total
                     UpdateDataGridView();
                 }
             }

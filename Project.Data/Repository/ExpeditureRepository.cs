@@ -157,6 +157,32 @@ namespace Project.Data.Repository
                 return dbConnection.Query<SpendingByCategory>("GetTotalExpenditureByCategory", commandType: CommandType.StoredProcedure);
             }
         }
+
+        public IEnumerable<Expenditure> GetExpenditureByMonth(int month, int year)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+
+                // Use parameters to pass values to the stored procedure
+                var parameters = new { Month = month, Year = year };
+
+                return dbConnection.Query<Expenditure>(
+                    "GetExpenditureByMonth",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
+            }
+        }
+
+        public IEnumerable<SpendingByCategory> GetMonthlyExpenditureByCategory()
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+                return dbConnection.Query<SpendingByCategory>("GetTotalExpenditureByCategory", commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }
     

@@ -30,20 +30,22 @@ namespace Project.Presentation.Main.Customers
 
         private void LoadCustomers()
         {
+            // Obtener la lista de clientes directamente del servicio
             IEnumerable<Customer> customers = customerService.GetPagedCustomers(pageSize, currentPage);
 
-
-            // Calcular el total de páginas
             totalPageCount = (int)Math.Ceiling((double)customerService.GetTotalCustomerCount() / pageSize);
 
-            // Deshabilitar o habilitar los botones según la página actual
             btnPreviousPage.Enabled = currentPage > 1;
             btnNextPage.Enabled = currentPage < totalPageCount;
 
-            // Actualizar el texto del labelPage
             labelPage.Text = $"Página {currentPage} de {totalPageCount}";
 
-            dataGridView.DataSource = new BindingSource { DataSource = customers };
+            dataGridView.Rows.Clear();
+
+            foreach (var customer in customers)
+            {
+                dataGridView.Rows.Add(new object[] { customer.Id, customer.Name, customer.Phone, });
+            }
         }
 
         private void btnPreviousPage_Click(object sender, System.EventArgs e)

@@ -64,14 +64,14 @@
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DateColumn,
             this.Column3});
-            this.dataGridView.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView.Location = new System.Drawing.Point(12, 58);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(790, 656);
+            this.dataGridView.Size = new System.Drawing.Size(790, 610);
             this.dataGridView.TabIndex = 18;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
@@ -91,16 +91,16 @@
             // 
             // btnReport
             // 
-            this.btnReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReport.FlatAppearance.BorderSize = 0;
             this.btnReport.Image = global::Project.Presentation.Properties.Resources._24_report;
-            this.btnReport.Location = new System.Drawing.Point(137, 674);
+            this.btnReport.Location = new System.Drawing.Point(445, 12);
             this.btnReport.Name = "btnReport";
             this.btnReport.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnReport.Size = new System.Drawing.Size(155, 40);
+            this.btnReport.Size = new System.Drawing.Size(158, 40);
             this.btnReport.TabIndex = 17;
-            this.btnReport.Text = "Generar reporte";
+            this.btnReport.Text = "Reporte general";
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
@@ -114,7 +114,7 @@
             this.btnDetails.Location = new System.Drawing.Point(12, 674);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnDetails.Size = new System.Drawing.Size(120, 40);
+            this.btnDetails.Size = new System.Drawing.Size(121, 40);
             this.btnDetails.TabIndex = 22;
             this.btnDetails.Text = "Ver detalle";
             this.btnDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -128,20 +128,20 @@
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.txtTotal.Location = new System.Drawing.Point(642, 683);
+            this.txtTotal.Location = new System.Drawing.Point(652, 683);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(160, 26);
+            this.txtTotal.Size = new System.Drawing.Size(150, 26);
             this.txtTotal.TabIndex = 23;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
             // btnReportByCategory
             // 
-            this.btnReportByCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReportByCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnReportByCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReportByCategory.FlatAppearance.BorderSize = 0;
             this.btnReportByCategory.Image = global::Project.Presentation.Properties.Resources._24_report;
-            this.btnReportByCategory.Location = new System.Drawing.Point(298, 674);
+            this.btnReportByCategory.Location = new System.Drawing.Point(609, 12);
             this.btnReportByCategory.Name = "btnReportByCategory";
             this.btnReportByCategory.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnReportByCategory.Size = new System.Drawing.Size(193, 40);

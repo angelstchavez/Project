@@ -100,6 +100,12 @@
     <Compile Include="Main\Bills\BillsPerDayForm.Designer.cs">
       <DependentUpon>BillsPerDayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Bills\BillsReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Bills\BillsReportForm.Designer.cs">
+      <DependentUpon>BillsReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Config\ConfigForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Bills\BillsPerDayForm.resx">
       <DependentUpon>BillsPerDayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Bills\BillsReportForm.resx">
+      <DependentUpon>BillsReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Config\ConfigForm.resx">
       <DependentUpon>ConfigForm.cs</DependentUpon>

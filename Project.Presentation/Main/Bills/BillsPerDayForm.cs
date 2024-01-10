@@ -96,9 +96,8 @@ namespace Project.Presentation.Main.Bills
 
         private void btnReportByCategory_Click(object sender, EventArgs e)
         {
-            Report.Forms.ReportGetTotalExpenditureByCategoryForm reportGetTotalExpenditureByCategoryForm =
-               new Report.Forms.ReportGetTotalExpenditureByCategoryForm();
-            reportGetTotalExpenditureByCategoryForm.ShowDialog();
+            BillsReportForm billsReportForm = new BillsReportForm();
+            billsReportForm.ShowDialog();
         }
     }
 }
