@@ -67,7 +67,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -79,7 +79,6 @@
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -90,7 +89,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.flowCategories);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Location = new System.Drawing.Point(12, 355);
+            this.panel1.Location = new System.Drawing.Point(12, 436);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(443, 278);
             this.panel1.TabIndex = 0;
@@ -135,7 +134,7 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.flowProducts);
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Location = new System.Drawing.Point(461, 355);
+            this.panel2.Location = new System.Drawing.Point(461, 437);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(541, 277);
             this.panel2.TabIndex = 1;
@@ -182,7 +181,7 @@
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Location = new System.Drawing.Point(12, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(684, 337);
+            this.panel3.Size = new System.Drawing.Size(684, 419);
             this.panel3.TabIndex = 1;
             // 
             // dataGridView
@@ -235,7 +234,7 @@
             this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(672, 295);
+            this.dataGridView.Size = new System.Drawing.Size(672, 377);
             this.dataGridView.TabIndex = 10;
             // 
             // Id
@@ -313,7 +312,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label4.Location = new System.Drawing.Point(6, 39);
+            this.label4.Location = new System.Drawing.Point(6, 42);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 18);
             this.label4.TabIndex = 12;
@@ -321,7 +320,7 @@
             // 
             // txtCustomer
             // 
-            this.txtCustomer.Location = new System.Drawing.Point(7, 60);
+            this.txtCustomer.Location = new System.Drawing.Point(7, 63);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(174, 26);
             this.txtCustomer.TabIndex = 13;
@@ -331,6 +330,8 @@
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.comboBox2);
+            this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.radioButton3);
             this.panel7.Controls.Add(this.radioButton2);
             this.panel7.Controls.Add(this.radioButton1);
@@ -348,14 +349,14 @@
             this.panel7.Controls.Add(this.label4);
             this.panel7.Location = new System.Drawing.Point(702, 65);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(300, 284);
+            this.panel7.Size = new System.Drawing.Size(300, 366);
             this.panel7.TabIndex = 21;
             // 
             // radioButton3
             // 
             this.radioButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(209, 206);
+            this.radioButton3.Location = new System.Drawing.Point(209, 281);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(67, 22);
             this.radioButton3.TabIndex = 36;
@@ -367,7 +368,7 @@
             // 
             this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(111, 206);
+            this.radioButton2.Location = new System.Drawing.Point(111, 281);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(92, 22);
             this.radioButton2.TabIndex = 35;
@@ -379,7 +380,7 @@
             // 
             this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(23, 206);
+            this.radioButton1.Location = new System.Drawing.Point(23, 281);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(82, 22);
             this.radioButton1.TabIndex = 34;
@@ -399,7 +400,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Image = global::Project.Presentation.Properties.Resources._24_cancel;
-            this.btnCancel.Location = new System.Drawing.Point(7, 236);
+            this.btnCancel.Location = new System.Drawing.Point(7, 318);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.btnCancel.Size = new System.Drawing.Size(114, 40);
@@ -422,7 +423,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label7.Location = new System.Drawing.Point(4, 152);
+            this.label7.Location = new System.Drawing.Point(4, 218);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 18);
             this.label7.TabIndex = 28;
@@ -430,7 +431,7 @@
             // 
             // txtAddressCustomer
             // 
-            this.txtAddressCustomer.Location = new System.Drawing.Point(7, 173);
+            this.txtAddressCustomer.Location = new System.Drawing.Point(7, 239);
             this.txtAddressCustomer.Name = "txtAddressCustomer";
             this.txtAddressCustomer.Size = new System.Drawing.Size(284, 26);
             this.txtAddressCustomer.TabIndex = 27;
@@ -457,7 +458,7 @@
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::Project.Presentation.Properties.Resources._24_acept_sale;
-            this.button2.Location = new System.Drawing.Point(127, 236);
+            this.button2.Location = new System.Drawing.Point(127, 318);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(164, 40);
@@ -470,7 +471,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label5.Location = new System.Drawing.Point(4, 96);
+            this.label5.Location = new System.Drawing.Point(4, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 18);
             this.label5.TabIndex = 24;
@@ -478,10 +479,10 @@
             // 
             // txtPhoneCustomer
             // 
-            this.txtPhoneCustomer.Location = new System.Drawing.Point(7, 117);
+            this.txtPhoneCustomer.Location = new System.Drawing.Point(7, 175);
             this.txtPhoneCustomer.MaxLength = 10;
             this.txtPhoneCustomer.Name = "txtPhoneCustomer";
-            this.txtPhoneCustomer.Size = new System.Drawing.Size(114, 26);
+            this.txtPhoneCustomer.Size = new System.Drawing.Size(283, 26);
             this.txtPhoneCustomer.TabIndex = 23;
             // 
             // btnSearchCustomer
@@ -496,7 +497,7 @@
             this.btnSearchCustomer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.btnSearchCustomer.ForeColor = System.Drawing.Color.White;
             this.btnSearchCustomer.Image = global::Project.Presentation.Properties.Resources._24_search;
-            this.btnSearchCustomer.Location = new System.Drawing.Point(187, 39);
+            this.btnSearchCustomer.Location = new System.Drawing.Point(187, 42);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
             this.btnSearchCustomer.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnSearchCustomer.Size = new System.Drawing.Size(103, 47);
@@ -540,30 +541,24 @@
             this.panel9.Size = new System.Drawing.Size(300, 49);
             this.panel9.TabIndex = 22;
             // 
-            // panel10
+            // comboBox2
             // 
-            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel10.Controls.Add(this.label8);
-            this.panel10.Location = new System.Drawing.Point(13, 637);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(989, 77);
-            this.panel10.TabIndex = 23;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(7, 117);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(114, 26);
+            this.comboBox2.TabIndex = 38;
             // 
             // label8
             // 
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(67)))), ((int)(((byte)(118)))));
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.label8.Location = new System.Drawing.Point(4, 96);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(987, 30);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Categorías disponibles";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Size = new System.Drawing.Size(71, 18);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Comuna:";
             // 
             // OrderControlForm
             // 
@@ -571,7 +566,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1014, 726);
-            this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel3);
@@ -594,7 +588,6 @@
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -637,7 +630,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label8;
     }
 }

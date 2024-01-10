@@ -33,17 +33,17 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelCount = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.idCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.labelPage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,16 +115,16 @@
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // labelCount
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(8, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 19);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Clientes registrados";
+            this.labelCount.AutoSize = true;
+            this.labelCount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.labelCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelCount.Location = new System.Drawing.Point(8, 16);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(162, 19);
+            this.labelCount.TabIndex = 14;
+            this.labelCount.Text = "Clientes registrados";
             // 
             // button6
             // 
@@ -170,6 +170,7 @@
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -186,48 +187,10 @@
             this.Column2});
             this.dataGridView.Location = new System.Drawing.Point(12, 48);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.Size = new System.Drawing.Size(590, 371);
             this.dataGridView.TabIndex = 10;
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(512, 425);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 30);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Siguiente";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(12, 425);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 30);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Anterior";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label2.Location = new System.Drawing.Point(108, 425);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(398, 30);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Cargando paginado...";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // idCol
             // 
@@ -245,16 +208,56 @@
             this.Column2.HeaderText = "Teléfono";
             this.Column2.Name = "Column2";
             // 
+            // btnNextPage
+            // 
+            this.btnNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNextPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNextPage.FlatAppearance.BorderSize = 0;
+            this.btnNextPage.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.btnNextPage.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.btnNextPage.Location = new System.Drawing.Point(512, 425);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(90, 30);
+            this.btnNextPage.TabIndex = 15;
+            this.btnNextPage.Text = "Siguiente";
+            this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            // 
+            // btnPreviousPage
+            // 
+            this.btnPreviousPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPreviousPage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPreviousPage.FlatAppearance.BorderSize = 0;
+            this.btnPreviousPage.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
+            this.btnPreviousPage.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.btnPreviousPage.Location = new System.Drawing.Point(12, 425);
+            this.btnPreviousPage.Name = "btnPreviousPage";
+            this.btnPreviousPage.Size = new System.Drawing.Size(90, 30);
+            this.btnPreviousPage.TabIndex = 16;
+            this.btnPreviousPage.Text = "Anterior";
+            this.btnPreviousPage.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
+            // 
+            // labelPage
+            // 
+            this.labelPage.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelPage.Location = new System.Drawing.Point(108, 425);
+            this.labelPage.Name = "labelPage";
+            this.labelPage.Size = new System.Drawing.Size(398, 30);
+            this.labelPage.TabIndex = 17;
+            this.labelPage.Text = "Cargando paginado...";
+            this.labelPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CustomersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(614, 561);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelPage);
+            this.Controls.Add(this.btnPreviousPage);
+            this.Controls.Add(this.btnNextPage);
+            this.Controls.Add(this.labelCount);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtUsername);
@@ -280,14 +283,14 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCount;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Button btnPreviousPage;
+        private System.Windows.Forms.Label labelPage;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

@@ -59,6 +59,22 @@ CREATE TABLE Product
 );
 GO
 
+CREATE TABLE Customer (
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(255) NOT NULL,
+    Phone NVARCHAR(20),
+    CreatedAt DATETIME
+);
+GO
+
+CREATE TABLE Neighborhood
+(
+    Id INT PRIMARY KEY IDENTITY (1,1),
+    Name NVARCHAR(255) NULL,
+    CommuneNumber NVARCHAR(10) NULL
+);
+GO
+
 -- Procedures
 
 CREATE PROCEDURE CreateUser
@@ -514,3 +530,119 @@ BEGIN
     WHERE P.IsActive = 1 AND P.CategoryId = @CategoryId
 END;
 GO
+
+CREATE PROCEDURE CreateCustomer
+    @Name NVARCHAR(255),
+    @Phone NVARCHAR(20),
+    @CreatedAt DATETIME
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Customer WHERE Name = @Name)
+    BEGIN
+        INSERT INTO Customer (Name, Phone, CreatedAt)
+        VALUES (@Name, @Phone, @CreatedAt);
+        SELECT SCOPE_IDENTITY() AS CustomerId;
+    END
+    ELSE
+    BEGIN
+        RAISERROR('Ya existe un cliente con este nombre.', 16, 1);
+    END
+END;
+GO
+
+CREATE PROCEDURE GetCustomer
+    @CustomerId INT
+AS
+BEGIN
+    SELECT * FROM Customer WHERE Id = @CustomerId;
+END;
+GO
+
+CREATE PROCEDURE UpdateCustomer
+    @CustomerId INT,
+    @Name NVARCHAR(255),
+    @Phone NVARCHAR(20),
+    @CreatedAt DATETIME
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Customer WHERE Id = @CustomerId)
+    BEGIN
+        RAISERROR('Cliente no encontrado.', 16, 1);
+    END
+    ELSE
+    BEGIN
+        UPDATE Customer
+        SET Name = @Name,
+            Phone = @Phone,
+            CreatedAt = @CreatedAt
+        WHERE Id = @CustomerId;
+    END
+END;
+GO
+
+CREATE PROCEDURE DeleteCustomer
+    @CustomerId INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Customer WHERE Id = @CustomerId)
+    BEGIN
+        RAISERROR('Cliente no encontrado.', 16, 1);
+    END
+    ELSE
+    BEGIN
+        DELETE FROM Customer WHERE Id = @CustomerId;
+    END
+END;
+GO
+
+CREATE PROCEDURE GetAllCustomers
+AS
+BEGIN
+    SELECT * FROM Customer;
+END;
+GO
+
+CREATE PROCEDURE GetPagedCustomers
+    @PageSize INT,
+    @PageNumber INT
+AS
+BEGIN
+    DECLARE @Offset INT = (@PageNumber - 1) * @PageSize;
+
+    SELECT *
+    FROM (
+        SELECT 
+            ROW_NUMBER() OVER (ORDER BY Id) AS RowNum,
+            *
+        FROM Customer
+    ) AS CustomersWithRowNumber
+    WHERE RowNum > @Offset AND RowNum <= (@Offset + @PageSize);
+END;
+GO
+
+CREATE PROCEDURE GetTotalCustomerCount
+AS
+BEGIN
+    SELECT COUNT(*) FROM Customer;
+END;
+GO
+
+CREATE PROCEDURE GetDistinctCommunes
+AS
+BEGIN
+    SELECT DISTINCT CommuneNumber
+    FROM Neighborhood
+    WHERE CommuneNumber IS NOT NULL;
+END;
+GO
+
+CREATE PROCEDURE GetNeighborhoodsByCommune
+    @CommuneNumber NVARCHAR(10)
+AS
+BEGIN
+    SELECT Name
+    FROM Neighborhood
+    WHERE CommuneNumber = @CommuneNumber;
+END;
+GO
+

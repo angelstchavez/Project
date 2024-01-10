@@ -13,6 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Business", "Project
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{D703B4C0-F8D8-47DF-815F-983A7313AAAB}"
 	ProjectSection(SolutionItems) = preProject
+		Inserts.sql = Inserts.sql
 		ProjectDatabase.sql = ProjectDatabase.sql
 	EndProjectSection
 EndProject
