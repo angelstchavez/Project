@@ -93,5 +93,12 @@ namespace Project.Presentation.Main.Bills
             Report.Forms.ReportGetTotalExpensesPerDayForm reportGetTotalExpensesPerDayForm = new Report.Forms.ReportGetTotalExpensesPerDayForm();
             reportGetTotalExpensesPerDayForm.ShowDialog();
         }
+
+        private void btnReportByCategory_Click(object sender, EventArgs e)
+        {
+            Report.Forms.ReportGetTotalExpenditureByCategoryForm reportGetTotalExpenditureByCategoryForm =
+               new Report.Forms.ReportGetTotalExpenditureByCategoryForm();
+            reportGetTotalExpenditureByCategoryForm.ShowDialog();
+        }
     }
 }

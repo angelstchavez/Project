@@ -185,6 +185,12 @@
     <Compile Include="Report\Forms\ReportGetAllProductsWithCategoryForm.Designer.cs">
       <DependentUpon>ReportGetAllProductsWithCategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\Forms\ReportGetTotalExpenditureByCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Forms\ReportGetTotalExpenditureByCategoryForm.Designer.cs">
+      <DependentUpon>ReportGetTotalExpenditureByCategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Forms\ReportGetTotalExpensesPerDayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,12 +257,16 @@
     </Compile>
     <EmbeddedResource Include="Report\Desings\ReportGetAllActiveProducts.rdlc" />
     <EmbeddedResource Include="Report\Desings\ReportGetAllProductsWithCategory.rdlc" />
+    <EmbeddedResource Include="Report\Desings\ReportGetTotalExpenditureByCategory.rdlc" />
     <EmbeddedResource Include="Report\Desings\ReportGetTotalExpensesPerDay.rdlc" />
     <EmbeddedResource Include="Report\Forms\ReportGetAllActiveProductsForm.resx">
       <DependentUpon>ReportGetAllActiveProductsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Forms\ReportGetAllProductsWithCategoryForm.resx">
       <DependentUpon>ReportGetAllProductsWithCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Forms\ReportGetTotalExpenditureByCategoryForm.resx">
+      <DependentUpon>ReportGetTotalExpenditureByCategoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Forms\ReportGetTotalExpensesPerDayForm.resx">
       <DependentUpon>ReportGetTotalExpensesPerDayForm.cs</DependentUpon>

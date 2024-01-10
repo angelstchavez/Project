@@ -35,6 +35,7 @@
             this.btnReport = new System.Windows.Forms.Button();
             this.btnDetails = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.btnReportByCategory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,11 +135,28 @@
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             // 
+            // btnReportByCategory
+            // 
+            this.btnReportByCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReportByCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportByCategory.FlatAppearance.BorderSize = 0;
+            this.btnReportByCategory.Image = global::Project.Presentation.Properties.Resources._24_report;
+            this.btnReportByCategory.Location = new System.Drawing.Point(298, 674);
+            this.btnReportByCategory.Name = "btnReportByCategory";
+            this.btnReportByCategory.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnReportByCategory.Size = new System.Drawing.Size(193, 40);
+            this.btnReportByCategory.TabIndex = 24;
+            this.btnReportByCategory.Text = "Gastos por categoría";
+            this.btnReportByCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportByCategory.UseVisualStyleBackColor = true;
+            this.btnReportByCategory.Click += new System.EventHandler(this.btnReportByCategory_Click);
+            // 
             // BillsPerDayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 726);
+            this.Controls.Add(this.btnReportByCategory);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.dataGridView);
@@ -161,5 +179,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Button btnReportByCategory;
     }
 }

@@ -10,5 +10,6 @@ namespace Project.Data.Interface
         IEnumerable<Expenditure> GetBySpecificDate(DateTime date);
         IEnumerable<ExpenditureDay> GetTotalExpensesPerDay();
         IEnumerable<Expenditure> GetAllExpensesByDate(DateTime date);
+        IEnumerable<SpendingByCategory> GetTotalExpenditureByCategory();
     }
 }

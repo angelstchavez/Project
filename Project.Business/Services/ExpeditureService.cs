@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Project.Business.Services
 {
-    public class ExpeditureService
+    public class ExpeditureService : IExpeditureRepository
     {
         private readonly ExpeditureRepository expeditureRepository;
 
@@ -43,6 +43,11 @@ namespace Project.Business.Services
         public IEnumerable<Expenditure> GetBySpecificDate(DateTime date)
         {
             return expeditureRepository.GetBySpecificDate(date);
+        }
+
+        public IEnumerable<SpendingByCategory> GetTotalExpenditureByCategory()
+        {
+            return expeditureRepository.GetTotalExpenditureByCategory();
         }
 
         public IEnumerable<ExpenditureDay> GetTotalExpensesPerDay()

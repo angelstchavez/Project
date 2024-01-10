@@ -646,3 +646,11 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE GetTotalExpenditureByCategory
+AS
+BEGIN
+    SELECT Category, SUM(Value) AS TotalExpenditure
+    FROM Expenditures
+    GROUP BY Category;
+END;
+GO
