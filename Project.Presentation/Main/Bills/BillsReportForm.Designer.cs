@@ -105,6 +105,7 @@
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "BillsReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

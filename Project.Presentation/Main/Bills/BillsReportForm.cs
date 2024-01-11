@@ -54,7 +54,7 @@ namespace Project.Presentation.Main.Bills
 
         private void btnMonthReport_Click(object sender, System.EventArgs e)
         {
-
+            OpenModule(new BillsMonthReport(), btnMonthReport);
         }
     }
 }

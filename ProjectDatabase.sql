@@ -672,17 +672,19 @@ END;
 GO
 
 CREATE PROCEDURE GetMonthlyExpenditureByCategory
+    @Month INT,
+    @Year INT
 AS
 BEGIN
-    DECLARE @CurrentMonthStart DATETIME;
-    DECLARE @CurrentMonthEnd DATETIME;
+    DECLARE @StartDate DATETIME;
+    DECLARE @EndDate DATETIME;
 
-    SET @CurrentMonthStart = DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), 0);
-    SET @CurrentMonthEnd = DATEADD(MONTH, DATEDIFF(MONTH, -1, GETDATE()), 0);
+    SET @StartDate = DATEADD(MONTH, @Month - 1, DATEADD(YEAR, @Year - 1900, 0));
+    SET @EndDate = DATEADD(MONTH, 1, @StartDate);
 
     SELECT Category, SUM(Value) AS TotalExpenditure
     FROM Expenditures
-    WHERE Date >= @CurrentMonthStart AND Date < @CurrentMonthEnd
+    WHERE Date >= @StartDate AND Date < @EndDate
     GROUP BY Category;
 END;
 GO

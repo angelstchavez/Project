@@ -26,7 +26,7 @@ namespace Project.Presentation.Report.Forms
             this.reportViewer.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.Percent;
 
             // Establece el zoom al 150%
-            this.reportViewer.ZoomPercent = 150;
+            this.reportViewer.ZoomPercent = 100;
 
             // Refresca el informe después de aplicar cambios
             this.reportViewer.RefreshReport();

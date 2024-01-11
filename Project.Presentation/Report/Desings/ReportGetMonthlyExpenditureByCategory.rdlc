@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>REPORTE DE GASTOS TOTALES POR CATEGORÍA</Value>
+                <Value>REPORTE DE GASTOS POR MES</Value>
                 <Style>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -22,7 +22,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.25531cm</Top>
+        <Top>0.3175cm</Top>
         <Left>2.86548cm</Left>
         <Height>0.6cm</Height>
         <Width>15.85904cm</Width>
@@ -40,15 +40,15 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>8.20177cm</Width>
+              <Width>8.62571cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.20177cm</Width>
+              <Width>8.62571cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.70583cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -61,7 +61,6 @@
                             <TextRun>
                               <Value>Categoría</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -96,7 +95,6 @@
                             <TextRun>
                               <Value>Total</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>White</Color>
                               </Style>
@@ -123,7 +121,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.70583cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -166,7 +164,7 @@
                             <TextRun>
                               <Value>=Fields!TotalExpenditure.Value</Value>
                               <Style>
-                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                                <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -183,7 +181,6 @@
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
-                        <rd:FormatSymbolCulture>es-CO</rd:FormatSymbolCulture>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -209,10 +206,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet</DataSetName>
-        <Top>1.26683cm</Top>
-        <Left>2.59323cm</Left>
-        <Height>1.2cm</Height>
-        <Width>16.40354cm</Width>
+        <Top>1.16099cm</Top>
+        <Left>2.16929cm</Left>
+        <Height>1.41166cm</Height>
+        <Width>17.25142cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -240,10 +237,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.65768cm</Top>
-        <Left>2.59323cm</Left>
+        <Top>2.6682cm</Top>
+        <Left>2.16929cm</Left>
         <Height>0.6cm</Height>
-        <Width>8.02538cm</Width>
+        <Width>8.44932cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -277,10 +274,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>2.65768cm</Top>
+        <Top>2.6682cm</Top>
         <Left>10.795cm</Left>
         <Height>0.6cm</Height>
-        <Width>8.20177cm</Width>
+        <Width>8.62571cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -294,7 +291,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>5.28037cm</Height>
+    <Height>5.67183cm</Height>
     <Style />
   </Body>
   <Width>21.59cm</Width>
@@ -403,10 +400,17 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte generado por: MV Arroz al Wok</Value>
+                  <Value>Reporte generado por: </Value>
                   <Style>
                     <FontSize>8pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value>MV Arroz al Wok</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -452,7 +456,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>9202963e-c0c8-468e-8833-93318eae3478</rd:DataSourceID>
+      <rd:DataSourceID>8ea0e909-3d19-4606-bc24-3c26e2561bb8</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -474,10 +478,10 @@
       <rd:DataSetInfo>
         <rd:DataSetName>ReportMasterDataSet</rd:DataSetName>
         <rd:SchemaPath>C:\Users\Equipo\source\repos\Project\Project.Presentation\Report\Data\ReportMasterDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>GetTotalExpenditureByCategory</rd:TableName>
+        <rd:TableName>GetMonthlyExpenditureByCategory</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>GetTotalExpenditureByCategoryTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>GetMonthlyExpenditureByCategoryTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -499,5 +503,5 @@ xyAoSSkQHjyZRjqbCnp8G7xzOhZvHx8HAtEdWG0QiQhzVj4yohB9WHQYDlZHebXHz+8LG3pNY+/X1cbP
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>9d2fff51-4783-4e50-9aef-9b0d1865ff84</rd:ReportID>
+  <rd:ReportID>9804e5ad-90da-4b00-8497-e495642ef9d5</rd:ReportID>
 </Report>

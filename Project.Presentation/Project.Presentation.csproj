@@ -94,6 +94,12 @@
     <Compile Include="Main\Bills\BillsForm.Designer.cs">
       <DependentUpon>BillsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Bills\BillsMonthReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Bills\BillsMonthReport.Designer.cs">
+      <DependentUpon>BillsMonthReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Bills\BillsPerDayForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     <EmbeddedResource Include="Main\Bills\BillsForm.resx">
       <DependentUpon>BillsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\Bills\BillsMonthReport.resx">
+      <DependentUpon>BillsMonthReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Bills\BillsPerDayForm.resx">
       <DependentUpon>BillsPerDayForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,6 +275,7 @@
     </Compile>
     <EmbeddedResource Include="Report\Desings\ReportGetAllActiveProducts.rdlc" />
     <EmbeddedResource Include="Report\Desings\ReportGetAllProductsWithCategory.rdlc" />
+    <EmbeddedResource Include="Report\Desings\ReportGetMonthlyExpenditureByCategory.rdlc" />
     <EmbeddedResource Include="Report\Desings\ReportGetTotalExpenditureByCategory.rdlc" />
     <EmbeddedResource Include="Report\Desings\ReportGetTotalExpensesPerDay.rdlc" />
     <EmbeddedResource Include="Report\Forms\ReportGetAllActiveProductsForm.resx">
