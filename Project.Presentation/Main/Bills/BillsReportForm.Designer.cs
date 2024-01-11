@@ -73,7 +73,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(784, 30);
+            this.label1.Size = new System.Drawing.Size(984, 30);
             this.label1.TabIndex = 14;
             this.label1.Text = "Reporte de gastos por categoría";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,14 +87,14 @@
             this.panelBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBase.Location = new System.Drawing.Point(11, 89);
             this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(761, 460);
+            this.panelBase.Size = new System.Drawing.Size(961, 660);
             this.panelBase.TabIndex = 15;
             // 
             // BillsReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(984, 761);
             this.Controls.Add(this.panelBase);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnMonthReport);
@@ -102,10 +102,9 @@
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(1000, 800);
             this.Name = "BillsReportForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
