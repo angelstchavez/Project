@@ -8,5 +8,6 @@ namespace Project.Data.Interface
     {
         IEnumerable<Customer> GetPagedCustomers(int pageSize, int pageNumber);
         int GetTotalCustomerCount();
+        Customer GetByPhoneNumber(string phoneNumber);
     }
 }

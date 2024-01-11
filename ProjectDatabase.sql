@@ -688,3 +688,11 @@ BEGIN
     GROUP BY Category;
 END;
 GO
+
+CREATE PROCEDURE GetCustomerByPhoneNumber
+    @PhoneNumber NVARCHAR(20)
+AS
+BEGIN
+    SELECT * FROM Customer WHERE Phone = @PhoneNumber;
+END;
+GO

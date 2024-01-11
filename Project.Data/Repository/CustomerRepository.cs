@@ -121,6 +121,19 @@ namespace Project.Data.Repository
             }
         }
 
+        public Customer GetByPhoneNumber(string phoneNumber)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+                return dbConnection.QueryFirstOrDefault<Customer>(
+                    "GetCustomerByPhoneNumber",
+                    new { PhoneNumber = phoneNumber },
+                    commandType: CommandType.StoredProcedure
+                );
+            }
+        }
+
         public IEnumerable<Customer> GetPagedCustomers(int pageSize, int pageNumber)
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectionString))

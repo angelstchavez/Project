@@ -34,6 +34,11 @@ namespace Project.Business.Services
             return customerRepository.GetAll();
         }
 
+        public Customer GetByPhoneNumber(string phoneNumber)
+        {
+            return customerRepository.GetByPhoneNumber(phoneNumber);
+        }
+
         public IEnumerable<Customer> GetPagedCustomers(int pageSize, int pageNumber)
         {
             return customerRepository.GetPagedCustomers(pageSize, pageNumber);

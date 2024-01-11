@@ -1,5 +1,6 @@
 ﻿using Project.Business.Services;
 using Project.Entity;
+using Project.Presentation.Main.Bills;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +65,36 @@ namespace Project.Presentation.Main.Customers
                 currentPage++;
                 LoadCustomers();
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            CustomerControlForm customerControlForm = new CustomerControlForm(false);
+            customerControlForm.ShowDialog();
+            LoadCustomers();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            CustomerControlForm customerControlForm = new CustomerControlForm(false);
+            customerControlForm.StartPosition = FormStartPosition.CenterParent;
+            customerControlForm.ShowDialog();
+            LoadCustomers();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
