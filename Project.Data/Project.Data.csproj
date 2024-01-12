@@ -57,6 +57,7 @@
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\ExpeditureRepository.cs" />
     <Compile Include="Repository\ModuleRepository.cs" />
+    <Compile Include="Repository\NeighborhoodRepository.cs" />
     <Compile Include="Repository\ProductCategoryRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />

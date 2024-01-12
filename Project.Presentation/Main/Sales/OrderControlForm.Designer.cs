@@ -41,6 +41,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
@@ -50,13 +55,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCommune = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxNeighborhood = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtAddressCustomer = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,11 +72,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -240,6 +240,40 @@
             this.dataGridView.Size = new System.Drawing.Size(604, 377);
             this.dataGridView.TabIndex = 10;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 110.7445F;
+            this.Column6.HeaderText = "Producto";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 110.7445F;
+            this.Column7.HeaderText = "Cantidad";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 110.7445F;
+            this.Column8.HeaderText = "Total";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Acción";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.Control;
@@ -301,13 +335,13 @@
             this.panel7.Controls.Add(this.button1);
             this.panel7.Controls.Add(this.textBox2);
             this.panel7.Controls.Add(this.textBox1);
-            this.panel7.Controls.Add(this.comboBox2);
+            this.panel7.Controls.Add(this.comboBoxCommune);
             this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.radioButton3);
             this.panel7.Controls.Add(this.radioButton2);
             this.panel7.Controls.Add(this.radioButton1);
             this.panel7.Controls.Add(this.btnCancel);
-            this.panel7.Controls.Add(this.comboBox1);
+            this.panel7.Controls.Add(this.comboBoxNeighborhood);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Controls.Add(this.txtAddressCustomer);
             this.panel7.Controls.Add(this.label6);
@@ -354,14 +388,15 @@
             this.textBox1.Size = new System.Drawing.Size(182, 26);
             this.textBox1.TabIndex = 39;
             // 
-            // comboBox2
+            // comboBoxCommune
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(9, 156);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(67, 26);
-            this.comboBox2.TabIndex = 38;
+            this.comboBoxCommune.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCommune.FormattingEnabled = true;
+            this.comboBoxCommune.Location = new System.Drawing.Point(9, 156);
+            this.comboBoxCommune.Name = "comboBoxCommune";
+            this.comboBoxCommune.Size = new System.Drawing.Size(67, 26);
+            this.comboBoxCommune.TabIndex = 38;
+            this.comboBoxCommune.SelectedIndexChanged += new System.EventHandler(this.comboBoxCommune_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -431,14 +466,14 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // comboBox1
+            // comboBoxNeighborhood
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(82, 156);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(276, 26);
-            this.comboBox1.TabIndex = 29;
+            this.comboBoxNeighborhood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNeighborhood.FormattingEnabled = true;
+            this.comboBoxNeighborhood.Location = new System.Drawing.Point(82, 156);
+            this.comboBoxNeighborhood.Name = "comboBoxNeighborhood";
+            this.comboBoxNeighborhood.Size = new System.Drawing.Size(276, 26);
+            this.comboBoxNeighborhood.TabIndex = 29;
             // 
             // label7
             // 
@@ -558,40 +593,6 @@
             this.panel9.Size = new System.Drawing.Size(368, 49);
             this.panel9.TabIndex = 22;
             // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 110.7445F;
-            this.Column6.HeaderText = "Producto";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 110.7445F;
-            this.Column7.HeaderText = "Cantidad";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 110.7445F;
-            this.Column8.HeaderText = "Total";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Acción";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            // 
             // OrderControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -649,7 +650,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPhoneCustomer;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxNeighborhood;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtAddressCustomer;
         private System.Windows.Forms.Button btnCancel;
@@ -657,7 +658,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxCommune;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;

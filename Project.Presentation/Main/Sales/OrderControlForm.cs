@@ -12,22 +12,33 @@ namespace Project.Presentation.Main.Sales
     public partial class OrderControlForm : Form
     {
         private readonly ProductCategoryService productCategoryService;
+        private readonly NeighborhoodService neighborhoodService;
         private readonly ProductService productService;
         private Button selectedCategoryButton;
         public static int productCategoryId;
         private List<ShoppingCartItem> shoppingCartItems = new List<ShoppingCartItem>();
 
-
         public OrderControlForm()
         {
             productCategoryService = new ProductCategoryService();
             productService = new ProductService();
+            neighborhoodService = new NeighborhoodService();
             InitializeComponent();
             DrawProductCategories();
+            LoadCommunes();
             txtTotalAmount.Text = "$ 0,00";
         }
 
         #region Functions
+
+        private void LoadCommunes()
+        {
+            // Obtener los números de las comunas desde el servicio
+            IEnumerable<int> communes = neighborhoodService.GetDistinctCommunes();
+
+            // Asignar la lista de números de comunas al ComboBox
+            comboBoxCommune.DataSource = communes.ToList();
+        }
 
         private void DrawProductCategories()
         {
@@ -222,7 +233,6 @@ namespace Project.Presentation.Main.Sales
             }
         }
 
-
         private void ClearCart()
         {
             // Limpiar la lista de productos en el carrito
@@ -282,6 +292,16 @@ namespace Project.Presentation.Main.Sales
         {
             Customers.CustomersConsultForm customersConsultForm = new Customers.CustomersConsultForm();
             customersConsultForm.ShowDialog();
+        }
+
+        private void comboBoxCommune_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedCommune = Convert.ToInt32(comboBoxCommune.SelectedItem);
+
+            IEnumerable<Neighborhood> neighborhoods = neighborhoodService.GetByCommune(selectedCommune);
+
+            comboBoxNeighborhood.DataSource = neighborhoods.ToList();
+            comboBoxNeighborhood.DisplayMember = "Name";
         }
     }
 }
