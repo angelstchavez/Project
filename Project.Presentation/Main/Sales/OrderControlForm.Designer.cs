@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowCategories = new System.Windows.Forms.FlowLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -50,24 +50,24 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtCustomer = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClearCustomer = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBoxCommune = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButtonNequi = new System.Windows.Forms.RadioButton();
+            this.radioButtonDaviplata = new System.Windows.Forms.RadioButton();
+            this.radioButtonCash = new System.Windows.Forms.RadioButton();
             this.btnCancel = new System.Windows.Forms.Button();
             this.comboBoxNeighborhood = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtAddressCustomer = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPhoneCustomer = new System.Windows.Forms.TextBox();
+            this.txtCustomerPhone = new System.Windows.Forms.TextBox();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -199,14 +199,14 @@
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -214,27 +214,27 @@
             this.Column7,
             this.Column8,
             this.Eliminar});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.EnableHeadersVisualStyles = false;
             this.dataGridView.Location = new System.Drawing.Point(4, 36);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(604, 377);
@@ -320,59 +320,60 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Nombre del cliente:";
             // 
-            // txtCustomer
+            // txtCustomerName
             // 
-            this.txtCustomer.Location = new System.Drawing.Point(7, 60);
-            this.txtCustomer.Name = "txtCustomer";
-            this.txtCustomer.Size = new System.Drawing.Size(220, 26);
-            this.txtCustomer.TabIndex = 13;
+            this.txtCustomerName.Location = new System.Drawing.Point(7, 60);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(220, 26);
+            this.txtCustomerName.TabIndex = 13;
             // 
             // panel7
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.button1);
+            this.panel7.Controls.Add(this.btnClearCustomer);
             this.panel7.Controls.Add(this.textBox2);
             this.panel7.Controls.Add(this.textBox1);
             this.panel7.Controls.Add(this.comboBoxCommune);
             this.panel7.Controls.Add(this.label8);
-            this.panel7.Controls.Add(this.radioButton3);
-            this.panel7.Controls.Add(this.radioButton2);
-            this.panel7.Controls.Add(this.radioButton1);
+            this.panel7.Controls.Add(this.radioButtonNequi);
+            this.panel7.Controls.Add(this.radioButtonDaviplata);
+            this.panel7.Controls.Add(this.radioButtonCash);
             this.panel7.Controls.Add(this.btnCancel);
             this.panel7.Controls.Add(this.comboBoxNeighborhood);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Controls.Add(this.txtAddressCustomer);
             this.panel7.Controls.Add(this.label6);
-            this.panel7.Controls.Add(this.button2);
+            this.panel7.Controls.Add(this.btnCreate);
             this.panel7.Controls.Add(this.label5);
-            this.panel7.Controls.Add(this.txtPhoneCustomer);
+            this.panel7.Controls.Add(this.txtCustomerPhone);
             this.panel7.Controls.Add(this.btnSearchCustomer);
             this.panel7.Controls.Add(this.panel8);
-            this.panel7.Controls.Add(this.txtCustomer);
+            this.panel7.Controls.Add(this.txtCustomerName);
             this.panel7.Controls.Add(this.label4);
             this.panel7.Location = new System.Drawing.Point(634, 65);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(368, 366);
             this.panel7.TabIndex = 21;
             // 
-            // button1
+            // btnClearCustomer
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(264, 92);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(94, 35);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "Limpiar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnClearCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearCustomer.BackColor = System.Drawing.Color.Gray;
+            this.btnClearCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClearCustomer.FlatAppearance.BorderSize = 0;
+            this.btnClearCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClearCustomer.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.btnClearCustomer.ForeColor = System.Drawing.Color.White;
+            this.btnClearCustomer.Location = new System.Drawing.Point(264, 92);
+            this.btnClearCustomer.Name = "btnClearCustomer";
+            this.btnClearCustomer.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnClearCustomer.Size = new System.Drawing.Size(94, 35);
+            this.btnClearCustomer.TabIndex = 41;
+            this.btnClearCustomer.Text = "Limpiar";
+            this.btnClearCustomer.UseVisualStyleBackColor = false;
+            this.btnClearCustomer.Click += new System.EventHandler(this.btnClearCustomer_Click);
             // 
             // textBox2
             // 
@@ -408,41 +409,41 @@
             this.label8.TabIndex = 37;
             this.label8.Text = "Comuna:";
             // 
-            // radioButton3
+            // radioButtonNequi
             // 
-            this.radioButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(107, 303);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(67, 22);
-            this.radioButton3.TabIndex = 36;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Nequi";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButtonNequi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonNequi.AutoSize = true;
+            this.radioButtonNequi.Location = new System.Drawing.Point(107, 303);
+            this.radioButtonNequi.Name = "radioButtonNequi";
+            this.radioButtonNequi.Size = new System.Drawing.Size(67, 22);
+            this.radioButtonNequi.TabIndex = 36;
+            this.radioButtonNequi.TabStop = true;
+            this.radioButtonNequi.Text = "Nequi";
+            this.radioButtonNequi.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonDaviplata
             // 
-            this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(9, 303);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(92, 22);
-            this.radioButton2.TabIndex = 35;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Daviplata";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonDaviplata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonDaviplata.AutoSize = true;
+            this.radioButtonDaviplata.Location = new System.Drawing.Point(9, 303);
+            this.radioButtonDaviplata.Name = "radioButtonDaviplata";
+            this.radioButtonDaviplata.Size = new System.Drawing.Size(92, 22);
+            this.radioButtonDaviplata.TabIndex = 35;
+            this.radioButtonDaviplata.TabStop = true;
+            this.radioButtonDaviplata.Text = "Daviplata";
+            this.radioButtonDaviplata.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonCash
             // 
-            this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(9, 245);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(82, 22);
-            this.radioButton1.TabIndex = 34;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Efectivo";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonCash.AutoSize = true;
+            this.radioButtonCash.Location = new System.Drawing.Point(9, 245);
+            this.radioButtonCash.Name = "radioButtonCash";
+            this.radioButtonCash.Size = new System.Drawing.Size(82, 22);
+            this.radioButtonCash.TabIndex = 34;
+            this.radioButtonCash.TabStop = true;
+            this.radioButtonCash.Text = "Efectivo";
+            this.radioButtonCash.UseVisualStyleBackColor = true;
             // 
             // btnCancel
             // 
@@ -474,6 +475,7 @@
             this.comboBoxNeighborhood.Name = "comboBoxNeighborhood";
             this.comboBoxNeighborhood.Size = new System.Drawing.Size(276, 26);
             this.comboBoxNeighborhood.TabIndex = 29;
+            this.comboBoxNeighborhood.SelectedIndexChanged += new System.EventHandler(this.comboBoxNeighborhood_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -502,26 +504,27 @@
             this.label6.TabIndex = 26;
             this.label6.Text = "Barrio:";
             // 
-            // button2
+            // btnCreate
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(148)))), ((int)(((byte)(40)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(28)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(32)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::Project.Presentation.Properties.Resources._24_acept_sale;
-            this.button2.Location = new System.Drawing.Point(195, 243);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(163, 55);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "Registrar venta";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(148)))), ((int)(((byte)(40)))));
+            this.btnCreate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreate.FlatAppearance.BorderSize = 0;
+            this.btnCreate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(28)))));
+            this.btnCreate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(32)))));
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Image = global::Project.Presentation.Properties.Resources._24_acept_sale;
+            this.btnCreate.Location = new System.Drawing.Point(195, 243);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnCreate.Size = new System.Drawing.Size(163, 55);
+            this.btnCreate.TabIndex = 21;
+            this.btnCreate.Text = "Registrar venta";
+            this.btnCreate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // label5
             // 
@@ -533,13 +536,13 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Teléfono:";
             // 
-            // txtPhoneCustomer
+            // txtCustomerPhone
             // 
-            this.txtPhoneCustomer.Location = new System.Drawing.Point(233, 60);
-            this.txtPhoneCustomer.MaxLength = 10;
-            this.txtPhoneCustomer.Name = "txtPhoneCustomer";
-            this.txtPhoneCustomer.Size = new System.Drawing.Size(125, 26);
-            this.txtPhoneCustomer.TabIndex = 23;
+            this.txtCustomerPhone.Location = new System.Drawing.Point(233, 60);
+            this.txtCustomerPhone.MaxLength = 10;
+            this.txtCustomerPhone.Name = "txtCustomerPhone";
+            this.txtCustomerPhone.Size = new System.Drawing.Size(125, 26);
+            this.txtCustomerPhone.TabIndex = 23;
             // 
             // btnSearchCustomer
             // 
@@ -639,30 +642,30 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.TextBox txtCustomer;
+        private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTotalAmount;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnSearchCustomer;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPhoneCustomer;
+        private System.Windows.Forms.TextBox txtCustomerPhone;
         private System.Windows.Forms.ComboBox comboBoxNeighborhood;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtAddressCustomer;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButtonDaviplata;
+        private System.Windows.Forms.RadioButton radioButtonCash;
+        private System.Windows.Forms.RadioButton radioButtonNequi;
         private System.Windows.Forms.ComboBox comboBoxCommune;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClearCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;

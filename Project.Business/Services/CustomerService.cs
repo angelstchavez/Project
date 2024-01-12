@@ -2,6 +2,7 @@
 using Project.Data.Repository;
 using Project.Entity;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Project.Business.Services
 {
@@ -16,6 +17,9 @@ namespace Project.Business.Services
 
         public bool Create(Customer entity)
         {
+            // Capitalizar el nombre antes de crear el cliente
+            entity.Name = CapitalizeName(entity.Name);
+
             return customerRepository.Create(entity);
         }
 
@@ -51,7 +55,15 @@ namespace Project.Business.Services
 
         public bool Update(Customer entity)
         {
+            // Capitalizar el nombre antes de actualizar el cliente
+            entity.Name = CapitalizeName(entity.Name);
+
             return customerRepository.Update(entity);
+        }
+
+        private string CapitalizeName(string name)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name.ToLower());
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Project.Business.Services;
 using Project.Entity;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
 
@@ -9,10 +9,22 @@ namespace Project.Presentation.Main.Customers
 {
     public partial class CustomersConsultForm : Form
     {
+        #region Fields
+
         private readonly CustomerService customerService;
         private int pageSize = 15;
         private int currentPage = 1;
         private int totalPageCount;
+
+        #endregion
+
+        #region Events
+
+        public event EventHandler<CustomerSelectedEventArgs> CustomerSelected;
+
+        #endregion
+
+        #region Constructor
 
         public CustomersConsultForm()
         {
@@ -20,6 +32,10 @@ namespace Project.Presentation.Main.Customers
             InitializeComponent();
             LoadCustomers();
         }
+
+        #endregion
+
+        #region Private Methods
 
         private void LoadCustomers()
         {
@@ -37,9 +53,42 @@ namespace Project.Presentation.Main.Customers
 
             foreach (var customer in customers)
             {
-                dataGridView.Rows.Add(new object[] { customer.Id, customer.Name, customer.Phone, });
+                dataGridView.Rows.Add(new object[] { customer.Id, customer.Name, customer.Phone });
             }
         }
+
+        private void FormatCellIfNoName(int rowIndex, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView.Rows[rowIndex].Cells["Nombre"].Value != null &&
+                string.Equals(dataGridView.Rows[rowIndex].Cells["Nombre"].Value.ToString(), "Sin nombre", StringComparison.OrdinalIgnoreCase))
+            {
+                dataGridView.Rows[rowIndex].DefaultCellStyle.BackColor = SystemColors.Info;
+            }
+        }
+
+        private void SelectCustomerAndClose(int rowIndex)
+        {
+            if (rowIndex >= 0 && rowIndex < dataGridView.Rows.Count)
+            {
+                // Obtén el objeto Customer desde la fila seleccionada
+                DataGridViewRow selectedRow = dataGridView.Rows[rowIndex];
+                Customer selectedCustomer = new Customer
+                {
+                    Id = Convert.ToInt32(selectedRow.Cells["Id"].Value),
+                    Name = selectedRow.Cells["Nombre"].Value.ToString(),
+                    Phone = selectedRow.Cells["Telefono"].Value.ToString(),
+                };
+
+                // Emitir el evento con la información del cliente seleccionado
+                OnCustomerSelected(new CustomerSelectedEventArgs(selectedCustomer));
+            }
+
+            this.Close();
+        }
+
+        #endregion
+
+        #region Event Handlers
 
         private void btnPreviousPage_Click(object sender, EventArgs e)
         {
@@ -61,11 +110,33 @@ namespace Project.Presentation.Main.Customers
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value != null &&
-    string.Equals(dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString(), "Sin nombre", StringComparison.OrdinalIgnoreCase))
-            {
-                dataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Info;
-            }
+            FormatCellIfNoName(e.RowIndex, e);
+        }
+
+        private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SelectCustomerAndClose(e.RowIndex);
+        }
+
+        #endregion
+
+        #region Custom Event
+
+        protected virtual void OnCustomerSelected(CustomerSelectedEventArgs e)
+        {
+            CustomerSelected?.Invoke(this, e);
+        }
+
+        #endregion
+    }
+
+    public class CustomerSelectedEventArgs : EventArgs
+    {
+        public Customer SelectedCustomer { get; }
+
+        public CustomerSelectedEventArgs(Customer selectedCustomer)
+        {
+            SelectedCustomer = selectedCustomer;
         }
     }
 }

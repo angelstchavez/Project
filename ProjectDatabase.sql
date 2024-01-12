@@ -662,7 +662,7 @@ CREATE PROCEDURE GetNeighborhoodsByCommune
     @CommuneNumber NVARCHAR(10)
 AS
 BEGIN
-    SELECT Name
+    SELECT Id, Name
     FROM Neighborhood
     WHERE CommuneNumber = @CommuneNumber;
 END;

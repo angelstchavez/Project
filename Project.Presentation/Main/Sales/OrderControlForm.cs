@@ -6,28 +6,42 @@ using System.Globalization;
 using System;
 using System.Windows.Forms;
 using System.Linq;
+using Project.Presentation.Main.Customers;
 
 namespace Project.Presentation.Main.Sales
 {
     public partial class OrderControlForm : Form
     {
+        #region Fields
+
         private readonly ProductCategoryService productCategoryService;
         private readonly NeighborhoodService neighborhoodService;
         private readonly ProductService productService;
+        private readonly CustomerService customerService;
         private Button selectedCategoryButton;
         public static int productCategoryId;
         private List<ShoppingCartItem> shoppingCartItems = new List<ShoppingCartItem>();
+        private Customer selectedCustomer;
+        private int selectedNeighborhoodId;
+
+        #endregion
+
+        #region Constructor
 
         public OrderControlForm()
         {
             productCategoryService = new ProductCategoryService();
             productService = new ProductService();
             neighborhoodService = new NeighborhoodService();
+            customerService = new CustomerService();
             InitializeComponent();
             DrawProductCategories();
             LoadCommunes();
+            LoadTest();
             txtTotalAmount.Text = "$ 0,00";
         }
+
+        #endregion
 
         #region Functions
 
@@ -237,8 +251,8 @@ namespace Project.Presentation.Main.Sales
         {
             // Limpiar la lista de productos en el carrito
             shoppingCartItems.Clear();
-            txtCustomer.Clear();
-            txtPhoneCustomer.Clear();
+            txtCustomerName.Clear();
+            txtCustomerPhone.Clear();
             txtAddressCustomer.Clear();
 
             // Actualizar el DataGridView y la cantidad total del valor de la venta
@@ -246,7 +260,114 @@ namespace Project.Presentation.Main.Sales
             UpdateTotalAmount();
         }
 
+        private string GetPaymentSale()
+        {
+            if (radioButtonCash.Checked)
+            {
+                return "Efectivo";
+            }
+            else if (radioButtonDaviplata.Checked)
+            {
+                return "Daviplata";
+            }
+            else if (radioButtonNequi.Checked)
+            {
+                return "Nequi";
+            }
+            else
+            {
+                return "No seleccionado";
+            }
+        }
+
+        private Customer GetCustomer()
+        {
+            // Verificar si se seleccionó un cliente
+            if (selectedCustomer != null)
+            {
+                return selectedCustomer;
+            }
+            else
+            {
+                // Crear un nuevo cliente con la información de los TextBox
+                string customerName = txtCustomerName.Text.Trim();
+                string customerPhone = txtCustomerPhone.Text.Trim();
+
+                // Verificar que se haya ingresado al menos el nombre o el teléfono
+                if (!string.IsNullOrEmpty(customerName) || !string.IsNullOrEmpty(customerPhone))
+                {
+                    // Crear un nuevo cliente con los datos ingresados
+                    Customer newCustomer = new Customer
+                    {
+                        Name = customerName,
+                        Phone = customerPhone,
+                        CreatedAt = DateTime.Now
+                    };
+
+                    // Guardar el nuevo cliente en la base de datos
+                    customerService.Create(newCustomer);
+
+                    // Devolver el cliente recién creado con el ID asignado
+                    return newCustomer;
+                }
+                else
+                {
+                    // No se ingresaron datos suficientes para crear un nuevo cliente
+                    return null;
+                }
+            }
+        }
+
+        private void CreateSale()
+        {
+            // Obtener el cliente para la venta
+            Customer saleCustomer = GetCustomer();
+
+            // Verificar si se obtuvo un cliente válido antes de asignarlo a la venta
+            if (saleCustomer != null)
+            {
+                // Asignar el ID del cliente recién creado a la venta
+                Sale sale = new Sale()
+                {
+                    User = new User() { Id = 6 },
+                    Customer = saleCustomer,
+                    PaymentType = GetPaymentSale(),
+                    Address = txtAddressCustomer.Text,
+                    Neighborhood = new Neighborhood() { Id = selectedNeighborhoodId }
+                    //TotalAmount = (decimal)txtTotalAmount.Text,
+                };
+
+                // Concatenar los datos de la venta para mostrar en el MessageBox
+                string saleDetails = $"Venta registrada exitosamente.\n\n" +
+                                     $"Cliente: {sale.Customer.Name}\n" +
+                                     $"Dirección: {sale.Address}\n" +
+                                     $"Barrio: {sale.Neighborhood.Id}\n" +  // Puedes cambiar esto dependiendo de cómo quieras mostrar el barrio
+                                     $"Método de pago: {sale.PaymentType}";
+
+                MessageBox.Show(saleDetails, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show("Venta registrada exitosamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // Mensaje de error o manejo adecuado cuando no se puede obtener un cliente válido
+                MessageBox.Show("No se pudo obtener un cliente válido para la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
         #endregion
+
+        #region Events
+        
+        private void LoadTest()
+        {
+            IEnumerable<Neighborhood> neighborhoods = neighborhoodService.GetByCommune(1);
+
+            comboBoxNeighborhood.DataSource = neighborhoods.ToList();
+            comboBoxNeighborhood.DisplayMember = "Name";
+            comboBoxNeighborhood.ValueMember = "Id";
+        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -288,20 +409,71 @@ namespace Project.Presentation.Main.Sales
             }
         }
 
+        private void CustomersConsultForm_CustomerSelected(object sender, CustomerSelectedEventArgs e)
+        {
+            // Obtén el objeto completo del cliente directamente
+            selectedCustomer = e.SelectedCustomer;
+
+            // Verifica si el cliente seleccionado no es nulo
+            if (selectedCustomer != null)
+            {
+                // Actualiza los TextBox con la información del cliente
+                txtCustomerName.Text = selectedCustomer.Name;
+                txtCustomerPhone.Text = selectedCustomer.Phone;
+
+                txtCustomerName.Enabled = false;
+                txtCustomerPhone.Enabled = false;
+            }
+        }
+
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
-            Customers.CustomersConsultForm customersConsultForm = new Customers.CustomersConsultForm();
+            CustomersConsultForm customersConsultForm = new CustomersConsultForm();
+            customersConsultForm.CustomerSelected += CustomersConsultForm_CustomerSelected;
             customersConsultForm.ShowDialog();
         }
 
         private void comboBoxCommune_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int selectedCommune = Convert.ToInt32(comboBoxCommune.SelectedItem);
+            if (comboBoxCommune.SelectedItem != null)
+            {
+                int selectedCommune = Convert.ToInt32(comboBoxCommune.SelectedItem);
 
-            IEnumerable<Neighborhood> neighborhoods = neighborhoodService.GetByCommune(selectedCommune);
+                IEnumerable<Neighborhood> neighborhoods = neighborhoodService.GetByCommune(selectedCommune);
 
-            comboBoxNeighborhood.DataSource = neighborhoods.ToList();
-            comboBoxNeighborhood.DisplayMember = "Name";
+                comboBoxNeighborhood.DataSource = neighborhoods.ToList();
+                comboBoxNeighborhood.DisplayMember = "Name";
+                comboBoxNeighborhood.ValueMember = "Id";
+            }
         }
+
+        private void comboBoxNeighborhood_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxNeighborhood.SelectedValue != null)
+            {
+                //selectedNeighborhoodId = Convert.ToInt32(comboBoxNeighborhood.SelectedValue);
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnClearCustomer_Click(object sender, EventArgs e)
+        {
+            txtCustomerName.Clear();
+            txtCustomerPhone.Clear();
+            txtCustomerName.Enabled = true;
+            txtCustomerPhone.Enabled = true;
+        }
+
+        #endregion
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            CreateSale();
+        }
+
+
     }
 }
