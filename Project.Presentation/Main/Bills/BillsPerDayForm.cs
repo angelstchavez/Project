@@ -97,6 +97,7 @@ namespace Project.Presentation.Main.Bills
         private void btnReportByCategory_Click(object sender, EventArgs e)
         {
             BillsReportForm billsReportForm = new BillsReportForm();
+            billsReportForm.StartPosition = FormStartPosition.CenterParent;
             billsReportForm.ShowDialog();
         }
     }
