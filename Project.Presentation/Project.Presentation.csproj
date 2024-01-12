@@ -391,6 +391,7 @@
     <None Include="Image\16px\16-config.png" />
     <None Include="Image\24px\24-save.png" />
     <None Include="Image\24px\24-clear.png" />
+    <None Include="Image\24px\24-whatsapp.png" />
     <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

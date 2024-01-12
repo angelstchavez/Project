@@ -15,7 +15,7 @@ namespace Project.Presentation.Main.Customers
         private int pageSize = 15;
         private int currentPage = 1;
         private int totalPageCount;
-
+        private int customerId;
         public CustomersForm()
         {
             this.customerService = new CustomerService();
@@ -48,6 +48,8 @@ namespace Project.Presentation.Main.Customers
             {
                 dataGridView.Rows.Add(new object[] { customer.Id, customer.Name, customer.Phone, });
             }
+
+            LoadCustomerCounts();
         }
 
         private void btnPreviousPage_Click(object sender, System.EventArgs e)
@@ -81,12 +83,32 @@ namespace Project.Presentation.Main.Customers
             customerControlForm.StartPosition = FormStartPosition.CenterParent;
             customerControlForm.ShowDialog();
             LoadCustomers();
-            LoadCustomerCounts();
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (customerId > 0)
+            {
+                DialogResult result = MessageBox.Show("¿Seguro que deseas eliminar este cliente?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                if (result == DialogResult.Yes)
+                {
+                    if (customerService.Delete(customerId))
+                    {
+                        MessageBox.Show("Cliente eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadCustomers();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al intentar eliminar el cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un cliente antes de eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnReport_Click(object sender, EventArgs e)
@@ -96,15 +118,40 @@ namespace Project.Presentation.Main.Customers
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0)
+            {
+                customerId = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells["Id"].Value);
+            }
         }
 
         private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             // Verificar si la celda en la columna "Nombre" tiene el valor "Sin nombre"
-            if (dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value != null && dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString() == "Sin nombre")
+            if (dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value != null &&
+                string.Equals(dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString(), "Sin nombre", StringComparison.OrdinalIgnoreCase))
             {
                 dataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Info;
+            }
+
+        }
+
+        private void btnWrite_Click(object sender, EventArgs e)
+        {
+            // Verificar si se ha seleccionado una fila
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                // Obtener el número de teléfono de la columna "Ptelefono" en la fila seleccionada
+                string phoneNumber = dataGridView.SelectedRows[0].Cells["Telefono"].Value.ToString();
+
+                // Construir el enlace de WhatsApp con el número de teléfono
+                string whatsappLink = $"https://api.whatsapp.com/send?phone={phoneNumber}";
+
+                // Abrir el enlace en el navegador predeterminado
+                System.Diagnostics.Process.Start(whatsappLink);
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un registro antes de abrir WhatsApp.");
             }
         }
     }

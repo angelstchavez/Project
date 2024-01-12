@@ -2,6 +2,8 @@
 using Project.Entity;
 using System;
 using System.Drawing;
+using System.Globalization;
+using System.Linq;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -65,6 +67,12 @@ namespace Project.Presentation.Main.Customers
             return customerService.GetByPhoneNumber(phoneNumber) == null;
         }
 
+        private string CapitalizeName(string name)
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name.ToLower());
+        }
+
+
         private void AddOrUpdateCustomer(Func<Customer, bool> action)
         {
             try
@@ -76,6 +84,13 @@ namespace Project.Presentation.Main.Customers
                 }
 
                 string phoneNumber = txtPhone.Text.Trim();
+                string capitalizedName = CapitalizeName(txtName.Text.Trim());
+
+                if (phoneNumber.Length != 10 || !phoneNumber.All(char.IsDigit))
+                {
+                    ShowWarningMessage("El número de teléfono debe tener exactamente 10 dígitos.");
+                    return;
+                }
 
                 if (!IsPhoneNumberUnique(phoneNumber))
                 {
@@ -85,7 +100,7 @@ namespace Project.Presentation.Main.Customers
 
                 Customer customer = new Customer
                 {
-                    Name = txtName.Text,
+                    Name = capitalizedName,
                     Phone = phoneNumber,
                     CreatedAt = DateTime.Now
                 };

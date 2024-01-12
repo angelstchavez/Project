@@ -3,6 +3,7 @@ using Project.Entity;
 using System.Collections.Generic;
 using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Project.Presentation.Main.Customers
 {
@@ -55,6 +56,15 @@ namespace Project.Presentation.Main.Customers
             {
                 currentPage++;
                 LoadCustomers();
+            }
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value != null &&
+    string.Equals(dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString(), "Sin nombre", StringComparison.OrdinalIgnoreCase))
+            {
+                dataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Info;
             }
         }
     }
