@@ -75,6 +75,28 @@ CREATE TABLE Neighborhood
 );
 GO
 
+CREATE TABLE Sale (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+	UserId INT FOREIGN KEY REFERENCES [Users](Id),
+    CustomerId INT FOREIGN KEY REFERENCES Customer(Id),
+    Address NVARCHAR(255),
+    NeighborhoodId INT FOREIGN KEY REFERENCES Neighborhood(Id),
+    PaymentType NVARCHAR(255),
+    TotalAmount DECIMAL(18, 2),
+    CreatedAt DATETIME
+);
+GO
+
+CREATE TABLE SaleDetail (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    SaleId INT FOREIGN KEY REFERENCES Sale(Id),
+    ProductId INT FOREIGN KEY REFERENCES Product(Id),
+    Amount DECIMAL(18, 2),
+    Quantity INT,
+    CreatetAt DATETIME
+);
+GO
+
 -- Procedures
 
 CREATE PROCEDURE CreateUser
@@ -694,5 +716,141 @@ CREATE PROCEDURE GetCustomerByPhoneNumber
 AS
 BEGIN
     SELECT * FROM Customer WHERE Phone = @PhoneNumber;
+END;
+GO
+
+-- Procedimiento almacenado para la creación de una venta
+CREATE PROCEDURE CreateSale
+    @UserId INT,
+    @CustomerId INT,
+    @Address NVARCHAR(255),
+    @NeighborhoodId INT,
+    @PaymentType NVARCHAR(255),
+    @TotalAmount DECIMAL(18, 2),
+    @CreatedAt DATETIME
+AS
+BEGIN
+    -- Validar que el usuario exista
+    IF NOT EXISTS (SELECT 1 FROM [Users] WHERE Id = @UserId)
+    BEGIN
+        RAISERROR('El usuario no existe.', 16, 1);
+        RETURN;
+    END
+
+    -- Validar que el cliente exista
+    IF NOT EXISTS (SELECT 1 FROM Customer WHERE Id = @CustomerId)
+    BEGIN
+        RAISERROR('El cliente no existe.', 16, 2);
+        RETURN;
+    END
+
+    -- Validar que el barrio exista
+    IF NOT EXISTS (SELECT 1 FROM Neighborhood WHERE Id = @NeighborhoodId)
+    BEGIN
+        RAISERROR('El barrio no existe.', 16, 3);
+        RETURN;
+    END
+
+    -- Validar otras condiciones según sea necesario
+
+    -- Insertar la venta
+    INSERT INTO Sale (UserId, CustomerId, Address, NeighborhoodId, PaymentType, TotalAmount, CreatedAt)
+    VALUES (@UserId, @CustomerId, @Address, @NeighborhoodId, @PaymentType, @TotalAmount, @CreatedAt);
+END;
+GO
+
+-- Procedimiento almacenado para la eliminación de una venta
+CREATE PROCEDURE DeleteSale
+    @SaleId INT
+AS
+BEGIN
+    -- Validar que la venta exista
+    IF NOT EXISTS (SELECT 1 FROM Sale WHERE Id = @SaleId)
+    BEGIN
+        RAISERROR('La venta no existe.', 16, 4);
+        RETURN;
+    END
+
+    -- Otras validaciones según sea necesario
+
+    -- Eliminar la venta
+    DELETE FROM Sale WHERE Id = @SaleId;
+END;
+GO
+
+-- Procedimiento almacenado para obtener una venta por su Id
+CREATE PROCEDURE GetSale
+    @SaleId INT
+AS
+BEGIN
+    -- Obtener la venta por su Id
+    SELECT *
+    FROM Sale
+    WHERE Id = @SaleId;
+END;
+GO
+
+-- Procedimiento almacenado para obtener todas las ventas
+CREATE PROCEDURE GetAllSales
+AS
+BEGIN
+    -- Obtener todas las ventas
+    SELECT *
+    FROM Sale;
+END;
+GO
+
+-- Procedimiento almacenado para actualizar una venta
+CREATE PROCEDURE UpdateSale
+    @SaleId INT,
+    @UserId INT,
+    @CustomerId INT,
+    @Address NVARCHAR(255),
+    @NeighborhoodId INT,
+    @PaymentType NVARCHAR(255),
+    @TotalAmount DECIMAL(18, 2),
+    @CreatedAt DATETIME
+AS
+BEGIN
+    -- Validar que la venta exista
+    IF NOT EXISTS (SELECT 1 FROM Sale WHERE Id = @SaleId)
+    BEGIN
+        RAISERROR('La venta no existe.', 16, 5);
+        RETURN;
+    END
+
+    -- Validar que el usuario exista
+    IF NOT EXISTS (SELECT 1 FROM [Users] WHERE Id = @UserId)
+    BEGIN
+        RAISERROR('El usuario no existe.', 16, 6);
+        RETURN;
+    END
+
+    -- Validar que el cliente exista
+    IF NOT EXISTS (SELECT 1 FROM Customer WHERE Id = @CustomerId)
+    BEGIN
+        RAISERROR('El cliente no existe.', 16, 7);
+        RETURN;
+    END
+
+    -- Validar que el barrio exista
+    IF NOT EXISTS (SELECT 1 FROM Neighborhood WHERE Id = @NeighborhoodId)
+    BEGIN
+        RAISERROR('El barrio no existe.', 16, 8);
+        RETURN;
+    END
+
+    -- Validar otras condiciones según sea necesario
+
+    -- Actualizar la venta
+    UPDATE Sale
+    SET UserId = @UserId,
+        CustomerId = @CustomerId,
+        Address = @Address,
+        NeighborhoodId = @NeighborhoodId,
+        PaymentType = @PaymentType,
+        TotalAmount = @TotalAmount,
+        CreatedAt = @CreatedAt
+    WHERE Id = @SaleId;
 END;
 GO

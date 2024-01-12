@@ -52,6 +52,7 @@
     <Compile Include="Interface\IModuleRepository.cs" />
     <Compile Include="Interface\IProductCategoryRepository.cs" />
     <Compile Include="Interface\IProductRepository.cs" />
+    <Compile Include="Interface\ISaleRepository.cs" />
     <Compile Include="Interface\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Repository\NeighborhoodRepository.cs" />
     <Compile Include="Repository\ProductCategoryRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\SaleRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
