@@ -854,3 +854,77 @@ BEGIN
     WHERE Id = @SaleId;
 END;
 GO
+
+-- Create SaleDetail
+CREATE PROCEDURE CreateSaleDetail
+    @SaleId INT,
+    @ProductId INT,
+    @Amount DECIMAL(18, 2),
+    @Quantity INT,
+    @CreatetAt DATETIME
+AS
+BEGIN
+    -- Validation: Add your custom validation logic here
+    IF @Quantity <= 0
+    BEGIN
+        RAISERROR('La cantidad debe ser superior a cero.', 16, 1);
+        RETURN;
+    END
+
+    INSERT INTO SaleDetail (SaleId, ProductId, Amount, Quantity, CreatetAt)
+    VALUES (@SaleId, @ProductId, @Amount, @Quantity, @CreatetAt);
+END
+GO
+
+-- Update SaleDetail
+CREATE PROCEDURE UpdateSaleDetail
+    @Id INT,
+    @SaleId INT,
+    @ProductId INT,
+    @Amount DECIMAL(18, 2),
+    @Quantity INT,
+    @CreatetAt DATETIME
+AS
+BEGIN
+    -- Validation: Add your custom validation logic here
+    IF @Quantity <= 0
+    BEGIN
+        RAISERROR('La cantidad debe ser superior a cero.', 16, 1);
+        RETURN;
+    END
+
+    UPDATE SaleDetail
+    SET SaleId = @SaleId, ProductId = @ProductId, Amount = @Amount, Quantity = @Quantity, CreatetAt = @CreatetAt
+    WHERE Id = @Id;
+END
+GO
+
+-- Get SaleDetail by Id
+CREATE PROCEDURE sp_GetSaleDetail
+    @Id INT
+AS
+BEGIN
+    SELECT *
+    FROM SaleDetail
+    WHERE Id = @Id;
+END
+GO
+
+-- Delete SaleDetail
+CREATE PROCEDURE DeleteSaleDetail
+    @Id INT
+AS
+BEGIN
+    DELETE FROM SaleDetail
+    WHERE Id = @Id;
+END
+GO
+
+-- Get all SaleDetails
+CREATE PROCEDURE GetAllSaleDetails
+AS
+BEGIN
+    SELECT *
+    FROM SaleDetail;
+END
+GO
