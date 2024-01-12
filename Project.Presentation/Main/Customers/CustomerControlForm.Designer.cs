@@ -34,8 +34,9 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAction = new System.Windows.Forms.Button();
             this.checkBox = new System.Windows.Forms.CheckBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnAction = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -84,6 +85,30 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Teléfono:";
             // 
+            // checkBox
+            // 
+            this.checkBox.AutoSize = true;
+            this.checkBox.Location = new System.Drawing.Point(180, 64);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(107, 22);
+            this.checkBox.TabIndex = 7;
+            this.checkBox.Text = "Sin nombre";
+            this.checkBox.UseVisualStyleBackColor = true;
+            this.checkBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Image = global::Project.Presentation.Properties.Resources._24_clear;
+            this.btnClear.Location = new System.Drawing.Point(81, 160);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnClear.Size = new System.Drawing.Size(100, 40);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "Limpiar";
+            this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // btnAction
             // 
             this.btnAction.Image = global::Project.Presentation.Properties.Resources._24_save;
@@ -97,22 +122,12 @@
             this.btnAction.UseVisualStyleBackColor = true;
             this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
             // 
-            // checkBox
-            // 
-            this.checkBox.AutoSize = true;
-            this.checkBox.Location = new System.Drawing.Point(180, 64);
-            this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(107, 22);
-            this.checkBox.TabIndex = 7;
-            this.checkBox.Text = "Sin nombre";
-            this.checkBox.UseVisualStyleBackColor = true;
-            this.checkBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // CustomerControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(299, 212);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.checkBox);
             this.Controls.Add(this.btnAction);
             this.Controls.Add(this.txtPhone);
@@ -144,5 +159,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAction;
         private System.Windows.Forms.CheckBox checkBox;
+        private System.Windows.Forms.Button btnClear;
     }
 }

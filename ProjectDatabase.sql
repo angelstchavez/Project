@@ -537,7 +537,7 @@ CREATE PROCEDURE CreateCustomer
     @CreatedAt DATETIME
 AS
 BEGIN
-    IF NOT EXISTS (SELECT 1 FROM Customer WHERE Name = @Name)
+    IF NOT EXISTS (SELECT 1 FROM Customer WHERE Phone = @Phone)
     BEGIN
         INSERT INTO Customer (Name, Phone, CreatedAt)
         VALUES (@Name, @Phone, @CreatedAt);
@@ -545,7 +545,7 @@ BEGIN
     END
     ELSE
     BEGIN
-        RAISERROR('Ya existe un cliente con este nombre.', 16, 1);
+        RAISERROR('Ya existe un cliente con este número de teléfono.', 16, 1);
     END
 END;
 GO

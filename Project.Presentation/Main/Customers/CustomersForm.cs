@@ -3,6 +3,7 @@ using Project.Entity;
 using Project.Presentation.Main.Bills;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -80,6 +81,7 @@ namespace Project.Presentation.Main.Customers
             customerControlForm.StartPosition = FormStartPosition.CenterParent;
             customerControlForm.ShowDialog();
             LoadCustomers();
+            LoadCustomerCounts();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -95,6 +97,15 @@ namespace Project.Presentation.Main.Customers
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Verificar si la celda en la columna "Nombre" tiene el valor "Sin nombre"
+            if (dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value != null && dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString() == "Sin nombre")
+            {
+                dataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Info;
+            }
         }
     }
 }

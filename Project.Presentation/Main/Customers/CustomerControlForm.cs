@@ -156,5 +156,11 @@ namespace Project.Presentation.Main.Customers
                 txtName.Text = string.Empty;
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtName.Clear();
+            txtPhone.Clear();
+        }
     }
 }
