@@ -93,9 +93,29 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16_basura {
+            get {
+                object obj = ResourceManager.GetObject("_16_basura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _16_config {
             get {
                 object obj = ResourceManager.GetObject("_16_config", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _16_lupa {
+            get {
+                object obj = ResourceManager.GetObject("_16_lupa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

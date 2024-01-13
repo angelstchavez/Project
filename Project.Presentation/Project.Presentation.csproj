@@ -166,6 +166,12 @@
     <Compile Include="Main\Sales\OrderControlForm.Designer.cs">
       <DependentUpon>OrderControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Sales\SaleControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Sales\SaleControlForm.Designer.cs">
+      <DependentUpon>SaleControlForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Sales\SalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Sales\OrderControlForm.resx">
       <DependentUpon>OrderControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Sales\SaleControlForm.resx">
+      <DependentUpon>SaleControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Sales\SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>
@@ -392,6 +401,8 @@
     <None Include="Image\24px\24-save.png" />
     <None Include="Image\24px\24-clear.png" />
     <None Include="Image\24px\24-whatsapp.png" />
+    <None Include="Image\16px\16-basura.png" />
+    <None Include="Image\16px\16-lupa.png" />
     <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

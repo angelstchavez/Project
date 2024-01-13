@@ -21,13 +21,13 @@ namespace Project.Presentation.Main.Sales
 
         private void OpenNewForm(Form module)
         {
-            this.panel.Controls.Clear();
+            this.panelBase.Controls.Clear();
             module.TopLevel = false;
             module.Dock = DockStyle.Fill;
-            this.panel.Controls.Add(module);
-            this.panel.Tag = module;
+            this.panelBase.Controls.Add(module);
+            this.panelBase.Tag = module;
             module.Show();
-            this.panel.BringToFront();
+            this.panelBase.BringToFront();
         }
 
         private void ToggleMainButtonsState(bool state, Button button)
@@ -56,7 +56,7 @@ namespace Project.Presentation.Main.Sales
 
         private void btnNewOrder_Click(object sender, System.EventArgs e)
         {
-            OpenModule(new OrderControlForm(), btnNewOrder);
+            OpenModule(new SaleControlForm(), btnNewOrder);
         }
     }
 }
