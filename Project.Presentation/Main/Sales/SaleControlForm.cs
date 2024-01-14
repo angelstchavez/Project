@@ -15,6 +15,7 @@ namespace Project.Presentation.Main.Sales
         #region Fields
 
         //Services
+        private readonly TransportationCompanyService transportationCompanyService;
         private readonly ProductCategoryService productCategoryService;
         private readonly ProductService productService;
         private readonly NeighborhoodService neighborhoodService;
@@ -33,12 +34,14 @@ namespace Project.Presentation.Main.Sales
 
         public SaleControlForm()
         {
+            this.transportationCompanyService = new TransportationCompanyService();
             this.productCategoryService = new ProductCategoryService();
             this.productService = new ProductService();
             this.neighborhoodService = new NeighborhoodService();
             InitializeComponent();
             DrawProductCategories();
             LoadCommunes();
+            LoadTransportationCompanies();
         }
 
         #endregion
@@ -235,6 +238,15 @@ namespace Project.Presentation.Main.Sales
 
             // Asignar la lista de números de comunas al ComboBox
             comboBoxCommune.DataSource = communes.ToList();
+        }
+
+        private void LoadTransportationCompanies()
+        {
+            IEnumerable<TransportationCompany> tc = transportationCompanyService.GetAll();
+
+            comboBoxTransportationCompany.DataSource = tc.ToList();
+            comboBoxTransportationCompany.DisplayMember = "Name";
+            comboBoxTransportationCompany.ValueMember = "Id";
         }
 
         #region Events

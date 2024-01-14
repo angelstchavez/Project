@@ -81,6 +81,7 @@ CREATE TABLE TransportationCompany
     Name NVARCHAR(255) NOT NULL,
     CreatedAt DATETIME NOT NULL
 );
+GO
 
 CREATE TABLE Sale (
     Id INT PRIMARY KEY IDENTITY(1,1),
@@ -935,4 +936,52 @@ BEGIN
     SELECT *
     FROM SaleDetail;
 END
+GO
+
+CREATE PROCEDURE CreateTransportationCompany
+    @Name NVARCHAR(255),
+    @CreatedAt DATETIME
+AS
+BEGIN
+    INSERT INTO TransportationCompany (Name, CreatedAt)
+    VALUES (@Name, @CreatedAt);
+END;
+GO
+
+CREATE PROCEDURE UpdateTransportationCompany
+    @Id INT,
+    @Name NVARCHAR(255),
+    @CreatedAt DATETIME
+AS
+BEGIN
+    UPDATE TransportationCompany
+    SET Name = @Name, CreatedAt = @CreatedAt
+    WHERE Id = @Id;
+END;
+GO
+
+CREATE PROCEDURE DeleteTransportationCompany
+    @Id INT
+AS
+BEGIN
+    DELETE FROM TransportationCompany
+    WHERE Id = @Id;
+END;
+GO
+
+CREATE PROCEDURE GetTransportationCompany
+    @Id INT
+AS
+BEGIN
+    SELECT * FROM TransportationCompany
+    WHERE Id = @Id;
+END;
+
+GO
+
+CREATE PROCEDURE GetAllTransportationCompanies
+AS
+BEGIN
+    SELECT * FROM TransportationCompany;
+END;
 GO
