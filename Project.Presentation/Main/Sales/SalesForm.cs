@@ -32,7 +32,7 @@ namespace Project.Presentation.Main.Sales
 
         private void ToggleMainButtonsState(bool state, Button button)
         {
-            List<Button> buttons = new List<Button> { btnNewOrder };
+            List<Button> buttons = new List<Button> { btnNewOrder, btnSaleHistoricDay };
 
             if (buttons.Contains(button))
             {
@@ -52,11 +52,16 @@ namespace Project.Presentation.Main.Sales
 
         #region Events
 
-        #endregion
-
         private void btnNewOrder_Click(object sender, System.EventArgs e)
         {
             OpenModule(new SaleControlForm(), btnNewOrder);
         }
+
+        private void btnSaleHistoricDay_Click(object sender, System.EventArgs e)
+        {
+            OpenModule(new SaleHistoricForm(), btnSaleHistoricDay);
+        }
+
+        #endregion
     }
 }
