@@ -97,8 +97,25 @@ namespace Project.Presentation.Main.Sales
             btnCategory.Dock = DockStyle.Top;
             btnCategory.TextAlign = ContentAlignment.MiddleCenter;
             btnCategory.Cursor = Cursors.Hand;
+            btnCategory.BackColor = Color.White;
+            btnCategory.TextAlign = ContentAlignment.BottomCenter;
+            btnCategory.TextImageRelation = TextImageRelation.ImageAboveText;
 
             btnCategory.Click += new EventHandler(ButtonCategoryEvent);
+
+            // Asignar imágenes según la categoría de productos
+            if (category.Name == "Bebidas")
+            {
+                btnCategory.Image = Properties.Resources._64_drink;
+            }
+            else if (category.Name == "Presentaciones")
+            {
+                btnCategory.Image = Properties.Resources._64_wok;
+            }
+            else if (category.Name == "Acompañantes")
+            {
+                btnCategory.Image = Properties.Resources._64_extra;
+            }
 
             flowCategories.Controls.Add(btnCategory);
         }
@@ -133,7 +150,7 @@ namespace Project.Presentation.Main.Sales
                     btnProduct.Dock = DockStyle.Bottom;
                     btnProduct.TextAlign = ContentAlignment.MiddleCenter;
                     btnProduct.Cursor = Cursors.Hand;
-
+                    btnProduct.BackColor = Color.White;
                     flowProducts.Controls.Add(btnProduct);
 
                     // Manejar el evento de clic para los botones de productos
@@ -223,6 +240,8 @@ namespace Project.Presentation.Main.Sales
                     UpdateDataGridView();
                     UpdateTotalAmount();
                     LoadCommunes();
+                    DrawProductCategories();
+                    flowProducts.Controls.Clear();
                 }
             }
             else
@@ -316,5 +335,29 @@ namespace Project.Presentation.Main.Sales
         }
 
         #endregion
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar si se hizo clic en la columna "Eliminar" y en una fila válida
+            if (e.ColumnIndex == dataGridView.Columns["Eliminar"].Index && e.RowIndex != -1)
+            {
+                // Obtener el ID del producto de la fila seleccionada
+                int productId = Convert.ToInt32(dataGridView.Rows[e.RowIndex].Cells["Id"].Value);
+
+                // Aquí puedes realizar la lógica para eliminar el producto del carrito o de la base de datos
+                // Por ejemplo, si tienes una lista llamada shoppingCartItems, podrías hacer algo como:
+                var itemToRemove = shoppingCartItems.FirstOrDefault(item => item.ProductId == productId);
+                if (itemToRemove != null)
+                {
+                    shoppingCartItems.Remove(itemToRemove);
+                }
+
+                // Eliminar la fila seleccionada del DataGridView
+                dataGridView.Rows.RemoveAt(e.RowIndex);
+
+                // Después de eliminar, actualiza nuevamente el total y cualquier otra lógica necesaria
+                UpdateTotalAmount();
+            }
+        }
     }
 }

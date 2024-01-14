@@ -98,15 +98,16 @@
             this.panelCategories.Controls.Add(this.panelCatTitle);
             this.panelCategories.Location = new System.Drawing.Point(12, 436);
             this.panelCategories.Name = "panelCategories";
-            this.panelCategories.Size = new System.Drawing.Size(443, 278);
+            this.panelCategories.Size = new System.Drawing.Size(492, 278);
             this.panelCategories.TabIndex = 0;
             // 
             // flowCategories
             // 
+            this.flowCategories.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowCategories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowCategories.Location = new System.Drawing.Point(0, 30);
             this.flowCategories.Name = "flowCategories";
-            this.flowCategories.Size = new System.Drawing.Size(439, 244);
+            this.flowCategories.Size = new System.Drawing.Size(488, 244);
             this.flowCategories.TabIndex = 2;
             // 
             // panelCatTitle
@@ -116,7 +117,7 @@
             this.panelCatTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCatTitle.Location = new System.Drawing.Point(0, 0);
             this.panelCatTitle.Name = "panelCatTitle";
-            this.panelCatTitle.Size = new System.Drawing.Size(439, 30);
+            this.panelCatTitle.Size = new System.Drawing.Size(488, 30);
             this.panelCatTitle.TabIndex = 0;
             // 
             // label1
@@ -126,7 +127,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(439, 30);
+            this.label1.Size = new System.Drawing.Size(488, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Categorias de productos disponibles";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,18 +141,18 @@
             this.panelProducts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelProducts.Controls.Add(this.flowProducts);
             this.panelProducts.Controls.Add(this.panel1);
-            this.panelProducts.Location = new System.Drawing.Point(461, 436);
+            this.panelProducts.Location = new System.Drawing.Point(510, 436);
             this.panelProducts.Name = "panelProducts";
-            this.panelProducts.Size = new System.Drawing.Size(541, 278);
+            this.panelProducts.Size = new System.Drawing.Size(492, 278);
             this.panelProducts.TabIndex = 1;
             // 
             // flowProducts
             // 
-            this.flowProducts.BackColor = System.Drawing.Color.White;
+            this.flowProducts.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowProducts.Location = new System.Drawing.Point(0, 30);
             this.flowProducts.Name = "flowProducts";
-            this.flowProducts.Size = new System.Drawing.Size(537, 244);
+            this.flowProducts.Size = new System.Drawing.Size(488, 244);
             this.flowProducts.TabIndex = 2;
             // 
             // panel1
@@ -161,7 +162,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(537, 30);
+            this.panel1.Size = new System.Drawing.Size(488, 30);
             this.panel1.TabIndex = 1;
             // 
             // label2
@@ -171,7 +172,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(537, 30);
+            this.label2.Size = new System.Drawing.Size(488, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Productos disponibles";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,7 +181,7 @@
             // 
             this.panelShoppingCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelShoppingCart.BackColor = System.Drawing.Color.White;
+            this.panelShoppingCart.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelShoppingCart.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelShoppingCart.Controls.Add(this.dataGridView);
             this.panelShoppingCart.Controls.Add(this.panel2);
@@ -198,7 +199,7 @@
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -237,9 +238,11 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView.RowHeadersWidth = 25;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(569, 374);
             this.dataGridView.TabIndex = 2;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // Id
             // 
@@ -313,9 +316,10 @@
             // 
             // labelTotalAmount
             // 
+            this.labelTotalAmount.BackColor = System.Drawing.Color.Green;
             this.labelTotalAmount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTotalAmount.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold);
-            this.labelTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelTotalAmount.ForeColor = System.Drawing.Color.White;
             this.labelTotalAmount.Location = new System.Drawing.Point(0, 0);
             this.labelTotalAmount.Name = "labelTotalAmount";
             this.labelTotalAmount.Size = new System.Drawing.Size(401, 46);
@@ -613,6 +617,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 726);
             this.Controls.Add(this.panelSaleDetail);
             this.Controls.Add(this.panelAmount);

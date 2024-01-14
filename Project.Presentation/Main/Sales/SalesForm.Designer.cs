@@ -64,7 +64,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBase.BackColor = System.Drawing.SystemColors.Control;
-            this.panelBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBase.Location = new System.Drawing.Point(12, 58);
             this.panelBase.Name = "panelBase";
             this.panelBase.Size = new System.Drawing.Size(790, 656);
