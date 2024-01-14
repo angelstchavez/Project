@@ -54,6 +54,7 @@
     <Compile Include="Interface\IProductRepository.cs" />
     <Compile Include="Interface\ISaleDetailRepository.cs" />
     <Compile Include="Interface\ISaleRepository.cs" />
+    <Compile Include="Interface\ITransportationCompanyRepository.cs" />
     <Compile Include="Interface\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\SaleDetailRepository.cs" />
     <Compile Include="Repository\SaleRepository.cs" />
+    <Compile Include="Repository\TransportationCompanyRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

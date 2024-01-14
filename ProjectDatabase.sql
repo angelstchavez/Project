@@ -75,10 +75,18 @@ CREATE TABLE Neighborhood
 );
 GO
 
+CREATE TABLE TransportationCompany
+(
+    Id INT PRIMARY KEY IDENTITY (1,1),
+    Name NVARCHAR(255) NOT NULL,
+    CreatedAt DATETIME NOT NULL
+);
+
 CREATE TABLE Sale (
     Id INT PRIMARY KEY IDENTITY(1,1),
 	UserId INT FOREIGN KEY REFERENCES [Users](Id),
     CustomerId INT FOREIGN KEY REFERENCES Customer(Id),
+    TransportationCompanyId INT FOREIGN KEY REFERENCES TransportationCompany(Id),
     Address NVARCHAR(255),
     NeighborhoodId INT FOREIGN KEY REFERENCES Neighborhood(Id),
     PaymentType NVARCHAR(255),
