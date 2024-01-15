@@ -50,6 +50,7 @@
     <Compile Include="Interface\ICustomerRepository.cs" />
     <Compile Include="Interface\IExpeditureRepository.cs" />
     <Compile Include="Interface\IModuleRepository.cs" />
+    <Compile Include="Interface\IPrintingAreaRepository.cs" />
     <Compile Include="Interface\IProductCategoryRepository.cs" />
     <Compile Include="Interface\IProductRepository.cs" />
     <Compile Include="Interface\ISaleDetailRepository.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="Repository\ExpeditureRepository.cs" />
     <Compile Include="Repository\ModuleRepository.cs" />
     <Compile Include="Repository\NeighborhoodRepository.cs" />
+    <Compile Include="Repository\PrintingAreaRepository.cs" />
     <Compile Include="Repository\ProductCategoryRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\SaleDetailRepository.cs" />

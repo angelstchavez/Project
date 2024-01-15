@@ -106,7 +106,21 @@ CREATE TABLE SaleDetail (
 );
 GO
 
--- Procedures
+CREATE TABLE PrintingArea (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(255),
+    CreatetAt DATETIME
+);
+GO
+
+CREATE TABLE Printer (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name VARCHAR(255),
+    AreaId INT,
+    CreatetAt DATETIME,
+    FOREIGN KEY (AreaId) REFERENCES PrintingArea(Id)
+);
+GO
 
 CREATE PROCEDURE CreateUser
     @Username NVARCHAR(255),
@@ -983,5 +997,105 @@ CREATE PROCEDURE GetAllTransportationCompanies
 AS
 BEGIN
     SELECT * FROM TransportationCompany;
+END;
+GO
+
+CREATE PROCEDURE CreatePrinter
+    @Name VARCHAR(255),
+    @AreaId INT,
+    @CreatetAt DATETIME
+AS
+BEGIN
+    INSERT INTO Printer (Name, AreaId, CreatetAt)
+    VALUES (@Name, @AreaId, @CreatetAt);
+END;
+GO
+
+-- Procedimiento para actualizar en la tabla Printer
+CREATE PROCEDURE UpdatePrinter
+    @Id INT,
+    @Name VARCHAR(255),
+    @AreaId INT,
+    @CreatetAt DATETIME
+AS
+BEGIN
+    UPDATE Printer
+    SET Name = @Name, AreaId = @AreaId, CreatetAt = @CreatetAt
+    WHERE Id = @Id;
+END;
+GO
+
+-- Procedimiento para eliminar en la tabla Printer
+CREATE PROCEDURE DeletePrinter
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Printer
+    WHERE Id = @Id;
+END;
+GO
+
+-- Procedimiento para obtener un registro de la tabla Printer
+CREATE PROCEDURE GetPrinter
+    @Id INT
+AS
+BEGIN
+    SELECT * FROM Printer
+    WHERE Id = @Id;
+END;
+GO
+
+-- Procedimiento para obtener todos los registros de la tabla Printer
+CREATE PROCEDURE GetAllPrinters
+AS
+BEGIN
+    SELECT * FROM Printer;
+END;
+GO
+
+CREATE PROCEDURE CreatePrintingArea
+    @Name VARCHAR(255),
+    @CreatetAt DATETIME
+AS
+BEGIN
+    INSERT INTO PrintingArea (Name, CreatetAt)
+    VALUES (@Name, @CreatetAt);
+END;
+GO
+
+CREATE PROCEDURE UpdatePrintingArea
+    @Id INT,
+    @Name VARCHAR(255),
+    @CreatetAt DATETIME
+AS
+BEGIN
+    UPDATE PrintingArea
+    SET Name = @Name, CreatetAt = @CreatetAt
+    WHERE Id = @Id;
+END;
+GO
+
+CREATE PROCEDURE DeletePrintingArea
+    @Id INT
+AS
+BEGIN
+    DELETE FROM PrintingArea
+    WHERE Id = @Id;
+END;
+GO
+
+CREATE PROCEDURE GetPrintingArea
+    @Id INT
+AS
+BEGIN
+    SELECT * FROM PrintingArea
+    WHERE Id = @Id;
+END;
+GO
+
+CREATE PROCEDURE GetAllPrintingAreas
+AS
+BEGIN
+    SELECT * FROM PrintingArea;
 END;
 GO

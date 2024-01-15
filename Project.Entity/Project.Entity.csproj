@@ -47,6 +47,8 @@
     <Compile Include="ExpenditureDay.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Neighborhood.cs" />
+    <Compile Include="Printer.cs" />
+    <Compile Include="PrintingArea.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
