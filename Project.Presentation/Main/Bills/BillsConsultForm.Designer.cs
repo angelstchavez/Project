@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.Label();
             this.btnCorrect = new System.Windows.Forms.Button();
             this.btnConsult = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Value = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnResalt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,17 +69,18 @@
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.Cantidad,
             this.Category,
             this.Description,
             this.Value,
@@ -91,6 +95,55 @@
             this.dataGridView.Size = new System.Drawing.Size(790, 624);
             this.dataGridView.TabIndex = 10;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.FillWeight = 30.45685F;
+            this.Cantidad.HeaderText = "N°";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Category
+            // 
+            this.Category.FillWeight = 123.1811F;
+            this.Category.HeaderText = "Categoría";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.FillWeight = 123.1811F;
+            this.Description.HeaderText = "Descripción";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // Value
+            // 
+            this.Value.FillWeight = 123.1811F;
+            this.Value.HeaderText = "Valor";
+            this.Value.Name = "Value";
+            this.Value.ReadOnly = true;
+            // 
+            // ColumnValue
+            // 
+            this.ColumnValue.HeaderText = "Value";
+            this.ColumnValue.Name = "ColumnValue";
+            this.ColumnValue.ReadOnly = true;
+            this.ColumnValue.Visible = false;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            this.Date.Visible = false;
             // 
             // button1
             // 
@@ -115,6 +168,7 @@
             this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.txtTotal.Location = new System.Drawing.Point(642, 688);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(160, 26);
             this.txtTotal.TabIndex = 12;
             // 
@@ -147,13 +201,13 @@
             this.btnCorrect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCorrect.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCorrect.FlatAppearance.BorderSize = 0;
-            this.btnCorrect.Image = global::Project.Presentation.Properties.Resources._24_correct;
-            this.btnCorrect.Location = new System.Drawing.Point(531, 12);
+            this.btnCorrect.Image = global::Project.Presentation.Properties.Resources._24_edit;
+            this.btnCorrect.Location = new System.Drawing.Point(553, 12);
             this.btnCorrect.Name = "btnCorrect";
             this.btnCorrect.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnCorrect.Size = new System.Drawing.Size(109, 40);
+            this.btnCorrect.Size = new System.Drawing.Size(87, 40);
             this.btnCorrect.TabIndex = 15;
-            this.btnCorrect.Text = "Corregir";
+            this.btnCorrect.Text = "Editar";
             this.btnCorrect.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCorrect.UseVisualStyleBackColor = true;
             this.btnCorrect.Click += new System.EventHandler(this.btnCorrect_Click);
@@ -173,50 +227,43 @@
             this.btnConsult.UseVisualStyleBackColor = true;
             this.btnConsult.Click += new System.EventHandler(this.btnConsult_Click);
             // 
-            // Id
+            // btnClear
             // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.Image = global::Project.Presentation.Properties.Resources._24_clear;
+            this.btnClear.Location = new System.Drawing.Point(507, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnClear.Size = new System.Drawing.Size(40, 40);
+            this.btnClear.TabIndex = 16;
+            this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // Category
+            // btnResalt
             // 
-            this.Category.HeaderText = "Categoría";
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Descripción";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
-            // Value
-            // 
-            this.Value.HeaderText = "Valor";
-            this.Value.Name = "Value";
-            this.Value.ReadOnly = true;
-            // 
-            // ColumnValue
-            // 
-            this.ColumnValue.HeaderText = "Value";
-            this.ColumnValue.Name = "ColumnValue";
-            this.ColumnValue.ReadOnly = true;
-            this.ColumnValue.Visible = false;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            this.Date.Visible = false;
+            this.btnResalt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnResalt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResalt.FlatAppearance.BorderSize = 0;
+            this.btnResalt.Image = global::Project.Presentation.Properties.Resources._24_correct;
+            this.btnResalt.Location = new System.Drawing.Point(461, 12);
+            this.btnResalt.Name = "btnResalt";
+            this.btnResalt.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnResalt.Size = new System.Drawing.Size(40, 40);
+            this.btnResalt.TabIndex = 17;
+            this.btnResalt.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnResalt.UseVisualStyleBackColor = true;
+            this.btnResalt.Click += new System.EventHandler(this.btnResalt_Click);
             // 
             // BillsConsultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 726);
+            this.Controls.Add(this.btnResalt);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCorrect);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.label1);
@@ -247,10 +294,13 @@
         private System.Windows.Forms.Label txtDate;
         private System.Windows.Forms.Button btnCorrect;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnResalt;
     }
 }

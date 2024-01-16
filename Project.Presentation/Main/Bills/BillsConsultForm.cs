@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Drawing;
 
 namespace Project.Presentation.Main.Bills
 {
@@ -14,6 +15,8 @@ namespace Project.Presentation.Main.Bills
         private bool isSearchEnabled = true;
         private int selectedId = 0;
         private Expenditure selectedExpenditure = new Expenditure();
+        private DataGridViewRow selectedRow;
+
         public BillsConsultForm()
         {
             InitializeComponent();
@@ -37,11 +40,13 @@ namespace Project.Presentation.Main.Bills
                 txtDate.Text = date.ToLongDateString();
 
                 decimal total = 0;
+                
+                int count = 1;
 
                 foreach (var item in expenditures)
                 {
                     // Agrega la fila al DataGridView con el formato de moneda colombiana
-                    dataGridView.Rows.Add(new object[] { item.Id, item.Category, item.Description, FormatCurrency(item.Value), item.Value });
+                    dataGridView.Rows.Add(new object[] { item.Id, count++, item.Category, item.Description, FormatCurrency(item.Value), item.Value });
 
                     // Suma el valor al total
                     total += item.Value;
@@ -116,6 +121,30 @@ namespace Project.Presentation.Main.Bills
             {
                 MessageBox.Show("Por favor, seleccione una fila antes de hacer clic en 'Corregir'.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnResalt_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                selectedRow = dataGridView.SelectedRows[0];
+
+                selectedRow.DefaultCellStyle.BackColor = Color.PaleGreen;
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una fila antes de cambiar el color.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                row.DefaultCellStyle.BackColor = dataGridView.DefaultCellStyle.BackColor;
+            }
+
+            selectedRow = null;
         }
     }
 }
