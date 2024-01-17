@@ -1132,3 +1132,27 @@ BEGIN
         CONVERT(DATE, s.CreatedAt) = CONVERT(DATE, @Today);
 END;
 GO
+
+CREATE PROCEDURE GetProductSalesForToday
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Today DATETIME = GETDATE();
+
+    SELECT
+        p.Name AS ProductName,
+        SUM(sd.Quantity) AS TotalQuantity,
+        SUM(sd.Quantity * p.Price) AS TotalAmount
+    FROM
+        Sale s
+    INNER JOIN
+        SaleDetail sd ON s.Id = sd.SaleId
+    INNER JOIN
+        Product p ON sd.ProductId = p.Id
+    WHERE
+        CONVERT(DATE, s.CreatedAt) = CONVERT(DATE, @Today)
+    GROUP BY
+        p.Name;
+END;
+GO

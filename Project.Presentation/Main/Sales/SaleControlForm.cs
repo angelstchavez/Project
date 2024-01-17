@@ -539,8 +539,14 @@ namespace Project.Presentation.Main.Sales
 
         private void btnCreateSale_Click(object sender, EventArgs e)
         {
-            // Obtener el cliente para la venta
-            Customer saleCustomer = GetCustomer();
+            if (!shoppingCartItems.Any())
+            {
+                MessageBox.Show("Agregue por lo menos un producto a la venta.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+                // Obtener el cliente para la venta
+                Customer saleCustomer = GetCustomer();
 
             // Verificar si se obtuvo un cliente válido antes de asignarlo a la venta
             if (saleCustomer != null)

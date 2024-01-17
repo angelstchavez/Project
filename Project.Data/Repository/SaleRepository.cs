@@ -85,6 +85,18 @@ namespace Project.Data.Repository
             }
         }
 
+        public IEnumerable<DetailedProduct> GetProductSalesForToday()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var products = connection.Query<DetailedProduct>("GetProductSalesForToday", commandType: CommandType.StoredProcedure);
+
+                return products;
+            }
+        }
+
         public IEnumerable<DetailedSale> GetSalesForToday()
         {
             using (var connection = new SqlConnection(ConnectionString))

@@ -7,5 +7,7 @@ namespace Project.Data.Interface
     public interface ISaleRepository : IGenericRepository<Sale>
     {
         IEnumerable<DetailedSale> GetSalesForToday();
+
+        IEnumerable<DetailedProduct> GetProductSalesForToday();
     }
 }
