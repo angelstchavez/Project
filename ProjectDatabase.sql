@@ -748,9 +748,11 @@ CREATE PROCEDURE CreateSale
     @CustomerId INT,
     @Address NVARCHAR(255),
     @NeighborhoodId INT,
+    @TransportationCompanyId INT,
     @PaymentType NVARCHAR(255),
     @TotalAmount DECIMAL(18, 2),
-    @CreatedAt DATETIME
+    @CreatedAt DATETIME,
+    @SaleId INT OUTPUT -- Agrega un parámetro de salida para el ID de la venta
 AS
 BEGIN
     -- Validar que el usuario exista
@@ -777,8 +779,11 @@ BEGIN
     -- Validar otras condiciones según sea necesario
 
     -- Insertar la venta
-    INSERT INTO Sale (UserId, CustomerId, Address, NeighborhoodId, PaymentType, TotalAmount, CreatedAt)
-    VALUES (@UserId, @CustomerId, @Address, @NeighborhoodId, @PaymentType, @TotalAmount, @CreatedAt);
+    INSERT INTO Sale (UserId, CustomerId, Address, NeighborhoodId, TransportationCompanyId,  PaymentType, TotalAmount, CreatedAt)
+    VALUES (@UserId, @CustomerId, @Address, @NeighborhoodId, @TransportationCompanyId, @PaymentType, @TotalAmount, @CreatedAt);
+
+    -- Obtener el ID generado
+    SET @SaleId = SCOPE_IDENTITY();
 END;
 GO
 

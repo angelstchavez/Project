@@ -3,6 +3,7 @@ using Project.Data.Connection;
 using Project.Data.Interface;
 using Project.Entity;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Project.Data.Repository
@@ -21,7 +22,17 @@ namespace Project.Data.Repository
             using (var connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                var result = connection.Execute("CreateSaleDetail", saleDetail, commandType: System.Data.CommandType.StoredProcedure);
+
+                var parameters = new
+                {
+                    SaleId = saleDetail.Sale.Id,
+                    ProductId = saleDetail.Product.Id,
+                    Amount = saleDetail.Amount,
+                    Quantity = saleDetail.Quantity,
+                    CreatetAt = saleDetail.CreatetAt
+                };
+
+                var result = connection.Execute("CreateSaleDetail", parameters, commandType: CommandType.StoredProcedure);
                 return result > 0;
             }
         }

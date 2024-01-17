@@ -19,6 +19,9 @@ namespace Project.Presentation.Main.Sales
         private readonly ProductCategoryService productCategoryService;
         private readonly ProductService productService;
         private readonly NeighborhoodService neighborhoodService;
+        private readonly SaleService saleService;
+        private readonly SaleDetailService saleDetailService;
+        private readonly CustomerService customerService;
 
         //Internal fields
         public static int productCategoryId;
@@ -38,6 +41,9 @@ namespace Project.Presentation.Main.Sales
             this.productCategoryService = new ProductCategoryService();
             this.productService = new ProductService();
             this.neighborhoodService = new NeighborhoodService();
+            this.saleService = new SaleService();
+            this.saleDetailService = new SaleDetailService();
+            this.customerService = new CustomerService();
             InitializeComponent();
             DrawProductCategories();
             LoadCommunes();
@@ -204,8 +210,10 @@ namespace Project.Presentation.Main.Sales
             // Agregar las filas actualizadas
             foreach (var item in shoppingCartItems)
             {
+                decimal price = item.TotalPrice / item.Quantity;
+
                 // Agregar una nueva fila con la información del carrito
-                int rowIndex = dataGridView.Rows.Add(item.ProductId, item.ProductName, item.Quantity, item.TotalPrice.ToString("C"));
+                int rowIndex = dataGridView.Rows.Add(item.ProductId, item.ProductName, price, item.Quantity, item.TotalPrice, item.TotalPrice.ToString("C"));
 
                 // Configurar el botón eliminar en la última columna
                 dataGridView.Rows[rowIndex].Cells["Eliminar"].Value = "Eliminar";
@@ -266,6 +274,175 @@ namespace Project.Presentation.Main.Sales
             comboBoxTransportationCompany.DataSource = tc.ToList();
             comboBoxTransportationCompany.DisplayMember = "Name";
             comboBoxTransportationCompany.ValueMember = "Id";
+        }
+
+        private bool RegistrarVenta(List<ProductoVenta> productos, int userId, int customerId, string address, int neighborhoodId, string paymentType)
+        {
+            try
+            {
+                Sale venta = new Sale
+                {
+                    User = new User { Id = userId },
+                    Customer = new Customer { Id = customerId },
+                    Address = address,
+                    Neighborhood = new Neighborhood { Id = neighborhoodId },
+                    TransportationCompany = new TransportationCompany() { Id = Convert.ToInt32(comboBoxTransportationCompany.SelectedValue) },
+                    PaymentType = paymentType,
+                    TotalAmount = CalcularTotal(dataGridView),
+                    CreatedAt = DateTime.Now
+                };
+
+                int saleId = saleService.Create(venta);
+
+
+                foreach (var producto in productos)
+                {
+                    SaleDetail saleDetail = new SaleDetail
+                    {
+                        Sale = new Sale() { Id = saleId },
+                        Product = producto.Producto,
+                        //Aqui 
+                        Amount = producto.Producto.Price * producto.Cantidad,
+                        Quantity = producto.Cantidad,
+                        CreatetAt = DateTime.Now
+                    };
+
+                    saleDetailService.Create(saleDetail);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al registrar la venta: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private decimal CalcularTotal(DataGridView dataGridView)
+        {
+            decimal total = 0;
+
+            foreach (DataGridViewRow fila in dataGridView.Rows)
+            {
+                // Obtener el precio y cantidad de las columnas específicas de tu DataGridView
+                var precioStr = fila.Cells["Precio"].Value?.ToString(); // Asegúrate de ajustar el nombre de la columna según tu estructura
+                var cantidadStr = fila.Cells["Cantidad"].Value?.ToString();
+
+                // Verificar que las celdas no estén vacías
+                if (!string.IsNullOrEmpty(precioStr) && !string.IsNullOrEmpty(cantidadStr))
+                {
+                    // Convertir los valores a decimal e int respectivamente
+                    if (decimal.TryParse(precioStr, out decimal precio) && int.TryParse(cantidadStr, out int cantidad))
+                    {
+                        total += precio * cantidad;
+                    }
+                    else
+                    {
+                        // Manejar la conversión fallida si es necesario
+                        MessageBox.Show("Error de conversión de datos en el DataGridView.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            return total;
+        }
+
+        private Customer GetCustomer()
+        {
+            // Verificar si se seleccionó un cliente
+            if (selectedCustomer != null)
+            {
+                return selectedCustomer;
+            }
+            else
+            {
+                // Crear un nuevo cliente con la información de los TextBox
+                string customerName = txtCustomerName.Text.Trim();
+                string customerPhone = txtCustomerPhone.Text.Trim();
+
+                // Verificar que se haya ingresado al menos el nombre o el teléfono
+                if (!string.IsNullOrEmpty(customerName) || !string.IsNullOrEmpty(customerPhone))
+                {
+                    // Crear un nuevo cliente con los datos ingresados
+                    Customer newCustomer = new Customer
+                    {
+                        Name = customerName,
+                        Phone = customerPhone,
+                        CreatedAt = DateTime.Now
+                    };
+
+                    // Guardar el nuevo cliente en la base de datos
+                    customerService.Create(newCustomer);
+
+                    // Devolver el cliente recién creado con el ID asignado
+                    return newCustomer;
+                }
+                else
+                {
+                    // No se ingresaron datos suficientes para crear un nuevo cliente
+                    return null;
+                }
+            }
+        }
+
+        private string GetPaymentSale()
+        {
+            if (radioButtonCash.Checked)
+            {
+                return "Efectivo";
+            }
+            else if (radioButtonDaviplata.Checked)
+            {
+                return "Daviplata";
+            }
+            else if (radioButtonNequi.Checked)
+            {
+                return "Nequi";
+            }
+            else
+            {
+                return "No seleccionado";
+            }
+        }
+
+        private List<ProductoVenta> ObtenerProductosDesdeDataGridView()
+        {
+            List<ProductoVenta> productos = new List<ProductoVenta>();
+
+            foreach (DataGridViewRow fila in dataGridView.Rows)
+            {
+                // Obtener los datos de la fila
+                var idCellValue = fila.Cells["Id"].Value;
+                var nombreProductoCellValue = fila.Cells["Producto"].Value;
+                var cantidadCellValue = fila.Cells["Cantidad"].Value;
+                var totalCellValue = fila.Cells["Total"].Value;
+
+                // Verificar si los valores son nulos antes de intentar convertirlos
+                if (idCellValue != null && nombreProductoCellValue != null && cantidadCellValue != null && totalCellValue != null)
+                {
+                    // Convertir los valores a los tipos adecuados
+                    int productoId = Convert.ToInt32(idCellValue);
+                    string nombreProducto = nombreProductoCellValue.ToString();
+                    int cantidad = Convert.ToInt32(cantidadCellValue);
+                    decimal total = Convert.ToDecimal(totalCellValue);
+
+                    // Crear una instancia de ProductoVenta y añadirla a la lista
+                    productos.Add(new ProductoVenta
+                    {
+                        Producto = new Product { Id = productoId, Name = nombreProducto },  // Ajusta según la estructura de tu clase Product
+                        Cantidad = cantidad
+                    });
+                }
+                else
+                {
+                    // Manejar el caso en que algún valor sea nulo
+                    MessageBox.Show("Error: Al menos uno de los valores en la fila es nulo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Puedes decidir qué hacer en este caso, como omitir la fila o detener el proceso.
+                }
+            }
+
+            return productos;
         }
 
         #region Events
@@ -359,5 +536,49 @@ namespace Project.Presentation.Main.Sales
                 UpdateTotalAmount();
             }
         }
+
+        private void btnCreateSale_Click(object sender, EventArgs e)
+        {
+            // Obtener el cliente para la venta
+            Customer saleCustomer = GetCustomer();
+
+            // Verificar si se obtuvo un cliente válido antes de asignarlo a la venta
+            if (saleCustomer != null)
+            {
+                // Crear una lista de productos para la venta (debes llenarla con los datos de tu DataGridView)
+                List<ProductoVenta> productos = ObtenerProductosDesdeDataGridView();
+
+                bool ventaRegistrada = RegistrarVenta(productos, userId: 1, customerId: saleCustomer.Id, address: txtAddressCustomer.Text, neighborhoodId: 1, paymentType: GetPaymentSale());
+
+                if (ventaRegistrada)
+                {
+                    MessageBox.Show("Venta registrada exitosamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Limpiar la lista de productos en el carrito
+                    shoppingCartItems.Clear();
+                    txtCustomerName.Clear();
+                    txtCustomerPhone.Clear();
+                    txtAddressCustomer.Clear();
+
+                    // Actualizar el DataGridView y la cantidad total del valor de la venta
+                    UpdateDataGridView();
+                    UpdateTotalAmount();
+                    LoadCommunes();
+                    DrawProductCategories();
+                    flowProducts.Controls.Clear();
+                }
+                else
+                {
+                    // Ocurrió un error al registrar la venta
+                    MessageBox.Show("Error al intentar registrar la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+    }
+
+    public class ProductoVenta
+    {
+        public Product Producto { get; set; }
+        public int Cantidad { get; set; }
     }
 }

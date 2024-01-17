@@ -41,11 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelShoppingCart = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panelAmount = new System.Windows.Forms.Panel();
@@ -55,7 +50,7 @@
             this.txtToDiscount = new System.Windows.Forms.TextBox();
             this.comboBoxTransportationCompany = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCreateSale = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButtonCash = new System.Windows.Forms.RadioButton();
@@ -75,6 +70,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelCategories.SuspendLayout();
             this.panelCatTitle.SuspendLayout();
             this.panelProducts.SuspendLayout();
@@ -214,8 +216,10 @@
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Producto,
+            this.Precio,
             this.Cantidad,
             this.Total,
+            this.TotalReal,
             this.Eliminar});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -243,43 +247,6 @@
             this.dataGridView.Size = new System.Drawing.Size(569, 374);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Producto
-            // 
-            this.Producto.FillWeight = 162.4365F;
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.FillWeight = 85.93887F;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.FillWeight = 85.93887F;
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.FillWeight = 65.68576F;
-            this.Eliminar.HeaderText = "Acción";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // panel2
             // 
@@ -336,7 +303,7 @@
             this.panelSaleDetail.Controls.Add(this.txtToDiscount);
             this.panelSaleDetail.Controls.Add(this.comboBoxTransportationCompany);
             this.panelSaleDetail.Controls.Add(this.btnClear);
-            this.panelSaleDetail.Controls.Add(this.button3);
+            this.panelSaleDetail.Controls.Add(this.btnCreateSale);
             this.panelSaleDetail.Controls.Add(this.label10);
             this.panelSaleDetail.Controls.Add(this.groupBox1);
             this.panelSaleDetail.Controls.Add(this.label9);
@@ -401,20 +368,21 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button3
+            // btnCreateSale
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(203, 268);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 40);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Registrar venta";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCreateSale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCreateSale.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateSale.FlatAppearance.BorderSize = 0;
+            this.btnCreateSale.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCreateSale.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateSale.ForeColor = System.Drawing.Color.White;
+            this.btnCreateSale.Location = new System.Drawing.Point(203, 268);
+            this.btnCreateSale.Name = "btnCreateSale";
+            this.btnCreateSale.Size = new System.Drawing.Size(193, 40);
+            this.btnCreateSale.TabIndex = 8;
+            this.btnCreateSale.Text = "Registrar venta";
+            this.btnCreateSale.UseVisualStyleBackColor = false;
+            this.btnCreateSale.Click += new System.EventHandler(this.btnCreateSale_Click);
             // 
             // label10
             // 
@@ -613,6 +581,56 @@
             this.label4.Text = "Detalles de la venta";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Producto
+            // 
+            this.Producto.FillWeight = 162.4365F;
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.FillWeight = 85.93887F;
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Total
+            // 
+            this.Total.FillWeight = 85.93887F;
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            this.Total.ReadOnly = true;
+            // 
+            // TotalReal
+            // 
+            this.TotalReal.HeaderText = "TotalReal";
+            this.TotalReal.Name = "TotalReal";
+            this.TotalReal.ReadOnly = true;
+            this.TotalReal.Visible = false;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.FillWeight = 65.68576F;
+            this.Eliminar.HeaderText = "Acción";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // SaleControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -679,18 +697,20 @@
         private System.Windows.Forms.RadioButton radioButtonNequi;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCreateSale;
         private System.Windows.Forms.ComboBox comboBoxTransportationCompany;
         private System.Windows.Forms.Label labelTotalAmount;
         private System.Windows.Forms.TextBox txtToDiscount;
         private System.Windows.Forms.CheckBox checkBoxToDiscount;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.FlowLayoutPanel flowCategories;
         private System.Windows.Forms.FlowLayoutPanel flowProducts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalReal;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

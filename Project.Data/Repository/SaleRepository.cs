@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
 using Dapper;
+using Project.Data.Generic;
 
 namespace Project.Data.Repository
 {
@@ -17,7 +18,7 @@ namespace Project.Data.Repository
             ConnectionString = MasterConnection.ConnectionString;
         }
 
-        public bool Create(Sale entity)
+        public int Create(Sale entity)
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
             {
@@ -29,15 +30,24 @@ namespace Project.Data.Repository
                     CustomerId = entity.Customer.Id,
                     Address = entity.Address,
                     NeighborhoodId = entity.Neighborhood.Id,
+                    TransportationCompanyId = entity.TransportationCompany.Id,
                     PaymentType = entity.PaymentType,
                     TotalAmount = entity.TotalAmount,
-                    CreatedAt = entity.CreatedAt
+                    CreatedAt = entity.CreatedAt,
+                    SaleId = 0,
                 };
 
-                dbConnection.Execute("CreateSale", parameters, commandType: CommandType.StoredProcedure);
-            }
+                // Utilizar DynamicParameters para manejar parámetros de salida
+                var dynamicParameters = new DynamicParameters(parameters);
+                dynamicParameters.Add("@SaleId", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
-            return true;
+                dbConnection.Execute("CreateSale", dynamicParameters, commandType: CommandType.StoredProcedure);
+
+                // Obtener el valor del parámetro de salida SaleId
+                int saleId = dynamicParameters.Get<int>("@SaleId");
+
+                return saleId;
+            }
         }
 
         public bool Delete(int id)
@@ -96,6 +106,11 @@ namespace Project.Data.Repository
             }
 
             return true;
+        }
+
+        bool IGenericRepository<Sale>.Create(Sale entity)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

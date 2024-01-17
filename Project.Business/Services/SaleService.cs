@@ -1,4 +1,6 @@
-﻿using Project.Data.Interface;
+﻿using Project.Data.Generic;
+using Project.Data.Interface;
+using Project.Data.Repository;
 using Project.Entity;
 using System.Collections.Generic;
 
@@ -6,14 +8,14 @@ namespace Project.Business.Services
 {
     public class SaleService : ISaleRepository
     {
-        private readonly ISaleRepository saleRepository;
+        private readonly SaleRepository saleRepository;
 
-        public SaleService(ISaleRepository saleRepository)
+        public SaleService()
         {
-            this.saleRepository = saleRepository;
+            this.saleRepository = new SaleRepository();
         }
 
-        public bool Create(Sale entity)
+        public int Create(Sale entity)
         {
             return saleRepository.Create(entity);
         }
@@ -36,6 +38,11 @@ namespace Project.Business.Services
         public bool Update(Sale entity)
         {
             return saleRepository.Update(entity);
+        }
+
+        bool IGenericRepository<Sale>.Create(Sale entity)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
