@@ -1104,3 +1104,31 @@ BEGIN
     SELECT * FROM PrintingArea;
 END;
 GO
+
+CREATE PROCEDURE GetSalesForToday
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Today DATETIME = GETDATE();
+
+    SELECT
+        s.Id AS SaleId,
+        c.Name AS CustomerName,
+        s.Address AS ShippingAddress,
+        n.Name AS NeighborhoodName,
+        tc.Name AS TransportationCompanyName,
+        s.PaymentType,
+        s.TotalAmount
+    FROM
+        Sale s
+    INNER JOIN
+        Customer c ON s.CustomerId = c.Id
+    INNER JOIN
+        Neighborhood n ON s.NeighborhoodId = n.Id
+    INNER JOIN
+        TransportationCompany tc ON s.TransportationCompanyId = tc.Id
+    WHERE
+        CONVERT(DATE, s.CreatedAt) = CONVERT(DATE, @Today);
+END;
+GO

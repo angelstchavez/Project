@@ -35,6 +35,11 @@ namespace Project.Business.Services
             return saleRepository.GetAll();
         }
 
+        public IEnumerable<DetailedSale> GetSalesForToday()
+        {
+            return saleRepository.GetSalesForToday();
+        }
+
         public bool Update(Sale entity)
         {
             return saleRepository.Update(entity);

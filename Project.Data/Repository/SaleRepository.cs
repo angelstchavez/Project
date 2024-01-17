@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using Dapper;
 using Project.Data.Generic;
+using System;
 
 namespace Project.Data.Repository
 {
@@ -81,6 +82,18 @@ namespace Project.Data.Repository
                 dbConnection.Open();
 
                 return dbConnection.Query<Sale>("GetAllSales", commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public IEnumerable<DetailedSale> GetSalesForToday()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var sales = connection.Query<DetailedSale>("GetSalesForToday", commandType: CommandType.StoredProcedure);
+
+                return sales;
             }
         }
 

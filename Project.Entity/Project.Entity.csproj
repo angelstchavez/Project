@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="DetailedSale.cs" />
     <Compile Include="Expenditure.cs" />
     <Compile Include="ExpenditureDay.cs" />
     <Compile Include="Module.cs" />

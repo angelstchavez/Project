@@ -548,7 +548,7 @@ namespace Project.Presentation.Main.Sales
                 // Crear una lista de productos para la venta (debes llenarla con los datos de tu DataGridView)
                 List<ProductoVenta> productos = ObtenerProductosDesdeDataGridView();
 
-                bool ventaRegistrada = RegistrarVenta(productos, userId: 1, customerId: saleCustomer.Id, address: txtAddressCustomer.Text, neighborhoodId: 1, paymentType: GetPaymentSale());
+                bool ventaRegistrada = RegistrarVenta(productos, userId: 6, customerId: saleCustomer.Id, address: txtAddressCustomer.Text, neighborhoodId: 1, paymentType: GetPaymentSale());
 
                 if (ventaRegistrada)
                 {
