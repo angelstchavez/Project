@@ -9,5 +9,11 @@ namespace Project.Data.Interface
         IEnumerable<DetailedSale> GetSalesForToday();
 
         IEnumerable<DetailedProduct> GetProductSalesForToday();
+
+        decimal GetCashSalesForToday();
+
+        decimal GetDaviplataSalesForToday();
+
+        decimal GetNequiSalesForToday();
     }
 }

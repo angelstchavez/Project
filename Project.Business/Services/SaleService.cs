@@ -35,6 +35,21 @@ namespace Project.Business.Services
             return saleRepository.GetAll();
         }
 
+        public decimal GetCashSalesForToday()
+        {
+            return saleRepository.GetCashSalesForToday();
+        }
+
+        public decimal GetDaviplataSalesForToday()
+        {
+            return saleRepository.GetDaviplataSalesForToday();
+        }
+
+        public decimal GetNequiSalesForToday()
+        {
+            return saleRepository.GetNequiSalesForToday();
+        }
+
         public IEnumerable<DetailedProduct> GetProductSalesForToday()
         {
             return saleRepository.GetProductSalesForToday();

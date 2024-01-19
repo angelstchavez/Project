@@ -1156,3 +1156,36 @@ BEGIN
         p.Name;
 END;
 GO
+
+CREATE PROCEDURE GetCashSalesForToday
+AS
+BEGIN
+    DECLARE @Today DATE = CONVERT(DATE, GETDATE());
+
+    SELECT SUM(TotalAmount) AS CashSalesAmount
+    FROM Sale
+    WHERE PaymentType = 'Efectivo' AND CONVERT(DATE, CreatedAt) = @Today;
+END;
+GO
+
+CREATE PROCEDURE GetDaviplataSalesForToday
+AS
+BEGIN
+    DECLARE @Today DATE = CONVERT(DATE, GETDATE());
+
+    SELECT SUM(TotalAmount) AS DaviplataSalesAmount
+    FROM Sale
+    WHERE PaymentType = 'Daviplata' AND CONVERT(DATE, CreatedAt) = @Today;
+END;
+GO
+
+CREATE PROCEDURE GetNequiSalesForToday
+AS
+BEGIN
+    DECLARE @Today DATE = CONVERT(DATE, GETDATE());
+
+    SELECT SUM(TotalAmount) AS NequiSalesAmount
+    FROM Sale
+    WHERE PaymentType = 'Nequi' AND CONVERT(DATE, CreatedAt) = @Today;
+END;
+GO

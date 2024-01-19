@@ -44,13 +44,20 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelTotalNequi = new System.Windows.Forms.Label();
+            this.labelTotalDaviplata = new System.Windows.Forms.Label();
+            this.labelTotalCash = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.totalSalesLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnResalt = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.totalSalesLabel = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,17 +65,11 @@
             this.Pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -94,6 +95,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
+            this.Contador,
             this.Cliente,
             this.Direccion,
             this.Barrio,
@@ -257,9 +259,9 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.labelTotalNequi);
+            this.panel1.Controls.Add(this.labelTotalDaviplata);
+            this.panel1.Controls.Add(this.labelTotalCash);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -269,6 +271,88 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(332, 204);
             this.panel1.TabIndex = 28;
+            // 
+            // labelTotalNequi
+            // 
+            this.labelTotalNequi.Font = new System.Drawing.Font("Arial", 14F);
+            this.labelTotalNequi.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTotalNequi.Location = new System.Drawing.Point(62, 174);
+            this.labelTotalNequi.Name = "labelTotalNequi";
+            this.labelTotalNequi.Size = new System.Drawing.Size(263, 22);
+            this.labelTotalNequi.TabIndex = 38;
+            this.labelTotalNequi.Text = "Efectivo:";
+            this.labelTotalNequi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTotalDaviplata
+            // 
+            this.labelTotalDaviplata.Font = new System.Drawing.Font("Arial", 14F);
+            this.labelTotalDaviplata.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTotalDaviplata.Location = new System.Drawing.Point(81, 130);
+            this.labelTotalDaviplata.Name = "labelTotalDaviplata";
+            this.labelTotalDaviplata.Size = new System.Drawing.Size(244, 22);
+            this.labelTotalDaviplata.TabIndex = 37;
+            this.labelTotalDaviplata.Text = "Efectivo:";
+            this.labelTotalDaviplata.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTotalCash
+            // 
+            this.labelTotalCash.Font = new System.Drawing.Font("Arial", 14F);
+            this.labelTotalCash.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTotalCash.Location = new System.Drawing.Point(77, 89);
+            this.labelTotalCash.Name = "labelTotalCash";
+            this.labelTotalCash.Size = new System.Drawing.Size(248, 22);
+            this.labelTotalCash.TabIndex = 36;
+            this.labelTotalCash.Text = "Efectivo:";
+            this.labelTotalCash.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 174);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 18);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "Nequi:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 133);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(78, 18);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Daviplata:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 18);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Efectivo:";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.totalSalesLabel);
+            this.panel3.Location = new System.Drawing.Point(4, 36);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(323, 46);
+            this.panel3.TabIndex = 32;
+            // 
+            // totalSalesLabel
+            // 
+            this.totalSalesLabel.BackColor = System.Drawing.Color.Green;
+            this.totalSalesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.totalSalesLabel.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold);
+            this.totalSalesLabel.ForeColor = System.Drawing.Color.White;
+            this.totalSalesLabel.Location = new System.Drawing.Point(0, 0);
+            this.totalSalesLabel.Name = "totalSalesLabel";
+            this.totalSalesLabel.Size = new System.Drawing.Size(319, 42);
+            this.totalSalesLabel.TabIndex = 30;
+            this.totalSalesLabel.Text = "...";
+            this.totalSalesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -322,28 +406,6 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // totalSalesLabel
-            // 
-            this.totalSalesLabel.BackColor = System.Drawing.Color.Green;
-            this.totalSalesLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.totalSalesLabel.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold);
-            this.totalSalesLabel.ForeColor = System.Drawing.Color.White;
-            this.totalSalesLabel.Location = new System.Drawing.Point(0, 0);
-            this.totalSalesLabel.Name = "totalSalesLabel";
-            this.totalSalesLabel.Size = new System.Drawing.Size(319, 42);
-            this.totalSalesLabel.TabIndex = 30;
-            this.totalSalesLabel.Text = "...";
-            this.totalSalesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.totalSalesLabel);
-            this.panel3.Location = new System.Drawing.Point(4, 36);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(323, 46);
-            this.panel3.TabIndex = 32;
-            // 
             // Id
             // 
             this.Id.HeaderText = "Id";
@@ -351,32 +413,44 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
+            // Contador
+            // 
+            this.Contador.FillWeight = 35.53299F;
+            this.Contador.HeaderText = "N°";
+            this.Contador.Name = "Contador";
+            this.Contador.ReadOnly = true;
+            // 
             // Cliente
             // 
+            this.Cliente.FillWeight = 110.7445F;
             this.Cliente.HeaderText = "Cliente";
             this.Cliente.Name = "Cliente";
             this.Cliente.ReadOnly = true;
             // 
             // Direccion
             // 
+            this.Direccion.FillWeight = 110.7445F;
             this.Direccion.HeaderText = "Dirección";
             this.Direccion.Name = "Direccion";
             this.Direccion.ReadOnly = true;
             // 
             // Barrio
             // 
+            this.Barrio.FillWeight = 110.7445F;
             this.Barrio.HeaderText = "Barrio";
             this.Barrio.Name = "Barrio";
             this.Barrio.ReadOnly = true;
             // 
             // Domicilio
             // 
+            this.Domicilio.FillWeight = 110.7445F;
             this.Domicilio.HeaderText = "Domicilio";
             this.Domicilio.Name = "Domicilio";
             this.Domicilio.ReadOnly = true;
             // 
             // Pago
             // 
+            this.Pago.FillWeight = 110.7445F;
             this.Pago.HeaderText = "Medio de pago";
             this.Pago.Name = "Pago";
             this.Pago.ReadOnly = true;
@@ -390,72 +464,10 @@
             // 
             // Total
             // 
+            this.Total.FillWeight = 110.7445F;
             this.Total.HeaderText = "Total";
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 18);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Efectivo:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 133);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 18);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Daviplata:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 174);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 18);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Nequi:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 14F);
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(241, 89);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 22);
-            this.label7.TabIndex = 36;
-            this.label7.Text = "Efectivo:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 14F);
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label8.Location = new System.Drawing.Point(241, 130);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 22);
-            this.label8.TabIndex = 37;
-            this.label8.Text = "Efectivo:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 14F);
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label9.Location = new System.Drawing.Point(241, 174);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 22);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Efectivo:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // SaleHistoricForm
             // 
@@ -481,8 +493,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -505,7 +517,14 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label totalSalesLabel;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelTotalNequi;
+        private System.Windows.Forms.Label labelTotalDaviplata;
+        private System.Windows.Forms.Label labelTotalCash;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contador;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Barrio;
@@ -513,11 +532,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
     }
 }

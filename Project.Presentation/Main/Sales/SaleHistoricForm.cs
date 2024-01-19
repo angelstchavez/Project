@@ -18,6 +18,7 @@ namespace Project.Presentation.Main.Sales
             InitializeComponent();
             LoadSalesToday();
             LoadDetailedProducts();
+            LoadAmounts();
         }
 
         private void LoadSalesToday()
@@ -31,10 +32,13 @@ namespace Project.Presentation.Main.Sales
                 // Actualizar el label con el total de ventas
                 UpdateTotalSalesLabel(totalSales);
 
+                int counter = 1;
+
                 foreach (var sale in sales)
                 {
                     dataGridView.Rows.Add(new object[] {
                 sale.Id,
+                counter++,
                 sale.CustomerName,
                 sale.ShippingAddress,
                 sale.NeighborhoodName,
@@ -49,6 +53,13 @@ namespace Project.Presentation.Main.Sales
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void LoadAmounts()
+        {
+            labelTotalCash.Text = saleService.GetCashSalesForToday().ToString("C");
+            labelTotalDaviplata.Text = saleService.GetDaviplataSalesForToday().ToString("C");
+            labelTotalNequi.Text = saleService.GetNequiSalesForToday().ToString("C");
         }
 
         private decimal CalculateTotalSales(IEnumerable<DetailedSale> sales)

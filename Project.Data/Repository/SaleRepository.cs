@@ -85,6 +85,42 @@ namespace Project.Data.Repository
             }
         }
 
+        public decimal GetCashSalesForToday()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var result = connection.QueryFirstOrDefault<decimal>("GetCashSalesForToday", commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
+
+        public decimal GetDaviplataSalesForToday()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var result = connection.QueryFirstOrDefault<decimal>("GetDaviplataSalesForToday", commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
+
+        public decimal GetNequiSalesForToday()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var result = connection.QueryFirstOrDefault<decimal>("GetNequiSalesForToday", commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
+
         public IEnumerable<DetailedProduct> GetProductSalesForToday()
         {
             using (var connection = new SqlConnection(ConnectionString))
