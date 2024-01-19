@@ -25,6 +25,7 @@ namespace Project.Presentation.Main.Sales
 
         //Internal fields
         public static int productCategoryId;
+        private int selectedNeighborhoodId;
 
         //Objects
         private Button selectedCategoryButton;
@@ -554,7 +555,10 @@ namespace Project.Presentation.Main.Sales
                 // Crear una lista de productos para la venta (debes llenarla con los datos de tu DataGridView)
                 List<ProductoVenta> productos = ObtenerProductosDesdeDataGridView();
 
-                bool ventaRegistrada = RegistrarVenta(productos, userId: 6, customerId: saleCustomer.Id, address: txtAddressCustomer.Text, neighborhoodId: 1, paymentType: GetPaymentSale());
+                // Asignar el valor de comboBoxNeighborhood_SelectedIndexChanged directamente
+                comboBoxNeighborhood_SelectedIndexChanged(comboBoxNeighborhood, EventArgs.Empty);
+
+                bool ventaRegistrada = RegistrarVenta(productos, userId: 6, customerId: saleCustomer.Id, address: txtAddressCustomer.Text, neighborhoodId: selectedNeighborhoodId, paymentType: GetPaymentSale());
 
                 if (ventaRegistrada)
                 {
@@ -578,6 +582,17 @@ namespace Project.Presentation.Main.Sales
                     // Ocurrió un error al registrar la venta
                     MessageBox.Show("Error al intentar registrar la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void comboBoxNeighborhood_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxNeighborhood.SelectedItem != null)
+            {
+                int selectedNeighborhoodId = Convert.ToInt32(comboBoxNeighborhood.SelectedValue);
+
+                // Guardar el selectedNeighborhoodId en una variable accesible para RegistrarVenta
+                this.selectedNeighborhoodId = selectedNeighborhoodId;
             }
         }
     }
