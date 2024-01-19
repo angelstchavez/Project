@@ -57,6 +57,7 @@
     <Compile Include="Role.cs" />
     <Compile Include="Sale.cs" />
     <Compile Include="SaleDetail.cs" />
+    <Compile Include="SalePerDay.cs" />
     <Compile Include="ShoppingCartItem.cs" />
     <Compile Include="SpendingByCategory.cs" />
     <Compile Include="TransportationCompany.cs" />

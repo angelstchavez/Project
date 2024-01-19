@@ -145,6 +145,18 @@ namespace Project.Data.Repository
             }
         }
 
+        public IEnumerable<SalePerDay> GetTotalSalesPerDay()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var sales = connection.Query<SalePerDay>("GetTotalSalesPerDay", commandType: CommandType.StoredProcedure);
+
+                return sales;
+            }
+        }
+
         public bool Update(Sale entity)
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectionString))

@@ -106,7 +106,7 @@ namespace Project.Presentation.Main.Dashboard
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-
+            OpenModule(new Sales.SaleManagerForm(), btnSales, "Registro de ventas");
         }
 
         private void btnBills_Click(object sender, EventArgs e)

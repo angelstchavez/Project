@@ -160,12 +160,6 @@
     <Compile Include="Main\Products\ProductManagerForm.Designer.cs">
       <DependentUpon>ProductManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\Sales\OrderControlForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main\Sales\OrderControlForm.Designer.cs">
-      <DependentUpon>OrderControlForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main\Sales\SaleControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +171,12 @@
     </Compile>
     <Compile Include="Main\Sales\SaleHistoricForm.Designer.cs">
       <DependentUpon>SaleHistoricForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Sales\SaleManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Sales\SaleManagerForm.Designer.cs">
+      <DependentUpon>SaleManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Main\Sales\SalesForm.cs">
       <SubType>Form</SubType>
@@ -277,14 +277,14 @@
     <EmbeddedResource Include="Main\Products\ProductManagerForm.resx">
       <DependentUpon>ProductManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Main\Sales\OrderControlForm.resx">
-      <DependentUpon>OrderControlForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Main\Sales\SaleControlForm.resx">
       <DependentUpon>SaleControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Sales\SaleHistoricForm.resx">
       <DependentUpon>SaleHistoricForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Sales\SaleManagerForm.resx">
+      <DependentUpon>SaleManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Sales\SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>

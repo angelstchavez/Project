@@ -15,5 +15,7 @@ namespace Project.Data.Interface
         decimal GetDaviplataSalesForToday();
 
         decimal GetNequiSalesForToday();
+
+        IEnumerable<SalePerDay> GetTotalSalesPerDay();
     }
 }

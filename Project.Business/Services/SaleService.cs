@@ -60,6 +60,11 @@ namespace Project.Business.Services
             return saleRepository.GetSalesForToday();
         }
 
+        public IEnumerable<SalePerDay> GetTotalSalesPerDay()
+        {
+            return saleRepository.GetTotalSalesPerDay();
+        }
+
         public bool Update(Sale entity)
         {
             return saleRepository.Update(entity);

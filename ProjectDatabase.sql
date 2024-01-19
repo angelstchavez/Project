@@ -1162,7 +1162,7 @@ AS
 BEGIN
     DECLARE @Today DATE = CONVERT(DATE, GETDATE());
 
-    SELECT SUM(TotalAmount) AS CashSalesAmount
+    SELECT ISNULL(SUM(TotalAmount), 0) AS CashSalesAmount
     FROM Sale
     WHERE PaymentType = 'Efectivo' AND CONVERT(DATE, CreatedAt) = @Today;
 END;
@@ -1173,7 +1173,7 @@ AS
 BEGIN
     DECLARE @Today DATE = CONVERT(DATE, GETDATE());
 
-    SELECT SUM(TotalAmount) AS DaviplataSalesAmount
+    SELECT ISNULL(SUM(TotalAmount), 0) AS DaviplataSalesAmount
     FROM Sale
     WHERE PaymentType = 'Daviplata' AND CONVERT(DATE, CreatedAt) = @Today;
 END;
@@ -1184,8 +1184,24 @@ AS
 BEGIN
     DECLARE @Today DATE = CONVERT(DATE, GETDATE());
 
-    SELECT SUM(TotalAmount) AS NequiSalesAmount
+    SELECT ISNULL(SUM(TotalAmount), 0) AS NequiSalesAmount
     FROM Sale
     WHERE PaymentType = 'Nequi' AND CONVERT(DATE, CreatedAt) = @Today;
+END;
+GO
+
+CREATE PROCEDURE GetTotalSalesPerDay
+AS
+BEGIN
+    SELECT
+        CONVERT(DATE, CreatedAt) AS SaleDate,
+        COUNT(Id) AS TotalSales,
+        SUM(TotalAmount) AS TotalAmount
+    FROM
+        Sale
+    GROUP BY
+        CONVERT(DATE, CreatedAt)
+    ORDER BY
+        SaleDate DESC;
 END;
 GO
