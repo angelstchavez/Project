@@ -133,6 +133,15 @@ namespace Project.Data.Repository
             }
         }
 
+        public int GetSaleCount()
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+                return dbConnection.ExecuteScalar<int>("GetSaleCount", commandType: CommandType.StoredProcedure);
+            }
+        }
+
         public IEnumerable<DetailedSale> GetSalesForToday()
         {
             using (var connection = new SqlConnection(ConnectionString))
@@ -142,6 +151,15 @@ namespace Project.Data.Repository
                 var sales = connection.Query<DetailedSale>("GetSalesForToday", commandType: CommandType.StoredProcedure);
 
                 return sales;
+            }
+        }
+
+        public decimal GetTotalSalesAmount()
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+                return dbConnection.ExecuteScalar<decimal>("GetTotalSalesAmount", commandType: CommandType.StoredProcedure);
             }
         }
 

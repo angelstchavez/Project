@@ -18,10 +18,11 @@ namespace Project.Presentation.Main.Dashboard
             InitializeComponent();
             ValidateControls();
             txtCurrentUser.Text = user.Username;
+            OpenModule(new Home.HomeForm(), btnHome, "Bandeja principal");
         }
 
         #region Functions
-       
+
         private void ValidateControls()
         {
             ModuleService moduleService = new ModuleService();
@@ -122,6 +123,11 @@ namespace Project.Presentation.Main.Dashboard
         private void DashboardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            OpenModule(new Home.HomeForm(), btnHome, "Bandeja principal");
         }
 
         #endregion

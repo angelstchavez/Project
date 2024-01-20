@@ -413,6 +413,16 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _64_customer {
+            get {
+                object obj = ResourceManager.GetObject("_64_customer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _64_drink {
             get {
                 object obj = ResourceManager.GetObject("_64_drink", resourceCulture);
@@ -423,9 +433,29 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _64_expense {
+            get {
+                object obj = ResourceManager.GetObject("_64_expense", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _64_extra {
             get {
                 object obj = ResourceManager.GetObject("_64_extra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _64_sale {
+            get {
+                object obj = ResourceManager.GetObject("_64_sale", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

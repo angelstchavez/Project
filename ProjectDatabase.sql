@@ -1244,3 +1244,38 @@ BEGIN
         SaleDate DESC;
 END;
 GO
+
+CREATE PROCEDURE GetCustomerCount
+AS
+BEGIN
+    SELECT COUNT(*) AS CustomerCount FROM Customer;
+END;
+GO
+
+CREATE PROCEDURE GetSaleCount
+AS
+BEGIN
+    SELECT COUNT(*) AS SaleCount FROM Sale;
+END;
+GO
+
+CREATE PROCEDURE GetExpenditureCount
+AS
+BEGIN
+    SELECT COUNT(*) AS ExpenditureCount FROM Expenditures;
+END;
+GO
+
+CREATE PROCEDURE GetTotalSalesAmount
+AS
+BEGIN
+    SELECT SUM(TotalAmount) AS TotalSalesAmount FROM Sale;
+END;
+GO
+
+CREATE PROCEDURE GetTotalExpenditureAmount
+AS
+BEGIN
+    SELECT SUM(Value) AS TotalExpenditureAmount FROM Expenditures;
+END;
+GO

@@ -55,9 +55,19 @@ namespace Project.Business.Services
             return saleRepository.GetProductSalesForToday();
         }
 
+        public int GetSaleCount()
+        {
+            return saleRepository.GetSaleCount();
+        }
+
         public IEnumerable<DetailedSale> GetSalesForToday()
         {
             return saleRepository.GetSalesForToday();
+        }
+
+        public decimal GetTotalSalesAmount()    
+        {
+            return saleRepository.GetTotalSalesAmount();
         }
 
         public IEnumerable<SalePerDay> GetTotalSalesPerDay()

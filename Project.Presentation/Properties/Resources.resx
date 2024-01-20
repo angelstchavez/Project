@@ -223,11 +223,20 @@
   <data name="_24_whatsapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\24px\24-whatsapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_64_customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\64px\64-customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_64_drink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\64px\64-drink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_64_expense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\64px\64-expense.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="_64_extra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\64px\64-extra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_64_sale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Image\64px\64-sale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_64_wok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Image\64px\64-wok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

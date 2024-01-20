@@ -183,6 +183,24 @@ namespace Project.Data.Repository
                 return dbConnection.Query<SpendingByCategory>("GetTotalExpenditureByCategory", commandType: CommandType.StoredProcedure);
             }
         }
+
+        public int GetExpenditureCount()
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+                return dbConnection.ExecuteScalar<int>("GetExpenditureCount", commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public decimal GetTotalExpenditureAmount()
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+                return dbConnection.ExecuteScalar<decimal>("GetTotalExpenditureAmount", commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }
     

@@ -50,9 +50,19 @@ namespace Project.Business.Services
             return expeditureRepository.GetExpenditureByMonth(month, year);
         }
 
+        public int GetExpenditureCount()
+        {
+            return expeditureRepository.GetExpenditureCount();
+        }
+
         public IEnumerable<SpendingByCategory> GetMonthlyExpenditureByCategory()
         {
             return expeditureRepository.GetMonthlyExpenditureByCategory();
+        }
+
+        public decimal GetTotalExpenditureAmount()
+        {
+            return expeditureRepository.GetTotalExpenditureAmount();
         }
 
         public IEnumerable<SpendingByCategory> GetTotalExpenditureByCategory()

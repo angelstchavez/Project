@@ -15,5 +15,7 @@ namespace Project.Data.Interface
         IEnumerable<SpendingByCategory> GetTotalExpenditureByCategory();
 
         IEnumerable<SpendingByCategory> GetMonthlyExpenditureByCategory();
+        int GetExpenditureCount();
+        decimal GetTotalExpenditureAmount();
     }
 }

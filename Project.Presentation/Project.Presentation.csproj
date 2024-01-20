@@ -429,6 +429,9 @@
     <None Include="Image\24px\24-backup.png" />
     <None Include="Image\24px\24-company.png" />
     <None Include="Image\24px\24-ticket.png" />
+    <None Include="Image\64px\64-customer.png" />
+    <None Include="Image\64px\64-expense.png" />
+    <None Include="Image\64px\64-sale.png" />
     <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
