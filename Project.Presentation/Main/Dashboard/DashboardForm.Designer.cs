@@ -44,12 +44,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtCurrentUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelBase = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTitle = new System.Windows.Forms.Label();
             this.panelSide.SuspendLayout();
             this.buttonsPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +62,7 @@
             this.panelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panelSide.Controls.Add(this.buttonsPanel);
             this.panelSide.Controls.Add(this.panel2);
+            this.panelSide.Controls.Add(this.panel3);
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSide.Location = new System.Drawing.Point(0, 35);
             this.panelSide.Name = "panelSide";
@@ -78,9 +83,9 @@
             this.buttonsPanel.Controls.Add(this.btnMakeOrder);
             this.buttonsPanel.Controls.Add(this.btnHome);
             this.buttonsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonsPanel.Location = new System.Drawing.Point(0, 0);
+            this.buttonsPanel.Location = new System.Drawing.Point(0, 121);
             this.buttonsPanel.Name = "buttonsPanel";
-            this.buttonsPanel.Size = new System.Drawing.Size(170, 681);
+            this.buttonsPanel.Size = new System.Drawing.Size(170, 560);
             this.buttonsPanel.TabIndex = 1;
             // 
             // btnConfig
@@ -333,6 +338,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario actual";
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel3.Controls.Add(this.pictureBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(170, 121);
+            this.panel3.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Project.Presentation.Properties.Resources.Sticker;
+            this.pictureBox1.Location = new System.Drawing.Point(34, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(102, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // panelBase
             // 
             this.panelBase.BackColor = System.Drawing.Color.Gainsboro;
@@ -377,13 +402,15 @@
             this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "DashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Project";
+            this.Text = "MV ARROZ AL WOK";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DashboardForm_FormClosing);
             this.panelSide.ResumeLayout(false);
             this.buttonsPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -410,5 +437,7 @@
         private System.Windows.Forms.Label txtCurrentUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSales;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
