@@ -153,6 +153,16 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _24_backup {
+            get {
+                object obj = ResourceManager.GetObject("_24_backup", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _24_bills {
             get {
                 object obj = ResourceManager.GetObject("_24_bills", resourceCulture);
@@ -176,6 +186,16 @@ namespace Project.Presentation.Properties {
         internal static System.Drawing.Bitmap _24_clear {
             get {
                 object obj = ResourceManager.GetObject("_24_clear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _24_company {
+            get {
+                object obj = ResourceManager.GetObject("_24_company", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +283,29 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _24_licence {
+            get {
+                object obj = ResourceManager.GetObject("_24_licence", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _24_make_sales {
             get {
                 object obj = ResourceManager.GetObject("_24_make_sales", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _24_print {
+            get {
+                object obj = ResourceManager.GetObject("_24_print", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -326,6 +366,16 @@ namespace Project.Presentation.Properties {
         internal static System.Drawing.Bitmap _24_suppliers {
             get {
                 object obj = ResourceManager.GetObject("_24_suppliers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _24_ticket {
+            get {
+                object obj = ResourceManager.GetObject("_24_ticket", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

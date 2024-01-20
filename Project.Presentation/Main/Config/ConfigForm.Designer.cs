@@ -28,63 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnCompany = new System.Windows.Forms.Button();
+            this.btnTicket = new System.Windows.Forms.Button();
             this.panelBase = new System.Windows.Forms.Panel();
+            this.btnBackup = new System.Windows.Forms.Button();
+            this.btnLicence = new System.Windows.Forms.Button();
+            this.btnPrints = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnCompany
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Empresa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCompany.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCompany.Image = global::Project.Presentation.Properties.Resources._24_company;
+            this.btnCompany.Location = new System.Drawing.Point(12, 12);
+            this.btnCompany.Name = "btnCompany";
+            this.btnCompany.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnCompany.Size = new System.Drawing.Size(107, 40);
+            this.btnCompany.TabIndex = 0;
+            this.btnCompany.Text = "Empresa";
+            this.btnCompany.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCompany.UseVisualStyleBackColor = true;
+            this.btnCompany.Click += new System.EventHandler(this.btnCompany_Click);
             // 
-            // button2
+            // btnTicket
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(118, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Impresoras";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(224, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Ticket";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Location = new System.Drawing.Point(436, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 40);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Licencia";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Location = new System.Drawing.Point(330, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 40);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "DB";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnTicket.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTicket.Image = global::Project.Presentation.Properties.Resources._24_ticket;
+            this.btnTicket.Location = new System.Drawing.Point(253, 12);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnTicket.Size = new System.Drawing.Size(85, 40);
+            this.btnTicket.TabIndex = 2;
+            this.btnTicket.Text = "Ticket";
+            this.btnTicket.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTicket.UseVisualStyleBackColor = true;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // panelBase
             // 
@@ -97,6 +75,48 @@
             this.panelBase.Size = new System.Drawing.Size(590, 491);
             this.panelBase.TabIndex = 5;
             // 
+            // btnBackup
+            // 
+            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackup.Image = global::Project.Presentation.Properties.Resources._24_backup;
+            this.btnBackup.Location = new System.Drawing.Point(344, 12);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnBackup.Size = new System.Drawing.Size(100, 40);
+            this.btnBackup.TabIndex = 4;
+            this.btnBackup.Text = "Backup";
+            this.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
+            // btnLicence
+            // 
+            this.btnLicence.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLicence.Image = global::Project.Presentation.Properties.Resources._24_licence;
+            this.btnLicence.Location = new System.Drawing.Point(450, 12);
+            this.btnLicence.Name = "btnLicence";
+            this.btnLicence.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnLicence.Size = new System.Drawing.Size(105, 40);
+            this.btnLicence.TabIndex = 3;
+            this.btnLicence.Text = "Licencia";
+            this.btnLicence.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLicence.UseVisualStyleBackColor = true;
+            this.btnLicence.Click += new System.EventHandler(this.btnLicence_Click);
+            // 
+            // btnPrints
+            // 
+            this.btnPrints.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrints.Image = global::Project.Presentation.Properties.Resources._24_print;
+            this.btnPrints.Location = new System.Drawing.Point(125, 12);
+            this.btnPrints.Name = "btnPrints";
+            this.btnPrints.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnPrints.Size = new System.Drawing.Size(122, 40);
+            this.btnPrints.TabIndex = 1;
+            this.btnPrints.Text = "Impresoras";
+            this.btnPrints.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPrints.UseVisualStyleBackColor = true;
+            this.btnPrints.Click += new System.EventHandler(this.btnPrints_Click);
+            // 
             // ConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -104,11 +124,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(614, 561);
             this.Controls.Add(this.panelBase);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBackup);
+            this.Controls.Add(this.btnLicence);
+            this.Controls.Add(this.btnTicket);
+            this.Controls.Add(this.btnPrints);
+            this.Controls.Add(this.btnCompany);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -120,11 +140,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCompany;
+        private System.Windows.Forms.Button btnPrints;
+        private System.Windows.Forms.Button btnTicket;
+        private System.Windows.Forms.Button btnLicence;
+        private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.Panel panelBase;
     }
 }

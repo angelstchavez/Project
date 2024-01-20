@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection\Backup.cs" />
     <Compile Include="Connection\MasterConnection.cs" />
     <Compile Include="Generic\IGenericRepository.cs" />
     <Compile Include="Interface\ICustomerRepository.cs" />

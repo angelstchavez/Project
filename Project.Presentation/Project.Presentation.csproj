@@ -154,6 +154,12 @@
     <Compile Include="Main\Login\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Prints\PrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Prints\PrintForm.Designer.cs">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Products\ProductManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,6 +424,11 @@
     <None Include="Image\64px\64-drink.png" />
     <None Include="Image\64px\64-extra.png" />
     <None Include="Image\64px\64-wok.png" />
+    <None Include="Image\24px\24-print.png" />
+    <None Include="Image\24px\24-licence.png" />
+    <None Include="Image\24px\24-backup.png" />
+    <None Include="Image\24px\24-company.png" />
+    <None Include="Image\24px\24-ticket.png" />
     <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

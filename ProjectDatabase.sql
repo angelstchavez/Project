@@ -122,6 +122,45 @@ CREATE TABLE Printer (
 );
 GO
 
+CREATE TABLE CashRegister
+(
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(255) NOT NULL,
+    IsActive BIT NOT NULL,
+    CreatedAt DATETIME NOT NULL
+);
+GO
+
+CREATE TABLE CashMovement
+(
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    CashRegisterId INT FOREIGN KEY REFERENCES CashRegister(Id),
+    SaleId INT FOREIGN KEY REFERENCES Sale(Id),
+    ExpenditureId INT FOREIGN KEY REFERENCES Expenditures(Id),
+    Amount DECIMAL(18, 2) NOT NULL,
+    MovementType NVARCHAR(20) NOT NULL,
+    CreatedAt DATETIME NOT NULL
+);
+GO
+
+CREATE TABLE SaleMovements
+(
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    SaleId INT FOREIGN KEY REFERENCES Sale(Id),
+    Amount DECIMAL(18, 2) NOT NULL,
+    CreatedAt DATETIME NOT NULL
+);
+GO
+
+CREATE TABLE ExpenseMovements
+(
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    ExpenditureId INT FOREIGN KEY REFERENCES Expenditures(Id),
+    Amount DECIMAL(18, 2) NOT NULL,
+    CreatedAt DATETIME NOT NULL
+);
+GO
+
 CREATE PROCEDURE CreateUser
     @Username NVARCHAR(255),
     @Password NVARCHAR(255),
