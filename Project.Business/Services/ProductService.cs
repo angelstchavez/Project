@@ -1,10 +1,11 @@
-﻿using Project.Data.Repository;
+﻿using Project.Data.Interface;
+using Project.Data.Repository;
 using Project.Entity;
 using System.Collections.Generic;
 
 namespace Project.Business.Services
 {
-    public class ProductService
+    public class ProductService : IProductRepository
     {
         private readonly ProductRepository productRepository;
 
@@ -41,6 +42,16 @@ namespace Project.Business.Services
         public bool Update(Product product)
         {
             return productRepository.Update(product);
+        }
+
+        public IEnumerable<Product> GetByCategoryId(int categoryId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<ProductSale> GetProductSales()
+        {
+            return productRepository.GetProductSales();
         }
     }
 }

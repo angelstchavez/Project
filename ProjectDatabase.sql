@@ -1279,3 +1279,18 @@ BEGIN
     SELECT SUM(Value) AS TotalExpenditureAmount FROM Expenditures;
 END;
 GO
+
+CREATE PROCEDURE GetProductSales
+AS
+BEGIN
+    SELECT
+        P.Name AS ProductName,
+        SUM(SD.Quantity) AS QuantitySold
+    FROM
+        SaleDetail SD
+    INNER JOIN
+        Product P ON SD.ProductId = P.Id
+    GROUP BY
+        P.Name;
+END;
+GO

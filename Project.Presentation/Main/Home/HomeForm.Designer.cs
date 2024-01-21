@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelSales = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -77,6 +79,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.productsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -102,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -333,7 +337,7 @@
             this.flowLayoutPanel.Controls.Add(this.panel12);
             this.flowLayoutPanel.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(990, 305);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(990, 269);
             this.flowLayoutPanel.TabIndex = 12;
             // 
             // panel6
@@ -630,12 +634,32 @@
             this.pictureBox12.TabIndex = 1;
             this.pictureBox12.TabStop = false;
             // 
+            // productsChart
+            // 
+            this.productsChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.productsChart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.productsChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            this.productsChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            this.productsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin4;
+            chartArea1.Name = "ChartArea1";
+            this.productsChart.ChartAreas.Add(chartArea1);
+            this.productsChart.Location = new System.Drawing.Point(12, 287);
+            this.productsChart.Name = "productsChart";
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "Series1";
+            this.productsChart.Series.Add(series1);
+            this.productsChart.Size = new System.Drawing.Size(990, 427);
+            this.productsChart.TabIndex = 13;
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 726);
+            this.Controls.Add(this.productsChart);
             this.Controls.Add(this.flowLayoutPanel);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -679,6 +703,7 @@
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -734,5 +759,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.DataVisualization.Charting.Chart productsChart;
     }
 }
