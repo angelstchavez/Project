@@ -42,6 +42,8 @@
             this.labelPage = new System.Windows.Forms.Label();
             this.btnPreviousPage = new System.Windows.Forms.Button();
             this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnReload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +122,7 @@
             // 
             // txtCustomer
             // 
-            this.txtCustomer.Location = new System.Drawing.Point(298, 39);
+            this.txtCustomer.Location = new System.Drawing.Point(185, 39);
             this.txtCustomer.Name = "txtCustomer";
             this.txtCustomer.Size = new System.Drawing.Size(174, 26);
             this.txtCustomer.TabIndex = 15;
@@ -129,7 +131,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
-            this.label4.Location = new System.Drawing.Point(235, 44);
+            this.label4.Location = new System.Drawing.Point(122, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 18);
             this.label4.TabIndex = 14;
@@ -188,11 +190,35 @@
             this.btnNextPage.UseVisualStyleBackColor = true;
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Location = new System.Drawing.Point(365, 40);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 26);
+            this.btnSearch.TabIndex = 21;
+            this.btnSearch.Text = "Buscar";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnReload
+            // 
+            this.btnReload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReload.Image = global::Project.Presentation.Properties.Resources._16_basura;
+            this.btnReload.Location = new System.Drawing.Point(446, 40);
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(26, 26);
+            this.btnReload.TabIndex = 22;
+            this.btnReload.UseVisualStyleBackColor = true;
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
             // CustomersConsultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.btnReload);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.labelPage);
             this.Controls.Add(this.btnPreviousPage);
             this.Controls.Add(this.btnNextPage);
@@ -228,5 +254,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnReload;
     }
 }

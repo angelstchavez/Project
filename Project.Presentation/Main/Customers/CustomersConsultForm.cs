@@ -86,6 +86,16 @@ namespace Project.Presentation.Main.Customers
             this.Close();
         }
 
+        private void UpdateCustomerList(IEnumerable<Customer> customers)
+        {
+            dataGridView.Rows.Clear();
+
+            foreach (var customer in customers)
+            {
+                dataGridView.Rows.Add(new object[] { customer.Id, customer.Name, customer.Phone });
+            }
+        }
+
         #endregion
 
         #region Event Handlers
@@ -128,6 +138,34 @@ namespace Project.Presentation.Main.Customers
         }
 
         #endregion
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtCustomer.Text.Trim();
+
+            // Realizar la búsqueda solo si hay un término para buscar
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                Customer searchResult = customerService.GetByPhoneNumber(searchTerm);
+
+                if (searchResult != null)
+                {
+                    // Actualizar la lista de clientes con el resultado de la búsqueda
+                    UpdateCustomerList(new List<Customer> { searchResult });
+                }
+                else
+                {
+                    // Mostrar un mensaje si no se encuentra ningún resultado
+                    MessageBox.Show("No se encontraron clientes con el número de teléfono proporcionado.", "Búsqueda sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            txtCustomer.Clear();
+            LoadCustomers();
+        }
     }
 
     public class CustomerSelectedEventArgs : EventArgs
