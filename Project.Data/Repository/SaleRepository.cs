@@ -85,6 +85,19 @@ namespace Project.Data.Repository
             }
         }
 
+        public decimal GetCashSalesForDate(DateTime targetDate)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var parameters = new { TargetDate = targetDate };
+                var result = connection.QueryFirstOrDefault<decimal>("GetCashSalesForDate", parameters, commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
+
         public decimal GetCashSalesForToday()
         {
             using (var connection = new SqlConnection(ConnectionString))
@@ -92,6 +105,19 @@ namespace Project.Data.Repository
                 connection.Open();
 
                 var result = connection.QueryFirstOrDefault<decimal>("GetCashSalesForToday", commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
+
+        public decimal GetDaviplataSalesForDate(DateTime targetDate)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var parameters = new { TargetDate = targetDate };
+                var result = connection.QueryFirstOrDefault<decimal>("GetDaviplataSalesForDate", parameters, commandType: CommandType.StoredProcedure);
 
                 return result;
             }
@@ -109,6 +135,19 @@ namespace Project.Data.Repository
             }
         }
 
+        public decimal GetNequiSalesForDate(DateTime targetDate)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var parameters = new { TargetDate = targetDate };
+                var result = connection.QueryFirstOrDefault<decimal>("GetNequiSalesForDate", parameters, commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
+
         public decimal GetNequiSalesForToday()
         {
             using (var connection = new SqlConnection(ConnectionString))
@@ -118,6 +157,19 @@ namespace Project.Data.Repository
                 var result = connection.QueryFirstOrDefault<decimal>("GetNequiSalesForToday", commandType: CommandType.StoredProcedure);
 
                 return result;
+            }
+        }
+
+        public IEnumerable<DetailedProduct> GetProductSalesForDate(DateTime targetDate)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var parameters = new { TargetDate = targetDate };
+                var productSales = connection.Query<DetailedProduct>("GetProductSalesForDate", parameters, commandType: CommandType.StoredProcedure);
+
+                return productSales;
             }
         }
 
@@ -139,6 +191,19 @@ namespace Project.Data.Repository
             {
                 dbConnection.Open();
                 return dbConnection.ExecuteScalar<int>("GetSaleCount", commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public IEnumerable<DetailedSale> GetSalesForDate(DateTime targetDate)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var parameters = new { TargetDate = targetDate };
+                var sales = connection.Query<DetailedSale>("GetSalesForDate", parameters, commandType: CommandType.StoredProcedure);
+
+                return sales;
             }
         }
 

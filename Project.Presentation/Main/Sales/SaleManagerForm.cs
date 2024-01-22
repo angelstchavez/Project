@@ -49,5 +49,29 @@ namespace Project.Presentation.Main.Sales
                 MessageBox.Show($"No hay ventas totales registradas", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnDetails_Click(object sender, EventArgs e)
+        {
+            SaleDetailForm saleDetailForm = new SaleDetailForm(selectedDate);
+            saleDetailForm.ShowDialog();
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView.Rows[e.RowIndex];
+                string selectedDateString = selectedRow.Cells["DateColumn"].Value.ToString();
+
+                if (DateTime.TryParse(selectedDateString, out selectedDate))
+                {
+                    // Puedes realizar cualquier acción adicional que desees aquí
+                }
+                else
+                {
+                    MessageBox.Show("La fecha seleccionada no es válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

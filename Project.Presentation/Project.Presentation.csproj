@@ -173,6 +173,12 @@
     <Compile Include="Main\Sales\SaleControlForm.Designer.cs">
       <DependentUpon>SaleControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Sales\SaleDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Sales\SaleDetailForm.Designer.cs">
+      <DependentUpon>SaleDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Sales\SaleHistoricForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Sales\SaleControlForm.resx">
       <DependentUpon>SaleControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Sales\SaleDetailForm.resx">
+      <DependentUpon>SaleDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Sales\SaleHistoricForm.resx">
       <DependentUpon>SaleHistoricForm.cs</DependentUpon>
@@ -434,6 +443,10 @@
     <None Include="Image\64px\64-expense.png" />
     <None Include="Image\64px\64-sale.png" />
     <None Include="Image\100px\Sticker.png" />
+    <None Include="Image\64px\64-customer-today.png" />
+    <None Include="Image\64px\64-expense-today.png" />
+    <None Include="Image\64px\64-sale-today.png" />
+    <None Include="Image\64px\64-wok-today.png" />
     <Content Include="logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

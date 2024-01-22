@@ -8,25 +8,28 @@ using System.Windows.Forms;
 
 namespace Project.Presentation.Main.Sales
 {
-    public partial class SaleHistoricForm : Form
+    public partial class SaleDetailForm : Form
     {
         private readonly SaleService saleService;
+        private readonly ProductService productService;
+        private DateTime targetDate;
         private DataGridViewRow selectedRow;
-        
-        public SaleHistoricForm()
+        public SaleDetailForm(DateTime targetDate)
         {
             this.saleService = new SaleService();
+            this.productService = new ProductService();
+            this.targetDate = targetDate;
             InitializeComponent();
-            LoadSalesToday();
-            LoadDetailedProducts();
+            LoadSalesDate();
             LoadAmounts();
+            LoadDetailedProducts();
         }
 
-        private void LoadSalesToday()
+        private void LoadSalesDate()
         {
             try
             {
-                var sales = saleService.GetSalesForToday();
+                var sales = saleService.GetSalesForDate(targetDate);
 
                 decimal totalSales = CalculateTotalSales(sales);
 
@@ -58,9 +61,9 @@ namespace Project.Presentation.Main.Sales
 
         private void LoadAmounts()
         {
-            labelTotalCash.Text = saleService.GetCashSalesForToday().ToString("C");
-            labelTotalDaviplata.Text = saleService.GetDaviplataSalesForToday().ToString("C");
-            labelTotalNequi.Text = saleService.GetNequiSalesForToday().ToString("C");
+            labelTotalCash.Text = saleService.GetCashSalesForDate(targetDate).ToString("C");
+            labelTotalDaviplata.Text = saleService.GetDaviplataSalesForDate(targetDate).ToString("C");
+            labelTotalNequi.Text = saleService.GetNequiSalesForDate(targetDate).ToString("C");
         }
 
         private decimal CalculateTotalSales(IEnumerable<DetailedSale> sales)
@@ -78,7 +81,7 @@ namespace Project.Presentation.Main.Sales
         {
             try
             {
-                var products = saleService.GetProductSalesForToday();
+                var products = saleService.GetProductSalesForDate(targetDate);
 
                 foreach (var product in products)
                 {
@@ -92,6 +95,22 @@ namespace Project.Presentation.Main.Sales
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView.Columns.Count - 1)
+            {
+                e.CellStyle.Font = new Font(dataGridView.Font, FontStyle.Bold);
+            }
+        }
+
+        private void dataGridViewProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewProducts.Columns.Count - 1)
+            {
+                e.CellStyle.Font = new Font(dataGridViewProducts.Font, FontStyle.Bold);
             }
         }
 
@@ -117,22 +136,6 @@ namespace Project.Presentation.Main.Sales
             }
 
             selectedRow = null;
-        }
-
-        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridView.Columns.Count - 1)
-            {
-                e.CellStyle.Font = new Font(dataGridView.Font, FontStyle.Bold);
-            }
-        }
-
-        private void dataGridViewProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridViewProducts.Columns.Count - 1)
-            {
-                e.CellStyle.Font = new Font(dataGridViewProducts.Font, FontStyle.Bold);
-            }
         }
     }
 }

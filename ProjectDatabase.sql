@@ -1172,6 +1172,86 @@ BEGIN
 END;
 GO
 
+CREATE PROCEDURE GetSalesForDate
+    @TargetDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        s.Id AS SaleId,
+        c.Name AS CustomerName,
+        s.Address AS ShippingAddress,
+        n.Name AS NeighborhoodName,
+        tc.Name AS TransportationCompanyName,
+        s.PaymentType,
+        s.TotalAmount
+    FROM
+        Sale s
+    INNER JOIN
+        Customer c ON s.CustomerId = c.Id
+    INNER JOIN
+        Neighborhood n ON s.NeighborhoodId = n.Id
+    INNER JOIN
+        TransportationCompany tc ON s.TransportationCompanyId = tc.Id
+    WHERE
+        CONVERT(DATE, s.CreatedAt) = @TargetDate;
+END;
+GO
+
+CREATE PROCEDURE GetProductSalesForDate
+    @TargetDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT
+        p.Name AS ProductName,
+        SUM(sd.Quantity) AS TotalQuantity,
+        SUM(sd.Quantity * p.Price) AS TotalAmount
+    FROM
+        Sale s
+    INNER JOIN
+        SaleDetail sd ON s.Id = sd.SaleId
+    INNER JOIN
+        Product p ON sd.ProductId = p.Id
+    WHERE
+        CONVERT(DATE, s.CreatedAt) = @TargetDate
+    GROUP BY
+        p.Name;
+END;
+GO
+
+CREATE PROCEDURE GetCashSalesForDate
+    @TargetDate DATE
+AS
+BEGIN
+    SELECT ISNULL(SUM(TotalAmount), 0) AS CashSalesAmount
+    FROM Sale
+    WHERE PaymentType = 'Efectivo' AND CONVERT(DATE, CreatedAt) = @TargetDate;
+END;
+GO
+
+CREATE PROCEDURE GetDaviplataSalesForDate
+    @TargetDate DATE
+AS
+BEGIN
+    SELECT ISNULL(SUM(TotalAmount), 0) AS DaviplataSalesAmount
+    FROM Sale
+    WHERE PaymentType = 'Daviplata' AND CONVERT(DATE, CreatedAt) = @TargetDate;
+END;
+GO
+
+CREATE PROCEDURE GetNequiSalesForDate
+    @TargetDate DATE
+AS
+BEGIN
+    SELECT ISNULL(SUM(TotalAmount), 0) AS NequiSalesAmount
+    FROM Sale
+    WHERE PaymentType = 'Nequi' AND CONVERT(DATE, CreatedAt) = @TargetDate;
+END;
+GO
+
 CREATE PROCEDURE GetProductSalesForToday
 AS
 BEGIN

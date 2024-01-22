@@ -30,13 +30,13 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.DateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnDetails = new System.Windows.Forms.Button();
             this.btnReportByCategory = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
-            this.DateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,27 @@
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(790, 610);
             this.dataGridView.TabIndex = 19;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // DateColumn
+            // 
+            this.DateColumn.FillWeight = 128.934F;
+            this.DateColumn.HeaderText = "Fecha";
+            this.DateColumn.Name = "DateColumn";
+            this.DateColumn.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 71.06599F;
+            this.Column3.HeaderText = "Valor";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // txtTotal
             // 
@@ -103,6 +124,7 @@
             this.btnDetails.Text = "Ver detalle";
             this.btnDetails.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
             // 
             // btnReportByCategory
             // 
@@ -133,26 +155,6 @@
             this.btnReport.Text = "Reporte general";
             this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReport.UseVisualStyleBackColor = true;
-            // 
-            // DateColumn
-            // 
-            this.DateColumn.FillWeight = 128.934F;
-            this.DateColumn.HeaderText = "Fecha";
-            this.DateColumn.Name = "DateColumn";
-            this.DateColumn.ReadOnly = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 71.06599F;
-            this.Column3.HeaderText = "Valor";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // SaleManagerForm
             // 

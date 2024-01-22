@@ -2,6 +2,7 @@
 using Project.Data.Interface;
 using Project.Data.Repository;
 using Project.Entity;
+using System;
 using System.Collections.Generic;
 
 namespace Project.Business.Services
@@ -35,9 +36,19 @@ namespace Project.Business.Services
             return saleRepository.GetAll();
         }
 
+        public decimal GetCashSalesForDate(DateTime targetDate)
+        {
+            return saleRepository.GetCashSalesForDate(targetDate);
+        }
+
         public decimal GetCashSalesForToday()
         {
             return saleRepository.GetCashSalesForToday();
+        }
+
+        public decimal GetDaviplataSalesForDate(DateTime targetDate)
+        {
+            return saleRepository.GetDaviplataSalesForDate(targetDate);
         }
 
         public decimal GetDaviplataSalesForToday()
@@ -45,9 +56,19 @@ namespace Project.Business.Services
             return saleRepository.GetDaviplataSalesForToday();
         }
 
+        public decimal GetNequiSalesForDate(DateTime targetDate)
+        {
+            return saleRepository.GetNequiSalesForDate(targetDate);
+        }
+
         public decimal GetNequiSalesForToday()
         {
             return saleRepository.GetNequiSalesForToday();
+        }
+
+        public IEnumerable<DetailedProduct> GetProductSalesForDate(DateTime targetDate)
+        {
+            return saleRepository.GetProductSalesForDate(targetDate);
         }
 
         public IEnumerable<DetailedProduct> GetProductSalesForToday()
@@ -58,6 +79,11 @@ namespace Project.Business.Services
         public int GetSaleCount()
         {
             return saleRepository.GetSaleCount();
+        }
+
+        public IEnumerable<DetailedSale> GetSalesForDate(DateTime targetDate)
+        {
+            return saleRepository.GetSalesForDate(targetDate);
         }
 
         public IEnumerable<DetailedSale> GetSalesForToday()

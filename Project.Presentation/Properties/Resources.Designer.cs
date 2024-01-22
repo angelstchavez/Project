@@ -423,6 +423,16 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _64_customer_today {
+            get {
+                object obj = ResourceManager.GetObject("_64_customer_today", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _64_drink {
             get {
                 object obj = ResourceManager.GetObject("_64_drink", resourceCulture);
@@ -436,6 +446,16 @@ namespace Project.Presentation.Properties {
         internal static System.Drawing.Bitmap _64_expense {
             get {
                 object obj = ResourceManager.GetObject("_64_expense", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _64_expense_today {
+            get {
+                object obj = ResourceManager.GetObject("_64_expense_today", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -463,9 +483,29 @@ namespace Project.Presentation.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _64_sale_today {
+            get {
+                object obj = ResourceManager.GetObject("_64_sale_today", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _64_wok {
             get {
                 object obj = ResourceManager.GetObject("_64_wok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _64_wok_today {
+            get {
+                object obj = ResourceManager.GetObject("_64_wok_today", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
