@@ -29,6 +29,8 @@ namespace Project.Presentation.Main.Sales
         {
             try
             {
+                labelDate.Text = $"Ventas del {targetDate.ToLongDateString()}";
+
                 var sales = saleService.GetSalesForDate(targetDate);
 
                 decimal totalSales = CalculateTotalSales(sales);

@@ -53,7 +53,7 @@
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
             this.btnReport = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -305,18 +305,18 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // label1
+            // labelDate
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(6, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 40);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Ventas del día";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelDate.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
+            this.labelDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.labelDate.Location = new System.Drawing.Point(6, 9);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(822, 40);
+            this.labelDate.TabIndex = 34;
+            this.labelDate.Text = "Ventas del día";
+            this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnReport
             // 
@@ -465,7 +465,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewProducts);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelDate);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.dataGridView);
             this.Font = new System.Drawing.Font("Arial", 12F);
@@ -505,7 +505,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
