@@ -201,6 +201,18 @@ namespace Project.Data.Repository
                 return dbConnection.ExecuteScalar<decimal>("GetTotalExpenditureAmount", commandType: CommandType.StoredProcedure);
             }
         }
+
+        public decimal GetTotalExpendituresForToday()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var result = connection.QueryFirstOrDefault<decimal>("GetTotalExpendituresForToday", commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
     }
 }
     

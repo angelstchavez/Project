@@ -1374,3 +1374,55 @@ BEGIN
         P.Name;
 END;
 GO
+
+CREATE PROCEDURE GetCustomerCountForToday
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Today DATETIME = CONVERT(DATE, GETDATE());
+
+    SELECT COUNT(Id) AS CustomerCount
+    FROM Customer
+    WHERE CONVERT(DATE, CreatedAt) = @Today;
+END;
+GO
+
+CREATE PROCEDURE GetTotalSalesAmountForToday
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Today DATETIME = CONVERT(DATE, GETDATE());
+
+    SELECT ISNULL(SUM(TotalAmount), 0) AS TotalSalesAmount
+    FROM Sale
+    WHERE CONVERT(DATE, CreatedAt) = @Today;
+END;
+GO
+
+CREATE PROCEDURE GetSalesCountForToday
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Today DATETIME = CONVERT(DATE, GETDATE());
+
+    SELECT COUNT(Id) AS SalesCount
+    FROM Sale
+    WHERE CONVERT(DATE, CreatedAt) = @Today;
+END;
+GO
+
+CREATE PROCEDURE GetTotalExpendituresForToday
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Today DATETIME = CONVERT(DATE, GETDATE());
+
+    SELECT ISNULL(SUM(Value), 0) AS TotalExpenditures
+    FROM Expenditures
+    WHERE CONVERT(DATE, Date) = @Today;
+END;
+GO

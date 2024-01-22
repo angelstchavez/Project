@@ -134,6 +134,18 @@ namespace Project.Data.Repository
             }
         }
 
+        public int GetCustomerCountForToday()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var result = connection.QueryFirstOrDefault<int>("GetCustomerCountForToday", commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
+
         public IEnumerable<Customer> GetPagedCustomers(int pageSize, int pageNumber)
         {
             using (IDbConnection dbConnection = new SqlConnection(ConnectionString))

@@ -43,6 +43,11 @@ namespace Project.Business.Services
             return customerRepository.GetByPhoneNumber(phoneNumber);
         }
 
+        public int GetCustomerCountForToday()
+        {
+            return customerRepository.GetCustomerCountForToday();
+        }
+
         public IEnumerable<Customer> GetPagedCustomers(int pageSize, int pageNumber)
         {
             return customerRepository.GetPagedCustomers(pageSize, pageNumber);

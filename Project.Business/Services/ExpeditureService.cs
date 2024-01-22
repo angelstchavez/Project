@@ -70,6 +70,11 @@ namespace Project.Business.Services
             return expeditureRepository.GetTotalExpenditureByCategory();
         }
 
+        public decimal GetTotalExpendituresForToday()
+        {
+            return expeditureRepository.GetTotalExpendituresForToday();
+        }
+
         public IEnumerable<ExpenditureDay> GetTotalExpensesPerDay()
         {
             return this.expeditureRepository.GetTotalExpensesPerDay();

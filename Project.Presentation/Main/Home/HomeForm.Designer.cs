@@ -47,20 +47,20 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelTotalSalesToday = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.labelTotalExpensesToday = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
+            this.labelCustomerCountToday = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.labelSalesCountToday = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.productsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -255,7 +255,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.labelTotalSalesToday);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.pictureBox6);
             this.panel5.Location = new System.Drawing.Point(3, 91);
@@ -263,16 +263,16 @@
             this.panel5.Size = new System.Drawing.Size(240, 82);
             this.panel5.TabIndex = 7;
             // 
-            // label5
+            // labelTotalSalesToday
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(66, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(25, 22);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "...";
+            this.labelTotalSalesToday.AutoSize = true;
+            this.labelTotalSalesToday.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.labelTotalSalesToday.ForeColor = System.Drawing.Color.White;
+            this.labelTotalSalesToday.Location = new System.Drawing.Point(66, 39);
+            this.labelTotalSalesToday.Name = "labelTotalSalesToday";
+            this.labelTotalSalesToday.Size = new System.Drawing.Size(25, 22);
+            this.labelTotalSalesToday.TabIndex = 9;
+            this.labelTotalSalesToday.Text = "...";
             // 
             // label10
             // 
@@ -315,7 +315,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panel6.Controls.Add(this.label11);
+            this.panel6.Controls.Add(this.labelTotalExpensesToday);
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.pictureBox5);
             this.panel6.Location = new System.Drawing.Point(249, 91);
@@ -323,16 +323,16 @@
             this.panel6.Size = new System.Drawing.Size(240, 82);
             this.panel6.TabIndex = 8;
             // 
-            // label11
+            // labelTotalExpensesToday
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(66, 39);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(25, 22);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "...";
+            this.labelTotalExpensesToday.AutoSize = true;
+            this.labelTotalExpensesToday.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.labelTotalExpensesToday.ForeColor = System.Drawing.Color.White;
+            this.labelTotalExpensesToday.Location = new System.Drawing.Point(66, 39);
+            this.labelTotalExpensesToday.Name = "labelTotalExpensesToday";
+            this.labelTotalExpensesToday.Size = new System.Drawing.Size(25, 22);
+            this.labelTotalExpensesToday.TabIndex = 9;
+            this.labelTotalExpensesToday.Text = "...";
             // 
             // label12
             // 
@@ -357,7 +357,7 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panel7.Controls.Add(this.label13);
+            this.panel7.Controls.Add(this.labelCustomerCountToday);
             this.panel7.Controls.Add(this.label14);
             this.panel7.Controls.Add(this.pictureBox7);
             this.panel7.Location = new System.Drawing.Point(495, 91);
@@ -365,16 +365,16 @@
             this.panel7.Size = new System.Drawing.Size(240, 82);
             this.panel7.TabIndex = 9;
             // 
-            // label13
+            // labelCustomerCountToday
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(66, 39);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(25, 22);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "...";
+            this.labelCustomerCountToday.AutoSize = true;
+            this.labelCustomerCountToday.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.labelCustomerCountToday.ForeColor = System.Drawing.Color.White;
+            this.labelCustomerCountToday.Location = new System.Drawing.Point(66, 39);
+            this.labelCustomerCountToday.Name = "labelCustomerCountToday";
+            this.labelCustomerCountToday.Size = new System.Drawing.Size(25, 22);
+            this.labelCustomerCountToday.TabIndex = 9;
+            this.labelCustomerCountToday.Text = "...";
             // 
             // label14
             // 
@@ -399,7 +399,7 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panel8.Controls.Add(this.label15);
+            this.panel8.Controls.Add(this.labelSalesCountToday);
             this.panel8.Controls.Add(this.label16);
             this.panel8.Controls.Add(this.pictureBox8);
             this.panel8.Location = new System.Drawing.Point(741, 91);
@@ -407,16 +407,16 @@
             this.panel8.Size = new System.Drawing.Size(240, 82);
             this.panel8.TabIndex = 10;
             // 
-            // label15
+            // labelSalesCountToday
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(66, 39);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(25, 22);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "...";
+            this.labelSalesCountToday.AutoSize = true;
+            this.labelSalesCountToday.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.labelSalesCountToday.ForeColor = System.Drawing.Color.White;
+            this.labelSalesCountToday.Location = new System.Drawing.Point(66, 39);
+            this.labelSalesCountToday.Name = "labelSalesCountToday";
+            this.labelSalesCountToday.Size = new System.Drawing.Size(25, 22);
+            this.labelSalesCountToday.TabIndex = 9;
+            this.labelSalesCountToday.Text = "...";
             // 
             // label16
             // 
@@ -446,7 +446,7 @@
             this.productsChart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.productsChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             this.productsChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            this.productsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin4;
+            this.productsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
             chartArea1.Name = "ChartArea1";
             this.productsChart.ChartAreas.Add(chartArea1);
             this.productsChart.Location = new System.Drawing.Point(12, 196);
@@ -521,18 +521,18 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelOrders;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelTotalSalesToday;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelTotalExpensesToday;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelCustomerCountToday;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label labelSalesCountToday;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.DataVisualization.Charting.Chart productsChart;

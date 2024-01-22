@@ -29,6 +29,10 @@ namespace Project.Presentation.Main.Home
             labelSales.Text = saleService.GetTotalSalesAmount().ToString("C");
             labelExpeditures.Text = expeditureService.GetTotalExpenditureAmount().ToString("C");
             labelOrders.Text = saleService.GetSaleCount().ToString();
+            labelTotalSalesToday.Text = saleService.GetTotalSalesAmountForToday().ToString("C");
+            labelCustomerCountToday.Text = customerService.GetCustomerCountForToday().ToString();
+            labelSalesCountToday.Text = saleService.GetSalesCountForToday().ToString();
+            labelTotalExpensesToday.Text = expeditureService.GetTotalExpendituresForToday().ToString();
         }
 
         private void LoadChart()

@@ -81,6 +81,11 @@ namespace Project.Business.Services
             return saleRepository.GetSaleCount();
         }
 
+        public int GetSalesCountForToday()
+        {
+            return saleRepository.GetSalesCountForToday();
+        }
+
         public IEnumerable<DetailedSale> GetSalesForDate(DateTime targetDate)
         {
             return saleRepository.GetSalesForDate(targetDate);
@@ -94,6 +99,11 @@ namespace Project.Business.Services
         public decimal GetTotalSalesAmount()    
         {
             return saleRepository.GetTotalSalesAmount();
+        }
+
+        public decimal GetTotalSalesAmountForToday()
+        {
+            return saleRepository.GetTotalSalesAmountForToday();
         }
 
         public IEnumerable<SalePerDay> GetTotalSalesPerDay()

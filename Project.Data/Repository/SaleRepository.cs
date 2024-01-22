@@ -194,6 +194,18 @@ namespace Project.Data.Repository
             }
         }
 
+        public int GetSalesCountForToday()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var result = connection.QueryFirstOrDefault<int>("GetSalesCountForToday", commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
+
         public IEnumerable<DetailedSale> GetSalesForDate(DateTime targetDate)
         {
             using (var connection = new SqlConnection(ConnectionString))
@@ -225,6 +237,18 @@ namespace Project.Data.Repository
             {
                 dbConnection.Open();
                 return dbConnection.ExecuteScalar<decimal>("GetTotalSalesAmount", commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public decimal GetTotalSalesAmountForToday()
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                var result = connection.QueryFirstOrDefault<decimal>("GetTotalSalesAmountForToday", commandType: CommandType.StoredProcedure);
+
+                return result;
             }
         }
 
