@@ -53,5 +53,10 @@ namespace Project.Business.Services
         {
             return productRepository.GetProductSales();
         }
+
+        public IEnumerable<ProductSale> GetProductSalesByCategory(string category)
+        {
+            return productRepository.GetProductSalesByCategory(category);
+        }
     }
 }

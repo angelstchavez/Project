@@ -1,5 +1,6 @@
 ﻿using Project.Business.Services;
 using Project.Entity;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -15,7 +16,6 @@ namespace Project.Presentation.Main.Home
         private readonly SaleService saleService;
         private int colorIndex = 0;
 
-        // Colores diferentes para cada barra
         private Color[] colors = new Color[]
         {
             Color.FromArgb(255, 0, 47),
@@ -38,7 +38,7 @@ namespace Project.Presentation.Main.Home
 
             InitializeComponent();
             LoadQuantities();
-            LoadChart();
+            LoadCharts();
         }
 
         private void LoadQuantities()
@@ -53,27 +53,37 @@ namespace Project.Presentation.Main.Home
             labelTotalExpensesToday.Text = expenditureService.GetTotalExpendituresForToday().ToString("C");
         }
 
-        private void LoadChart()
+        private void LoadCharts()
+        {
+            LoadCategoryChart(presentationsChart, "Presentaciones");
+            LoadCategoryChart(beveragesChart, "Bebidas");
+            LoadDonutChart(productsChart);
+        }
+
+        private void LoadCategoryChart(Chart chart, string category)
+        {
+            var productService = new ProductService();
+            var chartData = productService.GetProductSalesByCategory(category);
+
+            ConfigureChart(chart, "CategorySales");
+
+            foreach (var dataPoint in chartData)
+            {
+                var point = CreateDataPoint(dataPoint);
+                chart.Series["CategorySales"].Points.Add(point);
+            }
+        }
+
+        private void LoadDonutChart(Chart chart)
         {
             var productService = new ProductService();
             var chartData = productService.GetProductSales();
 
-            ConfigureChart(productsChart, "SalesData");
-            ConfigureChart(donutChart, "PercentageData");
+            ConfigureChart(chart, "PercentageData");
 
             var chartDataList = chartData.ToList();
-
-            foreach (var dataPoint in chartDataList)
-            {
-                var point = CreateDataPoint(dataPoint);
-                productsChart.Series["SalesData"].Points.Add(point);
-            }
-
-            colorIndex = 0;
-
             var percentages = CalculatePercentages(chartDataList);
-
-            var labels = new List<string>();  // Lista para almacenar las etiquetas
+            var labels = new List<string>();
 
             for (int i = 0; i < chartDataList.Count; i++)
             {
@@ -85,20 +95,18 @@ namespace Project.Presentation.Main.Home
                     AxisLabel = dataPoint.ProductName,
                     Font = new Font("Arial", 10, FontStyle.Bold),
                     Color = GetNextColor(),
-                    Label = $"{percentage:F2}%",  // Mostrar porcentaje en el formato adecuado
+                    Label = $"{percentage:F2}%",
                     IsValueShownAsLabel = true,
                 };
 
-                labels.Add(dataPoint.ProductName);  // Agregar etiqueta a la lista
-
+                labels.Add(dataPoint.ProductName);
                 point.SetValueY(percentage);
-                donutChart.Series["PercentageData"].Points.Add(point);
+                chart.Series["PercentageData"].Points.Add(point);
             }
 
-            // Agregar etiquetas a las leyendas
             for (int i = 0; i < labels.Count; i++)
             {
-                donutChart.Series["PercentageData"].Points[i].LegendText = labels[i];
+                chart.Series["PercentageData"].Points[i].LegendText = labels[i];
             }
 
             colorIndex = 0;
@@ -110,7 +118,6 @@ namespace Project.Presentation.Main.Home
             return chartData.Select(dataPoint => (dataPoint.QuantitySold / totalQuantitySold) * 100).ToList();
         }
 
-
         private void ConfigureChart(Chart chart, string seriesName)
         {
             chart.Series.Clear();
@@ -119,35 +126,32 @@ namespace Project.Presentation.Main.Home
             chart.ChartAreas.Add("ChartArea");
             chart.Series.Add(seriesName);
 
-            // Configuración adicional para quitar la cuadrícula de fondo
             chart.ChartAreas["ChartArea"].AxisX.MajorGrid.Enabled = false;
             chart.ChartAreas["ChartArea"].AxisY.MajorGrid.Enabled = false;
 
-            // Configuración para el estilo de las etiquetas del eje X e Y
-            chart.ChartAreas["ChartArea"].AxisX.Title = "Productos vendidos";
-            chart.ChartAreas["ChartArea"].AxisX.TitleFont = new Font("Arial", 12, FontStyle.Bold);
+            //chart.ChartAreas["ChartArea"].AxisX.Title = "Productos vendidos";
+            //chart.ChartAreas["ChartArea"].AxisX.TitleFont = new Font("Arial", 12, FontStyle.Bold);
 
-            chart.ChartAreas["ChartArea"].AxisY.Title = "Cantidad Vendida";
-            chart.ChartAreas["ChartArea"].AxisY.TitleFont = new Font("Arial", 12, FontStyle.Bold);
+            //chart.ChartAreas["ChartArea"].AxisY.Title = "Cantidad Vendida";
+            //chart.ChartAreas["ChartArea"].AxisY.TitleFont = new Font("Arial", 12, FontStyle.Bold);
 
             chart.ChartAreas["ChartArea"].AxisX.LabelStyle.Font = new Font("Arial", 12);
             chart.ChartAreas["ChartArea"].AxisY.LabelStyle.Font = new Font("Arial", 12);
 
-            // Configuración específica para el Chart de dona (doughnut)
             if (seriesName == "PercentageData")
             {
                 chart.Series["PercentageData"].ChartType = SeriesChartType.Doughnut;
                 chart.Series["PercentageData"].IsValueShownAsLabel = true;
-                chart.Series["PercentageData"]["DoughnutRadius"] = "70"; // Ajusta según tus necesidades
-                chart.Series["PercentageData"]["DoughnutInnerRadius"] = "40"; // Ajusta según tus necesidades
+                chart.Series["PercentageData"]["DoughnutRadius"] = "70";
+                chart.Series["PercentageData"]["DoughnutInnerRadius"] = "50";
             }
             else
             {
                 chart.Series[seriesName].ChartType = SeriesChartType.Column;
             }
 
-            chart.Series[seriesName]["PointWidth"] = "1.0"; // Ajusta el ancho de la barra
-            chart.Series[seriesName]["PixelPointWidth"] = "80"; // Ajusta el espaciado entre barras
+            chart.Series[seriesName]["PointWidth"] = "1.0";
+            chart.Series[seriesName]["PixelPointWidth"] = "40";
         }
 
         private DataPoint CreateDataPoint(ProductSale dataPoint)
@@ -161,7 +165,6 @@ namespace Project.Presentation.Main.Home
                 IsValueShownAsLabel = true,
             };
 
-            // Asignar valor Y al punto
             point.SetValueY(dataPoint.QuantitySold);
 
             return point;

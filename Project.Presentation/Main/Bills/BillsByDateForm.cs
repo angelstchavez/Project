@@ -2,6 +2,7 @@
 using Project.Entity;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
@@ -48,6 +49,14 @@ namespace Project.Presentation.Main.Bills
             else
             {
                 MessageBox.Show($"No hay gastos registrados", "Consulta de Gastos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView.Columns.Count - 1)
+            {
+                e.CellStyle.Font = new Font(dataGridView.Font, FontStyle.Bold);
             }
         }
     }

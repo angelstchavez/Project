@@ -1426,3 +1426,23 @@ BEGIN
     WHERE CONVERT(DATE, Date) = @Today;
 END;
 GO
+
+CREATE PROCEDURE GetProductSalesByCategory
+    @CategoryName NVARCHAR(255)
+AS
+BEGIN
+    SELECT
+        P.Name AS ProductName,
+        SUM(SD.Quantity) AS QuantitySold
+    FROM
+        SaleDetail SD
+    INNER JOIN
+        Product P ON SD.ProductId = P.Id
+    INNER JOIN
+        ProductCategory PC ON P.CategoryId = PC.Id
+    WHERE
+        PC.Name = @CategoryName
+    GROUP BY
+        P.Name;
+END;
+GO

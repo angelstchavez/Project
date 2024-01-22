@@ -115,5 +115,18 @@ namespace Project.Data.Repository
                 return result;
             }
         }
+
+        public IEnumerable<ProductSale> GetProductSalesByCategory(string category)
+        {
+            using (IDbConnection dbConnection = new SqlConnection(ConnectionString))
+            {
+                dbConnection.Open();
+
+                // Utiliza Dapper para ejecutar el procedimiento almacenado con el parámetro
+                var result = dbConnection.Query<ProductSale>("GetProductSalesByCategory", new { CategoryName = category }, commandType: CommandType.StoredProcedure);
+
+                return result;
+            }
+        }
     }
 }

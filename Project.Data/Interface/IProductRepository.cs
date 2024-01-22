@@ -8,5 +8,6 @@ namespace Project.Data.Interface
     {
         IEnumerable<Product> GetByCategoryId(int categoryId);
         IEnumerable<ProductSale> GetProductSales();
+        IEnumerable<ProductSale> GetProductSalesByCategory(string category);
     }
 }

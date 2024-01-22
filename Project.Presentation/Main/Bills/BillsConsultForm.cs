@@ -146,5 +146,14 @@ namespace Project.Presentation.Main.Bills
 
             selectedRow = null;
         }
+
+        private void dataGridView_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView.Columns.Count - 1)
+            {
+                e.CellStyle.Font = new Font(dataGridView.Font, FontStyle.Bold);
+                e.CellStyle.ForeColor = Color.Brown;
+            }
+        }
     }
 }

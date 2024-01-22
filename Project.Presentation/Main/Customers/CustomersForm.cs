@@ -30,6 +30,16 @@ namespace Project.Presentation.Main.Customers
             labelCount.Text = $"Clientes registrados: {customers.Count()}";
         }
 
+        private void UpdateCustomerList(IEnumerable<Customer> customers)
+        {
+            dataGridView.Rows.Clear();
+
+            foreach (var customer in customers)
+            {
+                dataGridView.Rows.Add(new object[] { customer.Id, customer.Name, customer.Phone });
+            }
+        }
+
         private void LoadCustomers()
         {
             // Obtener la lista de clientes directamente del servicio
@@ -153,6 +163,34 @@ namespace Project.Presentation.Main.Customers
             {
                 MessageBox.Show("Selecciona un registro antes de abrir WhatsApp.");
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtCustomer.Text.Trim();
+
+            // Realizar la búsqueda solo si hay un término para buscar
+            if (!string.IsNullOrEmpty(searchTerm))
+            {
+                Customer searchResult = customerService.GetByPhoneNumber(searchTerm);
+
+                if (searchResult != null)
+                {
+                    // Actualizar la lista de clientes con el resultado de la búsqueda
+                    UpdateCustomerList(new List<Customer> { searchResult });
+                }
+                else
+                {
+                    // Mostrar un mensaje si no se encuentra ningún resultado
+                    MessageBox.Show("No se encontraron clientes con el número de teléfono proporcionado.", "Búsqueda sin resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtCustomer.Clear();
+            LoadCustomers();
         }
     }
 }

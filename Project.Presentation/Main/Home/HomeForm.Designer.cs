@@ -35,6 +35,9 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelSales = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,8 +71,9 @@
             this.labelSalesCountToday = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.presentationsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.productsChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.donutChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.beveragesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -87,8 +91,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentationsChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.donutChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beveragesChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -445,6 +450,27 @@
             this.pictureBox8.TabIndex = 1;
             this.pictureBox8.TabStop = false;
             // 
+            // presentationsChart
+            // 
+            this.presentationsChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.presentationsChart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.presentationsChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            this.presentationsChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            this.presentationsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
+            chartArea1.Name = "ChartArea1";
+            this.presentationsChart.ChartAreas.Add(chartArea1);
+            this.presentationsChart.Location = new System.Drawing.Point(12, 196);
+            this.presentationsChart.Name = "presentationsChart";
+            series1.ChartArea = "ChartArea1";
+            series1.Name = "Series1";
+            this.presentationsChart.Series.Add(series1);
+            this.presentationsChart.Size = new System.Drawing.Size(330, 518);
+            this.presentationsChart.TabIndex = 13;
+            title1.Name = "Title1";
+            title1.Text = "Presentaciones vendidas históricamente";
+            this.presentationsChart.Titles.Add(title1);
+            // 
             // productsChart
             // 
             this.productsChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -454,47 +480,48 @@
             this.productsChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             this.productsChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
             this.productsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
-            chartArea1.Name = "ChartArea1";
-            this.productsChart.ChartAreas.Add(chartArea1);
-            this.productsChart.Location = new System.Drawing.Point(12, 196);
-            this.productsChart.Name = "productsChart";
-            series1.ChartArea = "ChartArea1";
-            series1.Name = "Series1";
-            this.productsChart.Series.Add(series1);
-            this.productsChart.Size = new System.Drawing.Size(735, 518);
-            this.productsChart.TabIndex = 13;
-            title1.Name = "Title1";
-            title1.Text = "Productos vendidos históricamente";
-            this.productsChart.Titles.Add(title1);
-            // 
-            // donutChart
-            // 
-            this.donutChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.donutChart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.donutChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            this.donutChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            this.donutChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
             chartArea2.Name = "ChartArea1";
-            this.donutChart.ChartAreas.Add(chartArea2);
+            this.productsChart.ChartAreas.Add(chartArea2);
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
             legend1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
-            this.donutChart.Legends.Add(legend1);
-            this.donutChart.Location = new System.Drawing.Point(753, 196);
-            this.donutChart.Name = "donutChart";
+            this.productsChart.Legends.Add(legend1);
+            this.productsChart.Location = new System.Drawing.Point(672, 196);
+            this.productsChart.Name = "productsChart";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             series2.YValuesPerPoint = 2;
-            this.donutChart.Series.Add(series2);
-            this.donutChart.Size = new System.Drawing.Size(249, 518);
-            this.donutChart.TabIndex = 14;
+            this.productsChart.Series.Add(series2);
+            this.productsChart.Size = new System.Drawing.Size(330, 518);
+            this.productsChart.TabIndex = 14;
             title2.Name = "Title1";
             title2.Text = "Productos vendidos históricamente";
-            this.donutChart.Titles.Add(title2);
+            this.productsChart.Titles.Add(title2);
+            // 
+            // beveragesChart
+            // 
+            this.beveragesChart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.beveragesChart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.beveragesChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            this.beveragesChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            this.beveragesChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
+            chartArea3.Name = "ChartArea1";
+            this.beveragesChart.ChartAreas.Add(chartArea3);
+            this.beveragesChart.Location = new System.Drawing.Point(346, 196);
+            this.beveragesChart.Name = "beveragesChart";
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series3.Name = "Series1";
+            this.beveragesChart.Series.Add(series3);
+            this.beveragesChart.Size = new System.Drawing.Size(320, 518);
+            this.beveragesChart.TabIndex = 15;
+            title3.Name = "Title1";
+            title3.Text = "Benidas vendidas históricamente";
+            this.beveragesChart.Titles.Add(title3);
             // 
             // HomeForm
             // 
@@ -502,8 +529,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1014, 726);
-            this.Controls.Add(this.donutChart);
+            this.Controls.Add(this.beveragesChart);
             this.Controls.Add(this.productsChart);
+            this.Controls.Add(this.presentationsChart);
             this.Controls.Add(this.flowLayoutPanel);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -535,8 +563,9 @@
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.presentationsChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.donutChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beveragesChart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -576,7 +605,8 @@
         private System.Windows.Forms.Label labelSalesCountToday;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.DataVisualization.Charting.Chart presentationsChart;
         private System.Windows.Forms.DataVisualization.Charting.Chart productsChart;
-        private System.Windows.Forms.DataVisualization.Charting.Chart donutChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart beveragesChart;
     }
 }
