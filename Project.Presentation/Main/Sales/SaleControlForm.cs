@@ -290,7 +290,7 @@ namespace Project.Presentation.Main.Sales
                     TransportationCompany = new TransportationCompany() { Id = Convert.ToInt32(comboBoxTransportationCompany.SelectedValue) },
                     PaymentType = paymentType,
                     TotalAmount = CalcularTotal(dataGridView),
-                    CreatedAt = DateTime.Now
+                    CreatedAt = dateTimePicker.Value,
                 };
 
                 int saleId = saleService.Create(venta);

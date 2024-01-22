@@ -77,6 +77,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panelCategories.SuspendLayout();
             this.panelCatTitle.SuspendLayout();
             this.panelProducts.SuspendLayout();
@@ -349,6 +350,7 @@
             this.panelSaleDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelSaleDetail.BackColor = System.Drawing.Color.White;
             this.panelSaleDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelSaleDetail.Controls.Add(this.dateTimePicker);
             this.panelSaleDetail.Controls.Add(this.checkBoxToDiscount);
             this.panelSaleDetail.Controls.Add(this.txtToDiscount);
             this.panelSaleDetail.Controls.Add(this.comboBoxTransportationCompany);
@@ -510,7 +512,7 @@
             // 
             this.txtAddressCustomer.Location = new System.Drawing.Point(7, 172);
             this.txtAddressCustomer.Name = "txtAddressCustomer";
-            this.txtAddressCustomer.Size = new System.Drawing.Size(389, 26);
+            this.txtAddressCustomer.Size = new System.Drawing.Size(270, 26);
             this.txtAddressCustomer.TabIndex = 5;
             // 
             // comboBoxCommune
@@ -631,6 +633,14 @@
             this.label4.Text = "Detalles de la venta";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker.Location = new System.Drawing.Point(283, 172);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(113, 26);
+            this.dateTimePicker.TabIndex = 58;
+            // 
             // SaleControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -712,5 +722,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalReal;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
     }
 }
