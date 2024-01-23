@@ -500,6 +500,7 @@ namespace Project.Presentation.Main.Sales
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
             CustomersConsultForm customersConsultForm = new CustomersConsultForm();
+            customersConsultForm.StartPosition = FormStartPosition.CenterParent;
             customersConsultForm.CustomerSelected += CustomersConsultForm_CustomerSelected;
             customersConsultForm.ShowDialog();
         }

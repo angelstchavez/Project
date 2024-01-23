@@ -98,7 +98,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel1.Controls.Add(this.labelSales);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -140,7 +140,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel2.Controls.Add(this.labelExpeditures);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.pictureBox2);
@@ -182,7 +182,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel3.Controls.Add(this.labelCustomers);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.pictureBox3);
@@ -224,7 +224,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel4.Controls.Add(this.labelOrders);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.pictureBox4);
@@ -266,7 +266,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel5.Controls.Add(this.labelTotalSalesToday);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.pictureBox6);
@@ -326,7 +326,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel6.Controls.Add(this.labelTotalExpensesToday);
             this.panel6.Controls.Add(this.label12);
             this.panel6.Controls.Add(this.pictureBox5);
@@ -368,7 +368,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel7.Controls.Add(this.labelCustomerCountToday);
             this.panel7.Controls.Add(this.label14);
             this.panel7.Controls.Add(this.pictureBox7);
@@ -410,7 +410,7 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel8.Controls.Add(this.labelSalesCountToday);
             this.panel8.Controls.Add(this.label16);
             this.panel8.Controls.Add(this.pictureBox8);
@@ -457,7 +457,7 @@
             this.presentationsChart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.presentationsChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             this.presentationsChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            this.presentationsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
+            this.presentationsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameTitle3;
             chartArea1.Name = "ChartArea1";
             this.presentationsChart.ChartAreas.Add(chartArea1);
             this.presentationsChart.Location = new System.Drawing.Point(12, 196);
@@ -467,6 +467,8 @@
             this.presentationsChart.Series.Add(series1);
             this.presentationsChart.Size = new System.Drawing.Size(330, 518);
             this.presentationsChart.TabIndex = 13;
+            title1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            title1.ForeColor = System.Drawing.Color.White;
             title1.Name = "Title1";
             title1.Text = "Presentaciones vendidas históricamente";
             this.presentationsChart.Titles.Add(title1);
@@ -478,12 +480,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.productsChart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.productsChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            this.productsChart.BorderSkin.BorderColor = System.Drawing.Color.White;
             this.productsChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            this.productsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
+            this.productsChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameTitle3;
             chartArea2.Name = "ChartArea1";
             this.productsChart.ChartAreas.Add(chartArea2);
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.Font = new System.Drawing.Font("Arial Narrow", 12F);
             legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
             this.productsChart.Legends.Add(legend1);
@@ -491,12 +494,15 @@
             this.productsChart.Name = "productsChart";
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series2.Font = new System.Drawing.Font("Arial", 12F);
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             series2.YValuesPerPoint = 2;
             this.productsChart.Series.Add(series2);
             this.productsChart.Size = new System.Drawing.Size(330, 518);
             this.productsChart.TabIndex = 14;
+            title2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.ForeColor = System.Drawing.Color.White;
             title2.Name = "Title1";
             title2.Text = "Productos vendidos históricamente";
             this.productsChart.Titles.Add(title2);
@@ -508,7 +514,7 @@
             this.beveragesChart.BorderSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.beveragesChart.BorderSkin.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             this.beveragesChart.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            this.beveragesChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameThin3;
+            this.beveragesChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.FrameTitle3;
             chartArea3.Name = "ChartArea1";
             this.beveragesChart.ChartAreas.Add(chartArea3);
             this.beveragesChart.Location = new System.Drawing.Point(346, 196);
@@ -519,8 +525,10 @@
             this.beveragesChart.Series.Add(series3);
             this.beveragesChart.Size = new System.Drawing.Size(320, 518);
             this.beveragesChart.TabIndex = 15;
+            title3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title3.ForeColor = System.Drawing.Color.White;
             title3.Name = "Title1";
-            title3.Text = "Benidas vendidas históricamente";
+            title3.Text = "Bebidas vendidas históricamente";
             this.beveragesChart.Titles.Add(title3);
             // 
             // HomeForm

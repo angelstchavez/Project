@@ -287,6 +287,9 @@
     <EmbeddedResource Include="Main\Login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\Prints\PrintForm.resx">
+      <DependentUpon>PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\Products\ProductManagerForm.resx">
       <DependentUpon>ProductManagerForm.cs</DependentUpon>
     </EmbeddedResource>

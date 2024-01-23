@@ -72,7 +72,7 @@
             this.panelBase.BackColor = System.Drawing.SystemColors.Control;
             this.panelBase.Location = new System.Drawing.Point(12, 58);
             this.panelBase.Name = "panelBase";
-            this.panelBase.Size = new System.Drawing.Size(590, 491);
+            this.panelBase.Size = new System.Drawing.Size(990, 656);
             this.panelBase.TabIndex = 5;
             // 
             // btnBackup
@@ -122,7 +122,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(614, 561);
+            this.ClientSize = new System.Drawing.Size(1014, 726);
             this.Controls.Add(this.panelBase);
             this.Controls.Add(this.btnBackup);
             this.Controls.Add(this.btnLicence);

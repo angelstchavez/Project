@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.flowPrintingAreas = new System.Windows.Forms.FlowLayoutPanel();
+            this.SuspendLayout();
+            // 
+            // flowPrintingAreas
+            // 
+            this.flowPrintingAreas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.flowPrintingAreas.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flowPrintingAreas.Location = new System.Drawing.Point(0, 0);
+            this.flowPrintingAreas.Name = "flowPrintingAreas";
+            this.flowPrintingAreas.Size = new System.Drawing.Size(200, 656);
+            this.flowPrintingAreas.TabIndex = 1;
+            // 
+            // PrintForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.ClientSize = new System.Drawing.Size(990, 656);
+            this.Controls.Add(this.flowPrintingAreas);
+            this.Font = new System.Drawing.Font("Arial", 12F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "PrintForm";
             this.Text = "PrintForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.FlowLayoutPanel flowPrintingAreas;
     }
 }
