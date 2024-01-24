@@ -28,98 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSales = new System.Windows.Forms.Button();
+            this.btnExpenditures = new System.Windows.Forms.Button();
+            this.btnInsumos = new System.Windows.Forms.Button();
+            this.btnProducts = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.panelBase = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSales
             // 
-            this.button1.Image = global::Project.Presentation.Properties.Resources._24_make_sales;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(92, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ventas";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSales.Image = global::Project.Presentation.Properties.Resources._24_make_sales;
+            this.btnSales.Location = new System.Drawing.Point(12, 12);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnSales.Size = new System.Drawing.Size(92, 40);
+            this.btnSales.TabIndex = 0;
+            this.btnSales.Text = "Ventas";
+            this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSales.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnExpenditures
             // 
-            this.button2.Image = global::Project.Presentation.Properties.Resources._24_bills;
-            this.button2.Location = new System.Drawing.Point(110, 12);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(95, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Gastos";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnExpenditures.Image = global::Project.Presentation.Properties.Resources._24_bills;
+            this.btnExpenditures.Location = new System.Drawing.Point(110, 12);
+            this.btnExpenditures.Name = "btnExpenditures";
+            this.btnExpenditures.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnExpenditures.Size = new System.Drawing.Size(95, 40);
+            this.btnExpenditures.TabIndex = 1;
+            this.btnExpenditures.Text = "Gastos";
+            this.btnExpenditures.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExpenditures.UseVisualStyleBackColor = true;
+            this.btnExpenditures.Click += new System.EventHandler(this.btnExpenditures_Click);
             // 
-            // button3
+            // btnInsumos
             // 
-            this.button3.Image = global::Project.Presentation.Properties.Resources._24_suppliers;
-            this.button3.Location = new System.Drawing.Point(211, 12);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(100, 40);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Insumos";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnInsumos.Image = global::Project.Presentation.Properties.Resources._24_suppliers;
+            this.btnInsumos.Location = new System.Drawing.Point(211, 12);
+            this.btnInsumos.Name = "btnInsumos";
+            this.btnInsumos.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnInsumos.Size = new System.Drawing.Size(100, 40);
+            this.btnInsumos.TabIndex = 3;
+            this.btnInsumos.Text = "Insumos";
+            this.btnInsumos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInsumos.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnProducts
             // 
-            this.button4.Image = global::Project.Presentation.Properties.Resources._24_products;
-            this.button4.Location = new System.Drawing.Point(317, 12);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button4.Size = new System.Drawing.Size(114, 40);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Productos";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnProducts.Image = global::Project.Presentation.Properties.Resources._24_products;
+            this.btnProducts.Location = new System.Drawing.Point(317, 12);
+            this.btnProducts.Name = "btnProducts";
+            this.btnProducts.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnProducts.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnProducts.Size = new System.Drawing.Size(114, 40);
+            this.btnProducts.TabIndex = 4;
+            this.btnProducts.Text = "Productos";
+            this.btnProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProducts.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnCustomers
             // 
-            this.button5.Image = global::Project.Presentation.Properties.Resources._24_customers;
-            this.button5.Location = new System.Drawing.Point(437, 12);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button5.Size = new System.Drawing.Size(102, 40);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Clientes";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCustomers.Image = global::Project.Presentation.Properties.Resources._24_customers;
+            this.btnCustomers.Location = new System.Drawing.Point(437, 12);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnCustomers.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnCustomers.Size = new System.Drawing.Size(102, 40);
+            this.btnCustomers.TabIndex = 5;
+            this.btnCustomers.Text = "Clientes";
+            this.btnCustomers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCustomers.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panelBase
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelBase.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(12, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(990, 656);
-            this.panel1.TabIndex = 6;
+            this.panelBase.BackColor = System.Drawing.Color.White;
+            this.panelBase.Location = new System.Drawing.Point(12, 58);
+            this.panelBase.Name = "panelBase";
+            this.panelBase.Size = new System.Drawing.Size(990, 656);
+            this.panelBase.TabIndex = 6;
             // 
             // ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 726);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panelBase);
+            this.Controls.Add(this.btnCustomers);
+            this.Controls.Add(this.btnProducts);
+            this.Controls.Add(this.btnInsumos);
+            this.Controls.Add(this.btnExpenditures);
+            this.Controls.Add(this.btnSales);
             this.Font = new System.Drawing.Font("Arial", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -131,11 +132,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSales;
+        private System.Windows.Forms.Button btnExpenditures;
+        private System.Windows.Forms.Button btnInsumos;
+        private System.Windows.Forms.Button btnProducts;
+        private System.Windows.Forms.Button btnCustomers;
+        private System.Windows.Forms.Panel panelBase;
     }
 }

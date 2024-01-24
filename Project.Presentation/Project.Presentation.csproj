@@ -167,6 +167,12 @@
     <Compile Include="Main\Products\ProductManagerForm.Designer.cs">
       <DependentUpon>ProductManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Reports\ExpensesReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Reports\ExpensesReportForm.Designer.cs">
+      <DependentUpon>ExpensesReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Reports\ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Products\ProductManagerForm.resx">
       <DependentUpon>ProductManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Reports\ExpensesReportForm.resx">
+      <DependentUpon>ExpensesReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Reports\ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
