@@ -80,7 +80,7 @@ namespace Project.Presentation.Main.Login
 
         public void SetTitle()
         {
-            this.txtName.Text = $"MV Arroz al Wok © {DateTime.Now.Year}";
+            this.txtName.Text = $"MV Arroz al Wok © Since 2023 - {DateTime.Now.Year}";
         }
 
         private void btnEntry_Click(object sender, EventArgs e)

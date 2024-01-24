@@ -67,15 +67,15 @@ namespace Project.Presentation.Main.Dashboard
             {
                 button.Enabled = !state;
 
-                button.BackColor = Color.FromArgb(50,50,50);
-                
+                button.BackColor = Color.FromArgb(50, 50, 50);
+
                 foreach (Button btn in buttons)
                 {
                     if (btn != button)
                     {
                         btn.Enabled = state;
 
-                        btn.BackColor = Color.FromArgb(40,40,40);
+                        btn.BackColor = Color.FromArgb(40, 40, 40);
                     }
                 }
             }
@@ -128,6 +128,11 @@ namespace Project.Presentation.Main.Dashboard
         private void btnHome_Click(object sender, EventArgs e)
         {
             OpenModule(new Home.HomeForm(), btnHome, "Bandeja principal");
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            OpenModule(new Reports.ReportForm(), btnReports, "Gestor de reportes");
         }
 
         #endregion
