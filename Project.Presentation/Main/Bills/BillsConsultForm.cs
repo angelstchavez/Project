@@ -155,5 +155,30 @@ namespace Project.Presentation.Main.Bills
                 e.CellStyle.ForeColor = Color.Brown;
             }
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedId > 0)
+            {
+                DialogResult result = MessageBox.Show("¿Seguro que deseas eliminar este gasto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    if (expeditureService.Delete(selectedId))
+                    {
+                        MessageBox.Show("gasto eliminado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Consult(dateTimePicker.Value);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al intentar eliminar el gasto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un gasto antes de eliminar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

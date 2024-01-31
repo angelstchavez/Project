@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +46,7 @@
             this.btnConsult = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnResalt = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,14 +70,14 @@
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -203,7 +204,7 @@
             this.btnCorrect.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCorrect.FlatAppearance.BorderSize = 0;
             this.btnCorrect.Image = global::Project.Presentation.Properties.Resources._24_edit;
-            this.btnCorrect.Location = new System.Drawing.Point(553, 12);
+            this.btnCorrect.Location = new System.Drawing.Point(446, 12);
             this.btnCorrect.Name = "btnCorrect";
             this.btnCorrect.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnCorrect.Size = new System.Drawing.Size(87, 40);
@@ -234,7 +235,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.Image = global::Project.Presentation.Properties.Resources._24_clear;
-            this.btnClear.Location = new System.Drawing.Point(507, 12);
+            this.btnClear.Location = new System.Drawing.Point(400, 12);
             this.btnClear.Name = "btnClear";
             this.btnClear.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnClear.Size = new System.Drawing.Size(40, 40);
@@ -249,7 +250,7 @@
             this.btnResalt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResalt.FlatAppearance.BorderSize = 0;
             this.btnResalt.Image = global::Project.Presentation.Properties.Resources._24_correct;
-            this.btnResalt.Location = new System.Drawing.Point(461, 12);
+            this.btnResalt.Location = new System.Drawing.Point(354, 12);
             this.btnResalt.Name = "btnResalt";
             this.btnResalt.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnResalt.Size = new System.Drawing.Size(40, 40);
@@ -258,11 +259,28 @@
             this.btnResalt.UseVisualStyleBackColor = true;
             this.btnResalt.Click += new System.EventHandler(this.btnResalt_Click);
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.FlatAppearance.BorderSize = 0;
+            this.buttonDelete.Image = global::Project.Presentation.Properties.Resources._24_delete;
+            this.buttonDelete.Location = new System.Drawing.Point(539, 12);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.buttonDelete.Size = new System.Drawing.Size(101, 40);
+            this.buttonDelete.TabIndex = 18;
+            this.buttonDelete.Text = "Eliminar";
+            this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // BillsConsultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 726);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.btnResalt);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCorrect);
@@ -303,5 +321,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Value;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }
