@@ -12,7 +12,7 @@ namespace Project.Presentation.Main.Customers
     public partial class CustomersForm : Form
     {
         private readonly CustomerService customerService;
-        private int pageSize = 15;
+        private int pageSize = 24;
         private int currentPage = 1;
         private int totalPageCount;
         private int customerId;
@@ -140,7 +140,7 @@ namespace Project.Presentation.Main.Customers
             if (dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value != null &&
                 string.Equals(dataGridView.Rows[e.RowIndex].Cells["Nombre"].Value.ToString(), "Sin nombre", StringComparison.OrdinalIgnoreCase))
             {
-                dataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Info;
+                dataGridView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Orange;
             }
 
         }

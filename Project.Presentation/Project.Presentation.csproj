@@ -203,6 +203,12 @@
     <Compile Include="Main\Sales\SaleManagerForm.Designer.cs">
       <DependentUpon>SaleManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\Sales\SaleMonthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Sales\SaleMonthForm.Designer.cs">
+      <DependentUpon>SaleMonthForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\Sales\SalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Sales\SaleManagerForm.resx">
       <DependentUpon>SaleManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Sales\SaleMonthForm.resx">
+      <DependentUpon>SaleMonthForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\Sales\SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>

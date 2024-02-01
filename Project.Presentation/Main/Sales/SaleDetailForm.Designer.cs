@@ -65,6 +65,7 @@
             this.Pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,7 +79,7 @@
             this.btnResalt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnResalt.FlatAppearance.BorderSize = 0;
             this.btnResalt.Image = global::Project.Presentation.Properties.Resources._24_correct;
-            this.btnResalt.Location = new System.Drawing.Point(900, 12);
+            this.btnResalt.Location = new System.Drawing.Point(792, 12);
             this.btnResalt.Name = "btnResalt";
             this.btnResalt.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnResalt.Size = new System.Drawing.Size(40, 40);
@@ -93,7 +94,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.Image = global::Project.Presentation.Properties.Resources._24_clear;
-            this.btnClear.Location = new System.Drawing.Point(946, 12);
+            this.btnClear.Location = new System.Drawing.Point(838, 12);
             this.btnClear.Name = "btnClear";
             this.btnClear.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnClear.Size = new System.Drawing.Size(40, 40);
@@ -454,12 +455,29 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.FlatAppearance.BorderSize = 0;
+            this.buttonDelete.Image = global::Project.Presentation.Properties.Resources._24_delete;
+            this.buttonDelete.Location = new System.Drawing.Point(884, 12);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.buttonDelete.Size = new System.Drawing.Size(101, 40);
+            this.buttonDelete.TabIndex = 40;
+            this.buttonDelete.Text = "Eliminar";
+            this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // SaleDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(998, 611);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.btnResalt);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.panel1);
@@ -517,5 +535,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

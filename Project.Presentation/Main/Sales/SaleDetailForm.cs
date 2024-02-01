@@ -14,6 +14,7 @@ namespace Project.Presentation.Main.Sales
         private readonly ProductService productService;
         private DateTime targetDate;
         private DataGridViewRow selectedRow;
+
         public SaleDetailForm(DateTime targetDate)
         {
             this.saleService = new SaleService();
@@ -138,6 +139,11 @@ namespace Project.Presentation.Main.Sales
             }
 
             selectedRow = null;
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

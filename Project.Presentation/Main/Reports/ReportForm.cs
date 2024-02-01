@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Project.Presentation.Main.Sales;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -49,6 +50,11 @@ namespace Project.Presentation.Main.Reports
         private void btnExpenditures_Click(object sender, System.EventArgs e)
         {
             OpenModule(new ExpensesReportForm(), btnExpenditures);
+        }
+
+        private void btnSales_Click(object sender, System.EventArgs e)
+        {
+            OpenModule(new SaleMonthForm(), btnSales);
         }
     }
 }
