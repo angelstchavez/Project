@@ -1,5 +1,6 @@
 ﻿using Project.Presentation.Main.Bills;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Project.Presentation.Main.Sales
@@ -37,12 +38,14 @@ namespace Project.Presentation.Main.Sales
             if (buttons.Contains(button))
             {
                 button.Enabled = !state;
+                button.BackColor = Color.FromArgb(30, 30, 30);
 
                 foreach (Button btn in buttons)
                 {
                     if (btn != button)
                     {
                         btn.Enabled = state;
+                        btn.BackColor = Color.FromArgb(12, 12, 12);
                     }
                 }
             }

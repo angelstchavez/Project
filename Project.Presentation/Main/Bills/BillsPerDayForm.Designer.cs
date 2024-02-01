@@ -153,7 +153,7 @@
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotal.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Bold);
-            this.txtTotal.ForeColor = System.Drawing.Color.Silver;
+            this.txtTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.txtTotal.Location = new System.Drawing.Point(552, 682);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
