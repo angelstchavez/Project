@@ -54,6 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(9, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 18);
@@ -62,6 +63,9 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.ForeColor = System.Drawing.Color.White;
             this.txtName.Location = new System.Drawing.Point(12, 62);
             this.txtName.MaxLength = 100;
             this.txtName.Name = "txtName";
@@ -70,6 +74,9 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhone.ForeColor = System.Drawing.Color.White;
             this.txtPhone.Location = new System.Drawing.Point(12, 123);
             this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
@@ -79,6 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(9, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 18);
@@ -88,6 +96,7 @@
             // checkBox
             // 
             this.checkBox.AutoSize = true;
+            this.checkBox.ForeColor = System.Drawing.Color.Gray;
             this.checkBox.Location = new System.Drawing.Point(180, 64);
             this.checkBox.Name = "checkBox";
             this.checkBox.Size = new System.Drawing.Size(107, 22);
@@ -98,6 +107,10 @@
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Image = global::Project.Presentation.Properties.Resources._24_clear;
             this.btnClear.Location = new System.Drawing.Point(81, 160);
             this.btnClear.Name = "btnClear";
@@ -106,11 +119,15 @@
             this.btnClear.TabIndex = 8;
             this.btnClear.Text = "Limpiar";
             this.btnClear.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnAction
             // 
+            this.btnAction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.btnAction.FlatAppearance.BorderSize = 0;
+            this.btnAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAction.ForeColor = System.Drawing.Color.White;
             this.btnAction.Image = global::Project.Presentation.Properties.Resources._24_save;
             this.btnAction.Location = new System.Drawing.Point(187, 160);
             this.btnAction.Name = "btnAction";
@@ -119,13 +136,14 @@
             this.btnAction.TabIndex = 5;
             this.btnAction.Text = "Guardar";
             this.btnAction.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAction.UseVisualStyleBackColor = true;
+            this.btnAction.UseVisualStyleBackColor = false;
             this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
             // 
             // CustomerControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(299, 212);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.checkBox);

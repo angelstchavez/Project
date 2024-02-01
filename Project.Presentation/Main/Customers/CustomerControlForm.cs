@@ -33,8 +33,10 @@ namespace Project.Presentation.Main.Customers
         private void InitializeForm(bool isEditMode)
         {
             labelTitle.BackColor = isEditMode ? Color.DarkOrange : Color.Green;
-            txtName.BackColor = isEditMode ? SystemColors.Info : SystemColors.Window;
-            txtPhone.BackColor = isEditMode ? SystemColors.Info : SystemColors.Window;
+            txtName.ForeColor = isEditMode ? SystemColors.Info : Color.White;
+            txtName.BackColor = isEditMode ? SystemColors.Info : Color.FromArgb(25, 25, 25);
+            txtPhone.ForeColor = isEditMode ? SystemColors.Info : Color.White;
+            txtPhone.BackColor = isEditMode ? SystemColors.Info : Color.FromArgb(25, 25, 25);
             labelTitle.Text = isEditMode ? "Actualizar cliente" : "Nuevo cliente";
         }
 
