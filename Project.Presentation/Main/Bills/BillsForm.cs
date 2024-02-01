@@ -36,12 +36,14 @@ namespace Project.Presentation.Main.Bills
             if (buttons.Contains(button))
             {
                 button.Enabled = !state;
+                button.BackColor = Color.FromArgb(30,30,30);
 
                 foreach (Button btn in buttons)
                 {
                     if (btn != button)
                     {
                         btn.Enabled = state;
+                        btn.BackColor = Color.FromArgb(12,12,12);
                     }
                 }
             }
