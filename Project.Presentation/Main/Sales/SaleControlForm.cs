@@ -104,10 +104,14 @@ namespace Project.Presentation.Main.Sales
             btnCategory.Dock = DockStyle.Top;
             btnCategory.TextAlign = ContentAlignment.MiddleCenter;
             btnCategory.Cursor = Cursors.Hand;
-            btnCategory.BackColor = Color.White;
+            btnCategory.BackColor = Color.FromArgb(12,12,12);
+            btnCategory.ForeColor = Color.Silver;
             btnCategory.TextAlign = ContentAlignment.BottomCenter;
             btnCategory.TextImageRelation = TextImageRelation.ImageAboveText;
-
+            btnCategory.FlatAppearance.BorderSize = 0;
+            btnCategory.FlatStyle = FlatStyle.Flat;
+            btnCategory.FlatAppearance.MouseDownBackColor = Color.FromArgb(40,40,40);
+            btnCategory.FlatAppearance.MouseOverBackColor = Color.FromArgb(15,15,15);
             btnCategory.Click += new EventHandler(ButtonCategoryEvent);
 
             // Asignar imágenes según la categoría de productos
@@ -157,7 +161,12 @@ namespace Project.Presentation.Main.Sales
                     btnProduct.Dock = DockStyle.Bottom;
                     btnProduct.TextAlign = ContentAlignment.MiddleCenter;
                     btnProduct.Cursor = Cursors.Hand;
-                    btnProduct.BackColor = Color.White;
+                    btnProduct.BackColor = Color.FromArgb(12, 12, 12);
+                    btnProduct.ForeColor = Color.Silver;
+                    btnProduct.FlatAppearance.BorderSize = 0;
+                    btnProduct.FlatStyle = FlatStyle.Flat;
+                    btnProduct.FlatAppearance.MouseDownBackColor = Color.FromArgb(40, 40, 40);
+                    btnProduct.FlatAppearance.MouseOverBackColor = Color.FromArgb(15, 15, 15);
                     flowProducts.Controls.Add(btnProduct);
 
                     // Manejar el evento de clic para los botones de productos
@@ -464,19 +473,6 @@ namespace Project.Presentation.Main.Sales
                 comboBoxNeighborhood.DataSource = neighborhoods.ToList();
                 comboBoxNeighborhood.DisplayMember = "Name";
                 comboBoxNeighborhood.ValueMember = "Id";
-            }
-        }
-
-        private void checkBoxToDiscount_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxToDiscount.Checked)
-            {
-                txtToDiscount.Enabled = true;
-            }
-            else
-            {
-                txtToDiscount.Enabled = false;
-                txtToDiscount.Clear();
             }
         }
 

@@ -34,11 +34,9 @@
             this.panelCategories = new System.Windows.Forms.Panel();
             this.flowCategories = new System.Windows.Forms.FlowLayoutPanel();
             this.panelCatTitle = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelProducts = new System.Windows.Forms.Panel();
             this.flowProducts = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelShoppingCart = new System.Windows.Forms.Panel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,21 +46,16 @@
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalReal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.panelAmount = new System.Windows.Forms.Panel();
             this.labelTotalAmount = new System.Windows.Forms.Label();
             this.panelSaleDetail = new System.Windows.Forms.Panel();
-            this.checkBoxToDiscount = new System.Windows.Forms.CheckBox();
-            this.txtToDiscount = new System.Windows.Forms.TextBox();
+            this.radioButtonCash = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.radioButtonDaviplata = new System.Windows.Forms.RadioButton();
+            this.radioButtonNequi = new System.Windows.Forms.RadioButton();
             this.comboBoxTransportationCompany = new System.Windows.Forms.ComboBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnCreateSale = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButtonCash = new System.Windows.Forms.RadioButton();
-            this.radioButtonNequi = new System.Windows.Forms.RadioButton();
-            this.radioButtonDaviplata = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.txtAddressCustomer = new System.Windows.Forms.TextBox();
             this.comboBoxCommune = new System.Windows.Forms.ComboBox();
@@ -77,17 +70,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelCategories.SuspendLayout();
             this.panelCatTitle.SuspendLayout();
             this.panelProducts.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelShoppingCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panelAmount.SuspendLayout();
             this.panelSaleDetail.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,22 +87,21 @@
             // 
             this.panelCategories.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panelCategories.BackColor = System.Drawing.Color.White;
-            this.panelCategories.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panelCategories.Controls.Add(this.flowCategories);
             this.panelCategories.Controls.Add(this.panelCatTitle);
-            this.panelCategories.Location = new System.Drawing.Point(12, 436);
+            this.panelCategories.Location = new System.Drawing.Point(12, 364);
             this.panelCategories.Name = "panelCategories";
-            this.panelCategories.Size = new System.Drawing.Size(492, 278);
+            this.panelCategories.Size = new System.Drawing.Size(492, 350);
             this.panelCategories.TabIndex = 0;
             // 
             // flowCategories
             // 
-            this.flowCategories.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowCategories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.flowCategories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowCategories.Location = new System.Drawing.Point(0, 30);
             this.flowCategories.Name = "flowCategories";
-            this.flowCategories.Size = new System.Drawing.Size(488, 244);
+            this.flowCategories.Size = new System.Drawing.Size(492, 320);
             this.flowCategories.TabIndex = 2;
             // 
             // panelCatTitle
@@ -120,42 +111,29 @@
             this.panelCatTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelCatTitle.Location = new System.Drawing.Point(0, 0);
             this.panelCatTitle.Name = "panelCatTitle";
-            this.panelCatTitle.Size = new System.Drawing.Size(488, 30);
+            this.panelCatTitle.Size = new System.Drawing.Size(492, 30);
             this.panelCatTitle.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(488, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Categorias de productos disponibles";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelProducts
             // 
             this.panelProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelProducts.BackColor = System.Drawing.Color.White;
-            this.panelProducts.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panelProducts.Controls.Add(this.flowProducts);
             this.panelProducts.Controls.Add(this.panel1);
-            this.panelProducts.Location = new System.Drawing.Point(510, 436);
+            this.panelProducts.Location = new System.Drawing.Point(510, 364);
             this.panelProducts.Name = "panelProducts";
-            this.panelProducts.Size = new System.Drawing.Size(492, 278);
+            this.panelProducts.Size = new System.Drawing.Size(492, 350);
             this.panelProducts.TabIndex = 1;
             // 
             // flowProducts
             // 
-            this.flowProducts.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flowProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.flowProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowProducts.Location = new System.Drawing.Point(0, 30);
             this.flowProducts.Name = "flowProducts";
-            this.flowProducts.Size = new System.Drawing.Size(488, 244);
+            this.flowProducts.Size = new System.Drawing.Size(492, 320);
             this.flowProducts.TabIndex = 2;
             // 
             // panel1
@@ -165,51 +143,34 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(488, 30);
+            this.panel1.Size = new System.Drawing.Size(492, 30);
             this.panel1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(488, 30);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Productos disponibles";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelShoppingCart
             // 
             this.panelShoppingCart.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelShoppingCart.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelShoppingCart.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelShoppingCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panelShoppingCart.Controls.Add(this.dataGridView);
-            this.panelShoppingCart.Controls.Add(this.panel2);
             this.panelShoppingCart.Location = new System.Drawing.Point(12, 12);
             this.panelShoppingCart.Name = "panelShoppingCart";
-            this.panelShoppingCart.Size = new System.Drawing.Size(579, 419);
+            this.panelShoppingCart.Size = new System.Drawing.Size(579, 346);
             this.panelShoppingCart.TabIndex = 1;
             // 
             // dataGridView
             // 
             this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
@@ -223,29 +184,31 @@
             this.TotalReal,
             this.Eliminar});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView.Location = new System.Drawing.Point(3, 36);
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.EnableHeadersVisualStyles = false;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView.RowHeadersWidth = 25;
+            this.dataGridView.RowHeadersWidth = 20;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(569, 374);
+            this.dataGridView.Size = new System.Drawing.Size(579, 346);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
@@ -299,33 +262,11 @@
             this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(575, 30);
-            this.panel2.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(575, 30);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Carrito de compras";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panelAmount
             // 
             this.panelAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panelAmount.BackColor = System.Drawing.Color.Orange;
-            this.panelAmount.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelAmount.Controls.Add(this.labelTotalAmount);
             this.panelAmount.Location = new System.Drawing.Point(597, 12);
             this.panelAmount.Name = "panelAmount";
@@ -334,13 +275,13 @@
             // 
             // labelTotalAmount
             // 
-            this.labelTotalAmount.BackColor = System.Drawing.Color.Green;
+            this.labelTotalAmount.BackColor = System.Drawing.Color.Orange;
             this.labelTotalAmount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelTotalAmount.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Bold);
-            this.labelTotalAmount.ForeColor = System.Drawing.Color.White;
+            this.labelTotalAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(36)))), ((int)(((byte)(0)))));
             this.labelTotalAmount.Location = new System.Drawing.Point(0, 0);
             this.labelTotalAmount.Name = "labelTotalAmount";
-            this.labelTotalAmount.Size = new System.Drawing.Size(401, 46);
+            this.labelTotalAmount.Size = new System.Drawing.Size(403, 48);
             this.labelTotalAmount.TabIndex = 0;
             this.labelTotalAmount.Text = "$ 0,00";
             this.labelTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -348,16 +289,14 @@
             // panelSaleDetail
             // 
             this.panelSaleDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelSaleDetail.BackColor = System.Drawing.Color.White;
-            this.panelSaleDetail.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelSaleDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panelSaleDetail.Controls.Add(this.radioButtonCash);
             this.panelSaleDetail.Controls.Add(this.dateTimePicker);
-            this.panelSaleDetail.Controls.Add(this.checkBoxToDiscount);
-            this.panelSaleDetail.Controls.Add(this.txtToDiscount);
+            this.panelSaleDetail.Controls.Add(this.radioButtonDaviplata);
+            this.panelSaleDetail.Controls.Add(this.radioButtonNequi);
             this.panelSaleDetail.Controls.Add(this.comboBoxTransportationCompany);
             this.panelSaleDetail.Controls.Add(this.btnClear);
             this.panelSaleDetail.Controls.Add(this.btnCreateSale);
-            this.panelSaleDetail.Controls.Add(this.label10);
-            this.panelSaleDetail.Controls.Add(this.groupBox1);
             this.panelSaleDetail.Controls.Add(this.label9);
             this.panelSaleDetail.Controls.Add(this.txtAddressCustomer);
             this.panelSaleDetail.Controls.Add(this.comboBoxCommune);
@@ -373,46 +312,74 @@
             this.panelSaleDetail.Controls.Add(this.panel3);
             this.panelSaleDetail.Location = new System.Drawing.Point(597, 68);
             this.panelSaleDetail.Name = "panelSaleDetail";
-            this.panelSaleDetail.Size = new System.Drawing.Size(405, 363);
+            this.panelSaleDetail.Size = new System.Drawing.Size(405, 290);
             this.panelSaleDetail.TabIndex = 3;
             // 
-            // checkBoxToDiscount
+            // radioButtonCash
             // 
-            this.checkBoxToDiscount.AutoSize = true;
-            this.checkBoxToDiscount.Location = new System.Drawing.Point(7, 325);
-            this.checkBoxToDiscount.Name = "checkBoxToDiscount";
-            this.checkBoxToDiscount.Size = new System.Drawing.Size(99, 22);
-            this.checkBoxToDiscount.TabIndex = 57;
-            this.checkBoxToDiscount.Text = "Descontar";
-            this.checkBoxToDiscount.UseVisualStyleBackColor = true;
-            this.checkBoxToDiscount.CheckedChanged += new System.EventHandler(this.checkBoxToDiscount_CheckedChanged);
+            this.radioButtonCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonCash.AutoSize = true;
+            this.radioButtonCash.ForeColor = System.Drawing.Color.Silver;
+            this.radioButtonCash.Location = new System.Drawing.Point(7, 211);
+            this.radioButtonCash.Name = "radioButtonCash";
+            this.radioButtonCash.Size = new System.Drawing.Size(82, 22);
+            this.radioButtonCash.TabIndex = 6;
+            this.radioButtonCash.TabStop = true;
+            this.radioButtonCash.Text = "Efectivo";
+            this.radioButtonCash.UseVisualStyleBackColor = true;
             // 
-            // txtToDiscount
+            // dateTimePicker
             // 
-            this.txtToDiscount.Enabled = false;
-            this.txtToDiscount.Location = new System.Drawing.Point(107, 322);
-            this.txtToDiscount.Name = "txtToDiscount";
-            this.txtToDiscount.Size = new System.Drawing.Size(90, 26);
-            this.txtToDiscount.TabIndex = 56;
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker.Location = new System.Drawing.Point(266, 172);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(130, 26);
+            this.dateTimePicker.TabIndex = 58;
+            // 
+            // radioButtonDaviplata
+            // 
+            this.radioButtonDaviplata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonDaviplata.AutoSize = true;
+            this.radioButtonDaviplata.ForeColor = System.Drawing.Color.Silver;
+            this.radioButtonDaviplata.Location = new System.Drawing.Point(95, 211);
+            this.radioButtonDaviplata.Name = "radioButtonDaviplata";
+            this.radioButtonDaviplata.Size = new System.Drawing.Size(92, 22);
+            this.radioButtonDaviplata.TabIndex = 48;
+            this.radioButtonDaviplata.TabStop = true;
+            this.radioButtonDaviplata.Text = "Daviplata";
+            this.radioButtonDaviplata.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonNequi
+            // 
+            this.radioButtonNequi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButtonNequi.AutoSize = true;
+            this.radioButtonNequi.ForeColor = System.Drawing.Color.Silver;
+            this.radioButtonNequi.Location = new System.Drawing.Point(193, 211);
+            this.radioButtonNequi.Name = "radioButtonNequi";
+            this.radioButtonNequi.Size = new System.Drawing.Size(67, 22);
+            this.radioButtonNequi.TabIndex = 49;
+            this.radioButtonNequi.TabStop = true;
+            this.radioButtonNequi.Text = "Nequi";
+            this.radioButtonNequi.UseVisualStyleBackColor = true;
             // 
             // comboBoxTransportationCompany
             // 
             this.comboBoxTransportationCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTransportationCompany.FormattingEnabled = true;
-            this.comboBoxTransportationCompany.Location = new System.Drawing.Point(7, 289);
+            this.comboBoxTransportationCompany.Location = new System.Drawing.Point(266, 209);
             this.comboBoxTransportationCompany.Name = "comboBoxTransportationCompany";
-            this.comboBoxTransportationCompany.Size = new System.Drawing.Size(190, 26);
+            this.comboBoxTransportationCompany.Size = new System.Drawing.Size(130, 26);
             this.comboBoxTransportationCompany.TabIndex = 7;
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.Gray;
+            this.btnClear.BackColor = System.Drawing.Color.DimGray;
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(203, 314);
+            this.btnClear.Location = new System.Drawing.Point(7, 244);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(193, 40);
             this.btnClear.TabIndex = 9;
@@ -422,81 +389,19 @@
             // 
             // btnCreateSale
             // 
-            this.btnCreateSale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCreateSale.BackColor = System.Drawing.Color.Green;
             this.btnCreateSale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateSale.FlatAppearance.BorderSize = 0;
             this.btnCreateSale.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCreateSale.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateSale.ForeColor = System.Drawing.Color.White;
-            this.btnCreateSale.Location = new System.Drawing.Point(203, 268);
+            this.btnCreateSale.Location = new System.Drawing.Point(203, 244);
             this.btnCreateSale.Name = "btnCreateSale";
             this.btnCreateSale.Size = new System.Drawing.Size(193, 40);
             this.btnCreateSale.TabIndex = 8;
             this.btnCreateSale.Text = "Registrar venta";
             this.btnCreateSale.UseVisualStyleBackColor = false;
             this.btnCreateSale.Click += new System.EventHandler(this.btnCreateSale_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.label10.Location = new System.Drawing.Point(4, 267);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(78, 18);
-            this.label10.TabIndex = 52;
-            this.label10.Text = "Domicilio:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButtonCash);
-            this.groupBox1.Controls.Add(this.radioButtonNequi);
-            this.groupBox1.Controls.Add(this.radioButtonDaviplata);
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.groupBox1.Location = new System.Drawing.Point(7, 207);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(389, 54);
-            this.groupBox1.TabIndex = 50;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Medio de pago";
-            // 
-            // radioButtonCash
-            // 
-            this.radioButtonCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonCash.AutoSize = true;
-            this.radioButtonCash.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonCash.Location = new System.Drawing.Point(68, 21);
-            this.radioButtonCash.Name = "radioButtonCash";
-            this.radioButtonCash.Size = new System.Drawing.Size(82, 22);
-            this.radioButtonCash.TabIndex = 6;
-            this.radioButtonCash.TabStop = true;
-            this.radioButtonCash.Text = "Efectivo";
-            this.radioButtonCash.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonNequi
-            // 
-            this.radioButtonNequi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonNequi.AutoSize = true;
-            this.radioButtonNequi.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonNequi.Location = new System.Drawing.Point(254, 21);
-            this.radioButtonNequi.Name = "radioButtonNequi";
-            this.radioButtonNequi.Size = new System.Drawing.Size(67, 22);
-            this.radioButtonNequi.TabIndex = 49;
-            this.radioButtonNequi.TabStop = true;
-            this.radioButtonNequi.Text = "Nequi";
-            this.radioButtonNequi.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonDaviplata
-            // 
-            this.radioButtonDaviplata.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButtonDaviplata.AutoSize = true;
-            this.radioButtonDaviplata.ForeColor = System.Drawing.Color.Black;
-            this.radioButtonDaviplata.Location = new System.Drawing.Point(156, 21);
-            this.radioButtonDaviplata.Name = "radioButtonDaviplata";
-            this.radioButtonDaviplata.Size = new System.Drawing.Size(92, 22);
-            this.radioButtonDaviplata.TabIndex = 48;
-            this.radioButtonDaviplata.TabStop = true;
-            this.radioButtonDaviplata.Text = "Daviplata";
-            this.radioButtonDaviplata.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -510,9 +415,12 @@
             // 
             // txtAddressCustomer
             // 
+            this.txtAddressCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtAddressCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddressCustomer.ForeColor = System.Drawing.Color.Silver;
             this.txtAddressCustomer.Location = new System.Drawing.Point(7, 172);
             this.txtAddressCustomer.Name = "txtAddressCustomer";
-            this.txtAddressCustomer.Size = new System.Drawing.Size(270, 26);
+            this.txtAddressCustomer.Size = new System.Drawing.Size(253, 26);
             this.txtAddressCustomer.TabIndex = 5;
             // 
             // comboBoxCommune
@@ -556,24 +464,32 @@
             // 
             // btnClearCustomer
             // 
+            this.btnClearCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             this.btnClearCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClearCustomer.FlatAppearance.BorderSize = 0;
+            this.btnClearCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearCustomer.Image = global::Project.Presentation.Properties.Resources._16_basura;
             this.btnClearCustomer.Location = new System.Drawing.Point(366, 58);
             this.btnClearCustomer.Name = "btnClearCustomer";
             this.btnClearCustomer.Size = new System.Drawing.Size(30, 30);
             this.btnClearCustomer.TabIndex = 30;
-            this.btnClearCustomer.UseVisualStyleBackColor = true;
+            this.btnClearCustomer.UseVisualStyleBackColor = false;
             this.btnClearCustomer.Click += new System.EventHandler(this.btnClearCustomer_Click);
             // 
             // btnSearchCustomer
             // 
+            this.btnSearchCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             this.btnSearchCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearchCustomer.FlatAppearance.BorderSize = 0;
+            this.btnSearchCustomer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnSearchCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnSearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchCustomer.Image = global::Project.Presentation.Properties.Resources._16_lupa;
             this.btnSearchCustomer.Location = new System.Drawing.Point(333, 58);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
             this.btnSearchCustomer.Size = new System.Drawing.Size(30, 30);
             this.btnSearchCustomer.TabIndex = 29;
-            this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            this.btnSearchCustomer.UseVisualStyleBackColor = false;
             this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
             // 
             // label5
@@ -588,6 +504,9 @@
             // 
             // txtCustomerPhone
             // 
+            this.txtCustomerPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtCustomerPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomerPhone.ForeColor = System.Drawing.Color.Silver;
             this.txtCustomerPhone.Location = new System.Drawing.Point(203, 60);
             this.txtCustomerPhone.MaxLength = 10;
             this.txtCustomerPhone.Name = "txtCustomerPhone";
@@ -596,6 +515,9 @@
             // 
             // txtCustomerName
             // 
+            this.txtCustomerName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.txtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomerName.ForeColor = System.Drawing.Color.Silver;
             this.txtCustomerName.Location = new System.Drawing.Point(7, 60);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(190, 26);
@@ -618,7 +540,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(401, 30);
+            this.panel3.Size = new System.Drawing.Size(405, 30);
             this.panel3.TabIndex = 2;
             // 
             // label4
@@ -628,24 +550,40 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(401, 30);
+            this.label4.Size = new System.Drawing.Size(405, 30);
             this.label4.TabIndex = 2;
             this.label4.Text = "Detalles de la venta";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker
+            // label2
             // 
-            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(283, 172);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(113, 26);
-            this.dateTimePicker.TabIndex = 58;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(492, 30);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Productos disponibles";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(492, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Categorias de productos disponibles";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // SaleControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(1014, 726);
             this.Controls.Add(this.panelSaleDetail);
             this.Controls.Add(this.panelAmount);
@@ -663,12 +601,9 @@
             this.panel1.ResumeLayout(false);
             this.panelShoppingCart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.panelAmount.ResumeLayout(false);
             this.panelSaleDetail.ResumeLayout(false);
             this.panelSaleDetail.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -683,10 +618,6 @@
         private System.Windows.Forms.Panel panelSaleDetail;
         private System.Windows.Forms.Panel panelCatTitle;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnClearCustomer;
@@ -703,15 +634,11 @@
         private System.Windows.Forms.TextBox txtAddressCustomer;
         private System.Windows.Forms.RadioButton radioButtonCash;
         private System.Windows.Forms.RadioButton radioButtonDaviplata;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButtonNequi;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCreateSale;
         private System.Windows.Forms.ComboBox comboBoxTransportationCompany;
         private System.Windows.Forms.Label labelTotalAmount;
-        private System.Windows.Forms.TextBox txtToDiscount;
-        private System.Windows.Forms.CheckBox checkBoxToDiscount;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.FlowLayoutPanel flowCategories;
         private System.Windows.Forms.FlowLayoutPanel flowProducts;
@@ -723,5 +650,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalReal;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -62,7 +62,7 @@ namespace Project.Presentation.Main.Customers
             if (dataGridView.Rows[rowIndex].Cells["Nombre"].Value != null &&
                 string.Equals(dataGridView.Rows[rowIndex].Cells["Nombre"].Value.ToString(), "Sin nombre", StringComparison.OrdinalIgnoreCase))
             {
-                dataGridView.Rows[rowIndex].DefaultCellStyle.BackColor = SystemColors.Info;
+                dataGridView.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.Orange;
             }
         }
 
