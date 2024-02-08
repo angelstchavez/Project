@@ -69,6 +69,7 @@ namespace Project.Presentation.Main.Sales
         private void btnDetails_Click(object sender, EventArgs e)
         {
             SaleDetailForm saleDetailForm = new SaleDetailForm(selectedDate);
+            saleDetailForm.StartPosition = FormStartPosition.CenterParent;
             saleDetailForm.ShowDialog();
         }
 

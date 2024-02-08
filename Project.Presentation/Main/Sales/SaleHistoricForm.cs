@@ -134,5 +134,10 @@ namespace Project.Presentation.Main.Sales
                 e.CellStyle.Font = new Font(dataGridViewProducts.Font, FontStyle.Bold);
             }
         }
+
+        private void dataGridViewProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

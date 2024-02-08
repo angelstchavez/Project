@@ -101,22 +101,6 @@ namespace Project.Presentation.Main.Sales
             }
         }
 
-        private void dataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridView.Columns.Count - 1)
-            {
-                e.CellStyle.Font = new Font(dataGridView.Font, FontStyle.Bold);
-            }
-        }
-
-        private void dataGridViewProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridViewProducts.Columns.Count - 1)
-            {
-                e.CellStyle.Font = new Font(dataGridViewProducts.Font, FontStyle.Bold);
-            }
-        }
-
         private void btnResalt_Click(object sender, EventArgs e)
         {
             if (dataGridView.SelectedRows.Count > 0)
@@ -144,6 +128,32 @@ namespace Project.Presentation.Main.Sales
         private void buttonDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SaleDetailForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView.Columns.Count - 1)
+            {
+                e.CellStyle.Font = new Font(dataGridView.Font, FontStyle.Bold);
+            }
+        }
+
+        private void dataGridViewProducts_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewProducts.Columns.Count - 1)
+            {
+                e.CellStyle.Font = new Font(dataGridViewProducts.Font, FontStyle.Bold);
+            }
         }
     }
 }
