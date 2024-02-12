@@ -80,6 +80,7 @@
             // comboBoxCategory
             // 
             this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCategory.ForeColor = System.Drawing.Color.Black;
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Items.AddRange(new object[] {
             "Alimentos",
@@ -113,6 +114,9 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.ForeColor = System.Drawing.Color.Black;
             this.txtDescription.Location = new System.Drawing.Point(11, 121);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(236, 26);
@@ -130,11 +134,12 @@
             // 
             // btnAction
             // 
-            this.btnAction.BackColor = System.Drawing.Color.Transparent;
+            this.btnAction.BackColor = System.Drawing.Color.Brown;
             this.btnAction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAction.FlatAppearance.BorderSize = 0;
+            this.btnAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAction.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAction.ForeColor = System.Drawing.Color.Brown;
+            this.btnAction.ForeColor = System.Drawing.Color.White;
             this.btnAction.Location = new System.Drawing.Point(11, 268);
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(236, 35);
@@ -163,21 +168,36 @@
             // 
             // numericUpDownValue
             // 
+            this.numericUpDownValue.BackColor = System.Drawing.SystemColors.Window;
+            this.numericUpDownValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.numericUpDownValue.ForeColor = System.Drawing.Color.Brown;
             this.numericUpDownValue.Location = new System.Drawing.Point(11, 232);
             this.numericUpDownValue.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
+            this.numericUpDownValue.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDownValue.Name = "numericUpDownValue";
             this.numericUpDownValue.Size = new System.Drawing.Size(236, 26);
             this.numericUpDownValue.TabIndex = 4;
+            this.numericUpDownValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDownValue.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // BillsControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(257, 314);
             this.Controls.Add(this.numericUpDownValue);
             this.Controls.Add(this.pickDate);
@@ -198,7 +218,6 @@
             this.MinimumSize = new System.Drawing.Size(273, 353);
             this.Name = "BillsControlForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.BillsControlForm_Load_1);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownValue)).EndInit();
             this.ResumeLayout(false);

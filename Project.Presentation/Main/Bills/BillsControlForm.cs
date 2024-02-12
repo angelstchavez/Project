@@ -2,9 +2,7 @@
 using Project.Entity;
 using System;
 using System.Drawing;
-using System.Globalization;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace Project.Presentation.Main.Bills
 {
@@ -208,11 +206,6 @@ namespace Project.Presentation.Main.Bills
             numericUpDownValue.BackColor = Color.FromArgb(20,20,20);
 
             btnAction.Enabled = false; // Deshabilita el botón después de un registro exitoso.
-        }
-
-        private void BillsControlForm_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
