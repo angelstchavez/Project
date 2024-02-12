@@ -205,7 +205,7 @@ namespace Project.Presentation.Main.Bills
             pickDate.BackColor = SystemColors.Window;
             comboBoxCategory.BackColor = SystemColors.Window;
             txtDescription.BackColor = SystemColors.Window;
-            numericUpDownValue.BackColor = SystemColors.Window;
+            numericUpDownValue.BackColor = Color.FromArgb(20,20,20);
 
             btnAction.Enabled = false; // Deshabilita el botón después de un registro exitoso.
         }
