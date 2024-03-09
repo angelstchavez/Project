@@ -107,7 +107,7 @@ namespace Project.Presentation.Main.Sales
             {
                 selectedRow = dataGridView.SelectedRows[0];
 
-                selectedRow.DefaultCellStyle.BackColor = Color.PaleGreen;
+                selectedRow.DefaultCellStyle.BackColor = Color.FromArgb(60, 107, 37);
             }
             else
             {

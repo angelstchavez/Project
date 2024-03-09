@@ -354,7 +354,7 @@
             this.labelDate.ForeColor = System.Drawing.Color.Orange;
             this.labelDate.Location = new System.Drawing.Point(6, 9);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(275, 40);
+            this.labelDate.Size = new System.Drawing.Size(780, 40);
             this.labelDate.TabIndex = 42;
             this.labelDate.Text = "Ventas del día";
             this.labelDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

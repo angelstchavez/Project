@@ -16,17 +16,18 @@ namespace Project.Presentation.Main.Sales
 
         private Dictionary<int, Color> monthColors = new Dictionary<int, Color>
         {
-            { 1, Color.FromArgb(255, 255, 255) },   // Enero - Blanco
-            { 3, Color.FromArgb(144, 238, 144) },   // Marzo - Verde claro
-            { 4, Color.FromArgb(255, 127, 80) },    // Abril - Coral
-            { 5, Color.FromArgb(173, 216, 230) },   // Mayo - Azul claro
-            { 6, Color.FromArgb(255, 182, 193) },   // Junio - Rosa claro
-            { 7, Color.FromArgb(255, 99, 71) },     // Julio - Rojo tomate
-            { 8, Color.FromArgb(0, 255, 255) },     // Agosto - Cian
-            { 9, Color.FromArgb(255, 255, 0) },     // Septiembre - Amarillo
-            { 10, Color.FromArgb(218, 112, 214) },  // Octubre - Orquídea
-            { 11, Color.FromArgb(0, 255, 127) },    // Noviembre - Verde esmeralda
-            { 12, Color.FromArgb(255, 140, 0) }     // Diciembre - Naranja oscuro
+            { 1, Color.FromArgb(255, 192, 203) },    // Enero - Rosa claro
+            { 2, Color.FromArgb(255, 218, 185) },    // Febrero - Melocotón
+            { 3, Color.FromArgb(173, 216, 230) },    // Marzo - Azul cielo más brillante
+            { 4, Color.FromArgb(255, 105, 105) },    // Abril - Rosa salmón más vivo
+            { 5, Color.FromArgb(144, 238, 144) },    // Mayo - Verde claro
+            { 6, Color.FromArgb(255, 215, 0) },      // Junio - Dorado
+            { 7, Color.FromArgb(255, 235, 139) },    // Julio - Amarillo más vivo
+            { 8, Color.FromArgb(255, 20, 147) },     // Agosto - Rosa oscuro
+            { 9, Color.FromArgb(124, 252, 0) },      // Septiembre - Verde lima más brillante
+            { 10, Color.FromArgb(64, 224, 208) },    // Octubre - Cian claro más vivo
+            { 11, Color.FromArgb(255, 182, 193) },   // Noviembre - Rosa claro
+            { 12, Color.FromArgb(255, 240, 245) }    // Diciembre - Rosa lavanda
         };
 
         public SaleManagerForm()
@@ -99,6 +100,11 @@ namespace Project.Presentation.Main.Sales
                 // Convertir la cadena de la celda a DateTime
                 if (DateTime.TryParse(e.Value.ToString(), out DateTime date))
                 {
+                    // Formatear la fecha como "Diciembre: 1 del 2023"
+                    string formattedDate = $"{date.ToString("MMMM")}: {date.Day} del {date.Year}";
+
+                    e.Value = formattedDate;
+
                     // Obtener el mes de la fecha
                     int month = date.Month;
 
@@ -108,6 +114,13 @@ namespace Project.Presentation.Main.Sales
                         e.CellStyle.ForeColor = monthColors[month];
                     }
                 }
+            }
+
+            // Verificar si la celda está en la última columna
+            if (e.ColumnIndex == dataGridView.Columns.Count - 1)
+            {
+                // Establecer el texto en negrita
+                e.CellStyle.Font = new Font(e.CellStyle.Font, FontStyle.Bold);
             }
         }
     }
